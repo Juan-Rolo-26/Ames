@@ -73,7 +73,7 @@ const Testimonios = () => {
 
                 <div className="mt-16 text-center">
                     <motion.a
-                        href="/casos"
+                        href={`${import.meta.env.BASE_URL}casos`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="inline-flex items-center text-accent font-semibold text-lg hover:text-teal-700 transition-colors"

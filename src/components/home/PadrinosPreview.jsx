@@ -114,7 +114,7 @@ const PadrinosPreview = () => {
                             transition={{ duration: 0.6, delay: 0.55, type: 'spring', stiffness: 80 }}
                         >
                             <motion.a
-                                href="/padrinos"
+                                href={`${import.meta.env.BASE_URL}padrinos`}
                                 whileHover={{ scale: 1.05, y: -3 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl group"
