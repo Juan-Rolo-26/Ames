@@ -24,7 +24,7 @@ const MembresiaPreview = () => {
             <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="w-full px-10 lg:px-20 relative z-10">
+            <div className="w-full px-5 sm:px-8 lg:px-20 relative z-10">
                 {/* Header — viene de arriba */}
                 <div className="text-center mb-16 max-w-3xl mx-auto">
                     <motion.span
@@ -88,7 +88,7 @@ const MembresiaPreview = () => {
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: true, margin: '-60px' }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="bg-white border-2 border-primary rounded-3xl p-8 md:p-12 shadow-2xl relative max-w-4xl mx-auto"
+                    className="bg-white border-2 border-primary rounded-3xl p-8 md:p-12 shadow-2xl relative"
                 >
                     {/* Badge superior */}
                     <motion.div
@@ -96,7 +96,7 @@ const MembresiaPreview = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="absolute top-0 right-0 py-2.5 px-7 bg-secondary text-white font-bold font-heading rounded-bl-xl rounded-tr-2xl text-sm shadow-lg"
+                        className="absolute top-0 right-0 py-2.5 px-7 bg-accent text-white font-bold font-heading rounded-bl-xl rounded-tr-2xl text-sm shadow-lg"
                     >
                         ⭐ Elegido por emprendedores
                     </motion.div>
@@ -122,7 +122,8 @@ const MembresiaPreview = () => {
                             >
                                 Cancelación en cualquier momento sin penalidades
                             </motion.p>
-                            <ul className="space-y-4">
+                            {/* Beneficios en 2 columnas */}
+                            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {beneficios.map((b, i) => (
                                     <motion.li
                                         key={i}
@@ -130,9 +131,9 @@ const MembresiaPreview = () => {
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: 0.35 + i * 0.08, type: 'spring', stiffness: 90 }}
-                                        className="flex items-center gap-3 text-gray-700 font-medium"
+                                        className="flex items-start gap-3 text-gray-700 font-medium text-sm"
                                     >
-                                        <span className="text-accent">{b.icon}</span>
+                                        <span className="text-accent mt-0.5">{b.icon}</span>
                                         <span>{b.text}</span>
                                     </motion.li>
                                 ))}
@@ -181,7 +182,7 @@ const MembresiaPreview = () => {
                                     rel="noreferrer"
                                     whileHover={{ scale: 1.04, y: -3 }}
                                     whileTap={{ scale: 0.96 }}
-                                    className="flex items-center justify-center gap-2 w-full bg-secondary text-white px-8 py-5 rounded-full font-bold text-lg hover:bg-orange-600 transition-colors shadow-xl shadow-orange-500/25 group"
+                                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-secondary to-accent text-white px-8 py-5 rounded-full font-bold text-lg hover:from-primary hover:to-secondary transition-all shadow-xl shadow-secondary/30 group"
                                 >
                                     Ver planes y suscribirme
                                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

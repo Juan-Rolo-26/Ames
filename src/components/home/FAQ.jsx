@@ -44,7 +44,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <section className="py-28 bg-background overflow-hidden">
+        <section className="py-16 lg:py-28 bg-background overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 lg:px-10">
 
                 {/* Header animado desde arriba */}
@@ -105,10 +105,10 @@ const FAQ = () => {
                     {faqs.map((faq, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, x: index % 2 === 0 ? -60 : 60 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: '-40px' }}
-                            transition={{ duration: 0.6, delay: index * 0.07, type: 'spring', stiffness: 80 }}
+                            transition={{ duration: 0.5, delay: index * 0.07 }}
                             className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-secondary/30 hover:shadow-lg transition-all"
                         >
                             <button

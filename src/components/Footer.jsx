@@ -17,7 +17,7 @@ const footerLinks = {
         { label: 'Empresas Padrino', to: '/servicios#empresas-padrinos' },
     ],
     institucional: [
-        { label: 'Sobre AMES', to: '/nosotros' },
+        { label: '¿Quiénes Somos?', to: '/nosotros' },
         { label: 'Empresas Padrino', to: '/padrinos' },
         { label: 'Casos de Éxito', to: '/casos' },
         { label: 'Membresía', href: 'https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames' },
@@ -32,7 +32,7 @@ const socials = [
 
 const Footer = () => {
     return (
-        <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #4a1060 0%, #682079 40%, #5a1870 70%, #3d0d52 100%)' }}>
+        <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #080E1E 0%, #0D2054 40%, #111c45 70%, #060c18 100%)' }}>
             {/* ── Decoraciones de fondo ── */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl" />
@@ -45,18 +45,22 @@ const Footer = () => {
             </div>
 
             {/* ── Cuerpo principal ── */}
-            <div className="relative z-10 w-full px-10 lg:px-20 pt-20 pb-10">
+            <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20 pt-20 pb-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
 
                     {/* Columna logo + descripción + socials */}
                     <div className="lg:col-span-4">
-                        <img
-                            src={brand.logoUrl}
-                            alt="AMES Logo"
-                            className="h-16 w-auto mb-7 brightness-0 invert"
-                        />
+                        {/* Logo sin fondo blanco con mix-blend-mode */}
+                        <div className="mb-7">
+                            <img
+                                src={brand.logoUrl}
+                                alt="Logo de Mutual AMES Rosario"
+                                className="h-16 w-auto"
+                                style={{ mixBlendMode: 'screen' }}
+                            />
+                        </div>
                         <p className="text-white/60 text-base leading-relaxed mb-8 max-w-xs">
-                            La mutual de emprendedores de Rosario. Te acompañamos con financiamiento, red de contactos y consultoría para que tu negocio escale con impacto real.
+                            La mutual de emprendedores de Rosario. Te acompañamos con formación, comunidad, consultoría y herramientas económicas para que tu negocio crezca con orden e impacto real.
                         </p>
 
                         {/* Redes sociales */}

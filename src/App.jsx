@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -16,7 +16,8 @@ function App() {
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Navigate to="/mutual-argentina" replace />} />
+            <Route path="/mutual-argentina" element={<Home />} />
             <Route path="/servicios" element={<ServiciosPage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/padrinos" element={<PadrinosPage />} />

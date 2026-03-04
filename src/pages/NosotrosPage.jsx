@@ -28,20 +28,18 @@ const fadeRight = (delay = 0) => ({
 
 // ── Datos del equipo ───────────────────────────────────────────────
 const equipo = [
-    { nombre: 'Carlos Rivera', rol: 'Fundador & Director', foto: avatars.carlos, bio: 'Emprendedor serial con +15 años de experiencia. Creó AMES para construir la red de soporte que él mismo necesitó y no tuvo en sus comienzos.' },
-    { nombre: 'María González', rol: 'Directora de Comunidad', foto: avatars.maria, bio: 'Especialista en desarrollo organizacional. Lidera las rondas de networking y los programas de mentoría con foco en resultados reales.' },
-    { nombre: 'Laura Ríos', rol: 'Coordinadora de Escuela', foto: avatars.laura, bio: 'Docente y consultora de negocios. Diseña los programas de capacitación Express para emprendedores en etapas iniciales y de crecimiento.' },
-    { nombre: 'Juan Pérez', rol: 'Jefe de Finanzas', foto: avatars.juan, bio: 'Contador público y experto en finanzas para pymes. Gestiona los programas de ayuda económica y conecta proyectos con fuentes de financiamiento.' },
+    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.maria, bio: 'Fundadora de Mutual AMES y profesional especializada en finanzas, costos y planificación estratégica. Impulsó la creación de la mutual con el objetivo de brindar estructura, acompañamiento y herramientas reales a emprendedores y empresas que buscan crecer con orden y respaldo institucional. Desde su rol, lidera el desarrollo financiero y estratégico del ecosistema AMES.' },
+    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.carlos, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
 ];
 
 // ── Valores ────────────────────────────────────────────────────────
 const valores = [
-    { icono: <Heart className="w-7 h-7" />, titulo: 'Comunidad', desc: 'Creemos que los emprendedores que se apoyan mutuamente llegan más lejos. La red lo es todo.', color: 'from-pink-500 to-secondary' },
+    { icono: <Heart className="w-7 h-7" />, titulo: 'Comunidad', desc: 'Creemos que los emprendedores que se apoyan mutuamente llegan más lejos. La red lo es todo.', color: 'from-secondary to-primary' },
     { icono: <Zap className="w-7 h-7" />, titulo: 'Impacto Real', desc: 'Medimos nuestro éxito en los resultados concretos de cada emprendedor. Nada de promesas vacías.', color: 'from-secondary to-accent' },
     { icono: <Globe className="w-7 h-7" />, titulo: 'Triple Impacto', desc: 'Economía, sociedad y medioambiente en equilibrio. Emprendemos con responsabilidad.', color: 'from-accent to-primary' },
     { icono: <Users className="w-7 h-7" />, titulo: 'Accesibilidad', desc: 'La mutual elimina barreras. El acompañamiento de calidad no debe ser un privilegio de pocos.', color: 'from-primary to-secondary' },
-    { icono: <Target className="w-7 h-7" />, titulo: 'Foco en Resultados', desc: 'Cada acción dentro de AMES está orientada a generar un avance concreto en tu proyecto.', color: 'from-secondary to-pink-500' },
-    { icono: <TrendingUp className="w-7 h-7" />, titulo: 'Crecimiento Continuo', desc: 'La cultura de aprendizaje y la mejora constante son el motor de nuestra comunidad.', color: 'from-accent to-secondary' },
+    { icono: <Target className="w-7 h-7" />, titulo: 'Foco en Resultados', desc: 'Cada acción dentro de AMES está orientada a generar un avance concreto en tu proyecto.', color: 'from-accent to-secondary' },
+    { icono: <TrendingUp className="w-7 h-7" />, titulo: 'Crecimiento Continuo', desc: 'La cultura de aprendizaje y la mejora constante son el motor de nuestra comunidad.', color: 'from-primary to-accent' },
 ];
 
 // ── Hitos de historia ──────────────────────────────────────────────
@@ -71,7 +69,7 @@ const NosotrosPage = () => {
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] z-0" />
                 <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-[100px] z-0" />
 
-                <div className="relative z-10 text-center px-6 py-32 max-w-4xl mx-auto">
+                <div className="relative z-10 text-center px-10 lg:px-24 py-32 w-full">
                     <motion.span
                         {...fadeUp(0.1)}
                         className="inline-block bg-secondary/20 border border-secondary/30 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase"
@@ -82,15 +80,16 @@ const NosotrosPage = () => {
                         {...fadeUp(0.25)}
                         className="text-5xl md:text-7xl font-heading font-black text-white mb-6 leading-[1.05]"
                     >
-                        Somos la comunidad que<br />
-                        <span className="text-secondary">potencia emprendedores</span>
+                        Somos la comunidad <br />
+                        que <span className="text-secondary">potencia emprendedores</span>
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.4)}
-                        className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+                        className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
                     >
-                        AMES nació del convencimiento de que un emprendedor acompañado vale más que diez solos.
-                        Construimos comunidad, brindamos herramientas y generamos impacto real en Rosario y la región.
+                        AMES nace en 2022 en Rosario como una mutual enfocada en acompañar a emprendedores, profesionales y empresas mediante formación, comunidad, consultoría estratégica y herramientas económicas responsables.
+                        <br /><br />
+                        Impulsamos un ecosistema donde las ideas se planifican, se fortalecen y se transforman en proyectos sostenibles con impacto real en la región.
                     </motion.p>
                 </div>
 
@@ -108,7 +107,7 @@ const NosotrosPage = () => {
 
             {/* ── Misión & Visión ───────────────────────────────────────── */}
             <section className="py-28 bg-white overflow-hidden">
-                <div className="w-full max-w-7xl mx-auto px-10 lg:px-20">
+                <div className="w-full px-5 sm:px-8 lg:px-20">
                     <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                         {/* Imagen */}
                         <motion.div {...fadeLeft(0)} className="w-full lg:w-5/12 relative">
@@ -141,23 +140,31 @@ const NosotrosPage = () => {
                         <div className="w-full lg:w-7/12 space-y-10">
                             <motion.div {...fadeRight(0)}>
                                 <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wide uppercase">
-                                    Quiénes Somos
+                                    ¿Quiénes Somos?
                                 </span>
                                 <h2 className="text-4xl md:text-5xl font-heading font-black text-primary leading-tight mb-6">
-                                    La mutual que <span className="text-secondary">te acompaña</span> en todo el camino
+                                    Una mutual que transforma <span className="text-secondary">acompañamiento en crecimiento</span>
                                 </h2>
-                                <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                                    Mutual AMES (Aceleradora Mutual de Emprendedores Sustentables) es una organización sin fines de lucro radicada en Rosario, Argentina. Desde 2018 trabajamos para que ningún emprendedor tenga que enfrentar solo los desafíos del camino.
-                                </p>
-                                <p className="text-lg text-gray-600 leading-relaxed">
-                                    Combinamos financiamiento solidario, formación práctica, red de contactos y acompañamiento personalizado para que las ideas se transformen en proyectos rentables con impacto positivo.
-                                </p>
+                                <div className="space-y-4">
+                                    <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                                        Mutual AMES (Asociación Mutual de Emprendedores de Santa Fe) es una organización sin fines de lucro con sede en Rosario, Argentina. Desde 2022 desarrollamos un ecosistema integral de acompañamiento para emprendedores, trabajadores, profesionales y empresas que buscan crecer con estructura y respaldo institucional.
+                                    </p>
+                                    <p className="text-lg text-gray-600 leading-relaxed font-bold text-primary">
+                                        En AMES no solo brindamos apoyo económico. Construimos bases sólidas para el desarrollo.
+                                    </p>
+                                    <p className="text-lg text-gray-600 leading-relaxed">
+                                        Integramos formación práctica a través de Academia Express, espacios de networking presencial, consultoría estratégica profesional, herramientas de ayuda económica e inversiones dentro del marco mutual y programas como la Aceleradora Impacto para proyectos con potencial de expansión.
+                                    </p>
+                                    <p className="text-lg text-gray-600 leading-relaxed font-semibold italic">
+                                        Nuestro propósito es que cada persona o empresa pueda avanzar con planificación, comunidad activa y herramientas concretas para fortalecer su actividad.
+                                    </p>
+                                </div>
                             </motion.div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                                 {[
-                                    { titulo: 'Nuestra Misión', texto: 'Acompañar a emprendedores de la economía real con herramientas, comunidad y financiamiento solidario, generando un impacto positivo triple en la sociedad, el ambiente y la economía.', icono: <Target className="w-5 h-5" /> },
-                                    { titulo: 'Nuestra Visión', texto: 'Ser la red mutual de emprendedores más importante del interior del país, referencia de que se puede emprender con propósito, impacto y resultados concretos.', icono: <TrendingUp className="w-5 h-5" /> }
+                                    { titulo: 'Nuestra Misión', texto: 'Impulsar el desarrollo económico de emprendedores, profesionales y empresas mediante formación, comunidad, asesoramiento estratégico y herramientas financieras responsables, promover crecimiento sostenible y ordenado.', icono: <Target className="w-5 h-5" /> },
+                                    { titulo: 'Nuestra Visión', texto: 'Consolidarnos como un ecosistema mutual de referencia en el interior del país, integrando educación, acompañamiento estratégico, ayuda económica e inversión dentro de una misma estructura institucional confiable y transparente.', icono: <TrendingUp className="w-5 h-5" /> }
                                 ].map((item, i) => (
                                     <motion.div
                                         key={i}
@@ -187,7 +194,7 @@ const NosotrosPage = () => {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-primary to-primary/90 z-0" />
 
-                <div className="relative z-10 w-full max-w-5xl mx-auto px-10 lg:px-20">
+                <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20">
                     <motion.div {...fadeUp(0)} className="text-center mb-20">
                         <span className="inline-block bg-secondary/20 border border-secondary/30 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
                             Nuestra Trayectoria
@@ -245,7 +252,7 @@ const NosotrosPage = () => {
 
             {/* ── Valores ───────────────────────────────────────────────── */}
             <section className="py-28 bg-background overflow-hidden">
-                <div className="w-full max-w-7xl mx-auto px-10 lg:px-20">
+                <div className="w-full px-5 sm:px-8 lg:px-20">
                     <motion.div {...fadeUp(0)} className="text-center mb-20">
                         <span className="inline-block bg-secondary/10 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
                             Lo que nos guía
@@ -281,7 +288,7 @@ const NosotrosPage = () => {
 
             {/* ── Equipo ────────────────────────────────────────────────── */}
             <section className="py-28 bg-white overflow-hidden">
-                <div className="w-full max-w-7xl mx-auto px-10 lg:px-20">
+                <div className="w-full px-5 sm:px-8 lg:px-20">
                     <motion.div {...fadeUp(0)} className="text-center mb-20">
                         <span className="inline-block bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase">
                             Las personas detrás de AMES
@@ -294,13 +301,13 @@ const NosotrosPage = () => {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
                         {equipo.map((miembro, i) => (
                             <motion.div
                                 key={i}
                                 {...fadeUp(i * 0.12)}
                                 whileHover={{ y: -10 }}
-                                className="group text-center cursor-default"
+                                className="group text-center cursor-default bg-white p-6 rounded-3xl border border-gray-100 shadow-sm"
                             >
                                 <div className="relative mb-5 mx-auto w-fit">
                                     <div className="w-36 h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white group-hover:border-secondary/50 transition-all mx-auto">
@@ -329,7 +336,7 @@ const NosotrosPage = () => {
                 <div className="absolute inset-0 opacity-5">
                     <img src={community.coworking} alt="" className="w-full h-full object-cover" />
                 </div>
-                <div className="relative z-10 w-full max-w-5xl mx-auto px-10 lg:px-20">
+                <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
                             { num: '+500', label: 'Emprendedores', sub: 'en la comunidad' },
@@ -353,7 +360,7 @@ const NosotrosPage = () => {
 
             {/* ── CTA Final ─────────────────────────────────────────────── */}
             <section className="py-28 bg-background">
-                <div className="w-full max-w-4xl mx-auto px-10 lg:px-20 text-center">
+                <div className="w-full px-5 sm:px-8 lg:px-20 text-center">
                     <motion.div {...fadeUp(0)}>
                         <span className="inline-block bg-secondary/10 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase">
                             Sumate

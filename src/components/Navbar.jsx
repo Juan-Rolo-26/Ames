@@ -30,6 +30,15 @@ const Navbar = () => {
         return () => { document.body.style.overflow = "unset"; };
     }, [menuOpen]);
 
+    useEffect(() => {
+        if (!menuOpen) return;
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") setMenuOpen(false);
+        };
+        window.addEventListener("keydown", onKeyDown);
+        return () => window.removeEventListener("keydown", onKeyDown);
+    }, [menuOpen]);
+
     const handleNavClick = (path) => {
         setMenuOpen(false);
         setActiveSubmenu(null);
@@ -40,8 +49,8 @@ const Navbar = () => {
     const navLinks = [
         {
             name: "INICIO",
-            path: "/",
-            action: () => handleNavClick("/"),
+            path: "/mutual-argentina",
+            action: () => handleNavClick("/mutual-argentina"),
         },
         {
             name: "SERVICIOS",
@@ -65,11 +74,11 @@ const Navbar = () => {
         if (location.pathname.includes("/padrinos")) return "PADRINOS";
         if (location.pathname.includes("/servicios")) return "SERVICIOS";
         if (location.pathname.includes("/casos")) return "CASOS";
-        return "ACELERADORA AMES";
+        return "MUTUAL AMES";
     };
 
     /* Siempre oscuro: el Hero de AMES tiene fondo claro */
-    const navBackground = "rgba(12, 8, 22, 0.96)";
+    const navBackground = "rgba(8, 14, 30, 0.97)";
     const navHeight = scrolled ? "70px" : "90px";
 
     const logoVariants = {
@@ -93,12 +102,13 @@ const Navbar = () => {
                     position: "fixed",
                     top: 0,
                     left: 0,
+                    right: 0,
                     width: "100%",
                     height: navHeight,
-                    display: "grid",
-                    gridTemplateColumns: "1fr auto 1fr",
+                    display: "flex",
                     alignItems: "center",
-                    padding: "0 5%",
+                    justifyContent: "space-between",
+                    padding: "0 4%",
                     zIndex: 1000,
                     transition: "all 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
                     background: navBackground,
@@ -110,46 +120,37 @@ const Navbar = () => {
                         : "0 4px 24px rgba(0,0,0,0.28)",
                 }}
             >
-                {/* ── Logo ──────────────────────────────────────── */}
+                {/* ── Logo (mix-blend-mode:screen elimina el fondo blanco del PNG) ── */}
                 <motion.div
                     variants={logoVariants}
                     initial="initial"
                     whileHover="hover"
-                    style={{ cursor: "pointer", display: "flex", alignItems: "center" }}
-                    onClick={() => handleNavClick("/")}
+                    style={{ cursor: "pointer", display: "flex", alignItems: "center", flexShrink: 0 }}
+                    onClick={() => handleNavClick("/mutual-argentina")}
                 >
-                    <div
+                    <img
+                        src={brand.logoUrl}
+                        alt="Asociación Mutual AMES"
                         style={{
-                            background: "#ffffff",
-                            borderRadius: "12px",
-                            padding: "5px 12px",
-                            display: "flex",
-                            alignItems: "center",
-                            transition: "all 0.4s ease",
-                            boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                            height: scrolled ? "38px" : "50px",
+                            width: "auto",
+                            transition: "height 0.4s ease",
+                            display: "block",
+                            mixBlendMode: "screen",
                         }}
-                    >
-                        <img
-                            src={brand.logoUrl}
-                            alt="AMES Aceleradora"
-                            style={{
-                                height: scrolled ? "34px" : "44px",
-                                width: "auto",
-                                transition: "height 0.4s ease",
-                                display: "block",
-                            }}
-                        />
-                    </div>
+                    />
                 </motion.div>
 
-                {/* ── Desktop Nav Links (columna central, verdaderamente centrada) ── */}
+                {/* ── Desktop Nav Links (centrado absoluto sobre el nav) ── */}
                 <div
                     className="ames-desktop-links"
                     style={{
+                        position: "absolute",
+                        left: "50%",
+                        transform: "translateX(-50%)",
                         display: "flex",
                         gap: "36px",
                         alignItems: "center",
-                        justifyContent: "center",
                         height: "100%",
                     }}
                 >
@@ -172,7 +173,7 @@ const Navbar = () => {
                                     style={{
                                         background: "none",
                                         border: "none",
-                                        color: isActive ? "#fff" : "rgba(255,255,255,0.72)",
+                                        color: isActive ? "#60a5fa" : "rgba(255,255,255,0.72)",
                                         fontSize: "0.88rem",
                                         fontWeight: "600",
                                         letterSpacing: "2px",
@@ -195,7 +196,7 @@ const Navbar = () => {
                                                 left: 0,
                                                 right: 0,
                                                 height: "2px",
-                                                background: "linear-gradient(90deg, #682079, #a855f7)",
+                                                background: "linear-gradient(90deg, #1A56DB, #7C3AED)",
                                                 borderRadius: "99px",
                                             }}
                                             initial={{ opacity: 0 }}
@@ -214,7 +215,7 @@ const Navbar = () => {
                                                 left: 0,
                                                 right: 0,
                                                 height: "2px",
-                                                background: "rgba(168,85,247,0.45)",
+                                                background: "rgba(124,58,237,0.50)",
                                                 borderRadius: "99px",
                                             }}
                                             initial={{ scaleX: 0 }}
@@ -289,7 +290,7 @@ const Navbar = () => {
                 </div>
 
                 {/* ── Right section ────────────────────────────── */}
-                <div style={{ display: "flex", alignItems: "center", gap: "20px", justifySelf: "end" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", justifySelf: "end" }}>
 
                     {/* Location badge (solo desktop grande) */}
                     <div
@@ -304,7 +305,7 @@ const Navbar = () => {
                             background: "rgba(255,255,255,0.04)",
                         }}
                     >
-                        <span style={{ fontSize: "0.72rem", color: "#c084fc", fontWeight: "700", letterSpacing: "0.08em" }}>
+                        <span style={{ fontSize: "0.72rem", color: "#60a5fa", fontWeight: "700", letterSpacing: "0.08em" }}>
                             {getRouteName()}
                         </span>
                         <div style={{ width: "1px", height: "12px", background: "rgba(255,255,255,0.18)" }} />
@@ -313,40 +314,42 @@ const Navbar = () => {
                         </span>
                     </div>
 
-                    {/* Menú button */}
+                    {/* ── Botón hamburguesa (visible en móvil) ── */}
                     <motion.button
-                        onClick={() => setMenuOpen(true)}
+                        className="ames-hamburger"
                         variants={menuButtonVariants}
                         initial="initial"
                         whileHover="hover"
                         whileTap="tap"
+                        onClick={() => setMenuOpen(true)}
+                        aria-label="Abrir menú"
+                        type="button"
                         style={{
-                            background: "rgba(168,85,247,0.12)",
-                            border: "1px solid rgba(168,85,247,0.25)",
+                            background: "rgba(255,255,255,0.06)",
+                            border: "1px solid rgba(255,255,255,0.12)",
+                            borderRadius: "10px",
                             color: "#fff",
                             cursor: "pointer",
+                            width: "44px",
+                            height: "44px",
                             display: "flex",
                             alignItems: "center",
-                            gap: "12px",
-                            padding: "9px 18px",
-                            borderRadius: "40px",
-                            backdropFilter: "blur(10px)",
-                            transition: "background .25s, border-color .25s",
+                            justifyContent: "center",
                         }}
                     >
-                        <span style={{ fontSize: "0.78rem", fontWeight: "700", letterSpacing: "2px" }}>
-                            MENÚ
-                        </span>
-                        <MenuIcon size={18} color="#c084fc" />
+                        <MenuIcon size={22} color="#fff" />
                     </motion.button>
                 </div>
             </motion.nav>
 
-            {/* ── Responsive: hide elements on small screens ── */}
+            {/* ── Responsive: hide/show elements ── */}
             <style>{`
         @media (max-width: 960px) {
           .ames-desktop-links  { display: none !important; }
           .ames-location-badge { display: none !important; }
+        }
+        @media (min-width: 961px) {
+          .ames-hamburger { display: none !important; }
         }
       `}</style>
 
@@ -368,6 +371,7 @@ const Navbar = () => {
                             zIndex: 2000,
                             pointerEvents: "auto",
                         }}
+                        onClick={() => setMenuOpen(false)}
                     >
                         {/* Overlay */}
                         <motion.div
@@ -379,8 +383,8 @@ const Navbar = () => {
                                 inset: 0,
                                 background: "rgba(0,0,0,0.85)",
                                 backdropFilter: "blur(16px)",
+                                zIndex: 1,
                             }}
-                            onClick={() => setMenuOpen(false)}
                         />
 
                         {/* Panel lateral */}
@@ -396,18 +400,24 @@ const Navbar = () => {
                                 width: "100%",
                                 maxWidth: "580px",
                                 height: "100%",
-                                background: "#0a0614",
-                                padding: "56px 72px",
+                                background: "#060c1a",
+                                padding: "clamp(28px,5vw,56px) clamp(24px,6vw,72px)",
                                 display: "flex",
                                 flexDirection: "column",
                                 justifyContent: "space-between",
-                                borderLeft: "1px solid rgba(168,85,247,0.15)",
+                                borderLeft: "1px solid rgba(26,86,219,0.25)",
                                 boxShadow: "-20px 0 80px rgba(0,0,0,0.5)",
+                                zIndex: 2,
+                                pointerEvents: "auto",
+                                overflowY: "auto",
                             }}
+                            onClick={(event) => event.stopPropagation()}
                         >
                             {/* Cerrar */}
                             <button
                                 onClick={() => setMenuOpen(false)}
+                                type="button"
+                                aria-label="Cerrar menú"
                                 style={{
                                     position: "absolute",
                                     top: "28px",
@@ -422,6 +432,7 @@ const Navbar = () => {
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
+                                    zIndex: 3,
                                 }}
                             >
                                 <CloseIcon size={22} color="#fff" />
@@ -438,11 +449,12 @@ const Navbar = () => {
                                     >
                                         <motion.button
                                             onClick={link.action}
+                                            type="button"
                                             whileHover={{ x: 18 }}
                                             style={{
                                                 background: "none",
                                                 border: "none",
-                                                color: location.pathname === link.path ? "#c084fc" : "#fff",
+                                                color: location.pathname === link.path ? "#60a5fa" : "#fff",
                                                 fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
                                                 fontWeight: "700",
                                                 letterSpacing: "2px",
@@ -453,10 +465,10 @@ const Navbar = () => {
                                                 width: "100%",
                                                 transition: "color 0.25s",
                                             }}
-                                            onHoverStart={(e) => { e.currentTarget.style.color = "#c084fc"; }}
+                                            onHoverStart={(e) => { e.currentTarget.style.color = "#7C3AED"; }}
                                             onHoverEnd={(e) => {
                                                 e.currentTarget.style.color =
-                                                    location.pathname === link.path ? "#c084fc" : "#fff";
+                                                    location.pathname === link.path ? "#60a5fa" : "#fff";
                                             }}
                                         >
                                             {link.name}
@@ -477,7 +489,7 @@ const Navbar = () => {
                                         alignItems: "center",
                                         gap: "10px",
                                         marginTop: "28px",
-                                        background: "linear-gradient(135deg, #682079, #9333ea)",
+                                        background: "linear-gradient(135deg, #1A56DB, #7C3AED)",
                                         color: "#fff",
                                         fontWeight: "700",
                                         fontSize: "1rem",
@@ -485,7 +497,7 @@ const Navbar = () => {
                                         padding: "14px 32px",
                                         borderRadius: "99px",
                                         textDecoration: "none",
-                                        boxShadow: "0 8px 28px rgba(104,32,121,0.45)",
+                                        boxShadow: "0 8px 28px rgba(26,86,219,0.45)",
                                     }}
                                 >
                                     Sumarme ahora
@@ -508,9 +520,9 @@ const Navbar = () => {
                                     paddingTop: "32px",
                                 }}>
                                     {[
-                                        { Icon: InstagramIcon, href: "https://instagram.com/aceleradoraimpactoames", color: "#E4405F" },
-                                        { Icon: LinkedinIcon, href: "#", color: "#0077B5" },
-                                        { Icon: YoutubeIcon, href: "#", color: "#FF0000" },
+                                        { Icon: InstagramIcon, href: "https://www.instagram.com/mutual.ames/", color: "#E4405F" },
+                                        { Icon: LinkedinIcon, href: "https://www.linkedin.com/company/mutual-ames/", color: "#0077B5" },
+                                        { Icon: YoutubeIcon, href: "https://www.youtube.com/@AceleradoraImpacto", color: "#FF0000" },
                                     ].map(({ Icon, href, color }, i) => (
                                         <motion.a
                                             key={i}
@@ -546,7 +558,7 @@ const Navbar = () => {
                                     whileHover={{ x: 6 }}
                                     target="_blank" rel="noreferrer"
                                     style={{
-                                        color: "#c084fc",
+                                        color: "#60a5fa",
                                         textDecoration: "none",
                                         fontSize: "1.05rem",
                                         fontWeight: "600",

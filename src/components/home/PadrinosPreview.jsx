@@ -19,7 +19,7 @@ const PadrinosPreview = () => {
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent skew-x-12 origin-top-right transform translate-x-1/4 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div className="w-full px-10 lg:px-20 relative z-10">
+            <div className="w-full px-5 sm:px-8 lg:px-20 relative z-10">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-16">
 
                     {/* Columna izquierda — texto viene de la izquierda */}
@@ -100,7 +100,7 @@ const PadrinosPreview = () => {
                                     transition={{ duration: 0.5, delay: 0.3 + i * 0.07, type: 'spring', stiffness: 90 }}
                                     className="flex items-start gap-3 text-gray-300"
                                 >
-                                    <CheckCircle className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
+                                    <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                                     <span className="text-sm">{b}</span>
                                 </motion.li>
                             ))}
@@ -161,7 +161,7 @@ const PadrinosPreview = () => {
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: 0.65 }}
-                            className="absolute -top-8 -right-8 w-28 h-28 bg-accent/30 rounded-full blur-2xl -z-10"
+                            className="absolute -top-8 -right-8 w-28 h-28 bg-secondary/30 rounded-full blur-2xl -z-10"
                         />
 
                         {/* Badge superior — viene desde arriba */}

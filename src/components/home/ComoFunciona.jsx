@@ -3,8 +3,8 @@ import { community } from '../../assets/images';
 
 const ComoFunciona = () => {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
-            <div className="w-full px-10 lg:px-20 max-w-7xl mx-auto">
+        <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
+            <div className="w-full px-5 sm:px-8 lg:px-20">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Columna Izquierda: Imagen */}
                     <motion.div
@@ -15,7 +15,7 @@ const ComoFunciona = () => {
                         className="w-full lg:w-1/2 relative"
                     >
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img src={community.grupo} alt="Comunidad AMES" className="w-full h-[600px] object-cover" />
+                            <img src={community.grupo} alt="Servicios de mutual en Argentina" className="w-full h-64 sm:h-96 lg:h-[680px] object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent mix-blend-multiply"></div>
 
                             {/* Floating badge */}
@@ -29,8 +29,8 @@ const ComoFunciona = () => {
                             </motion.div>
                         </div>
                         {/* Decoración */}
-                        <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-accent/20 rounded-full blur-2xl -z-10"></div>
-                        <div className="absolute -top-8 -left-8 w-48 h-48 bg-secondary/20 rounded-full blur-2xl -z-10"></div>
+                        <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary/20 rounded-full blur-2xl -z-10"></div>
+                        <div className="absolute -top-8 -left-8 w-48 h-48 bg-accent/20 rounded-full blur-2xl -z-10"></div>
                     </motion.div>
 
                     {/* Columna Derecha: Contenido y Pasos */}

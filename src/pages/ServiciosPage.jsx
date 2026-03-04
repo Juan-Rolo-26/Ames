@@ -35,13 +35,13 @@ const servicios = [
         titulo: 'Consultoría Estratégica',
         subtitulo: 'Diagnóstico real, plan de acción claro',
         imagen: services.consultoria,
-        colorGradient: 'from-secondary to-violet-800',
+        colorGradient: 'from-primary to-secondary',
         colorLight: 'bg-secondary/10',
         colorText: 'text-secondary',
         colorBorder: 'border-secondary/30',
-        descripcion: `¿Tenés un proyecto con potencial pero no sabés por dónde empezar o cómo desbloquearlo? Nuestra consultoría estratégica te da acceso a especialistas que trabajaron con cientos de emprendedores de la economía real.
+        descripcion: `El departamento de Consultoría Estratégica brinda acompañamiento profesional personalizado para emprendedores y empresas que necesitan ordenar su estructura y tomar decisiones con mayor claridad. Trabajamos sobre análisis financiero, estructura de costos, planificación impositiva, redes sociales, estrategia comercial y marketing, con un enfoque práctico y orientado a resultados.
 
-En AMES no hacemos diagnósticos genéricos. Analizamos tu modelo de negocio, tus números, tu equipo y tu mercado para darte un plan de acción concreto que podés empezar a implementar hoy mismo.`,
+Nuestro objetivo es transformar la improvisación en planificación y convertir proyectos en estructuras sostenibles.`,
         beneficios: [
             'Diagnóstico inicial de 90 minutos con especialista',
             'Análisis de modelo de negocio (Canvas y Lean)',
@@ -66,16 +66,16 @@ En AMES no hacemos diagnósticos genéricos. Analizamos tu modelo de negocio, tu
     {
         id: 'networking',
         icono: <Users className="w-8 h-8" />,
-        titulo: 'Networking & Comunidad',
+        titulo: 'Networking y Comunidad',
         subtitulo: 'No emprendas solo. La red lo es todo.',
         imagen: community.networking,
         colorGradient: 'from-accent to-blue-700',
         colorLight: 'bg-accent/10',
         colorText: 'text-accent',
         colorBorder: 'border-accent/30',
-        descripcion: `El 80% de las oportunidades de negocio llegan a través de la red de contactos. En AMES construimos intencionalmente esa red para vos.
+        descripcion: `El departamento de Networking está orientada a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales.
 
-No es un simple grupo de WhatsApp. Es un ecosistema curado de emprendedores comprometidos, proveedores de confianza, potenciales socios y referentes de distintas industrias que se juntan para hacer negocios con propósito.`,
+Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercambio de valor.`,
         beneficios: [
             'Acceso a comunidad privada de +500 emprendedores activos',
             'Rondas de negocios mensuales estructuradas (speed networking)',
@@ -100,16 +100,16 @@ No es un simple grupo de WhatsApp. Es un ecosistema curado de emprendedores comp
     {
         id: 'escuela-express',
         icono: <GraduationCap className="w-8 h-8" />,
-        titulo: 'Escuela Express AMES',
+        titulo: 'Academia Express AMES',
         subtitulo: 'Formación práctica, sin vueltas, al grano',
         imagen: services.escuela,
-        colorGradient: 'from-secondary to-pink-700',
-        colorLight: 'bg-secondary/10',
-        colorText: 'text-secondary',
-        colorBorder: 'border-secondary/30',
-        descripcion: `La formación tradicional no está diseñada para emprendedores. Los cursos son largos, teóricos y alejados de la realidad del día a día de quien lleva un negocio.
+        colorGradient: 'from-accent to-violet-900',
+        colorLight: 'bg-accent/10',
+        colorText: 'text-accent',
+        colorBorder: 'border-accent/30',
+        descripcion: `Academia Express es el departamento de formación de AMES. Está diseñado para acompañar a emprendedores desde la etapa inicial hasta la profesionalización de su negocio. Ofrece contenido práctico y enfocado en ejecución, abordando temas clave como finanzas, costos, ventas, marketing, comunicación y bases legales, de forma clara y aplicable.
 
-La Escuela Express AMES es diferente: módulos cortos, intensivos y 100% orientados a la acción. En 4 a 8 horas por programa, aprendés lo que necesitás para implementar en los próximos 7 días. Sin relleno. Sin burocracia.`,
+Formamos para aplicar, no solo para aprender.`,
         beneficios: [
             'Programas de 4 a 8 hs, 100% aplicables e inmediatos',
             'Módulos de ventas, finanzas, marketing digital y liderazgo',
@@ -134,16 +134,20 @@ La Escuela Express AMES es diferente: módulos cortos, intensivos y 100% orienta
     {
         id: 'ayuda-economica',
         icono: <Banknote className="w-8 h-8" />,
-        titulo: 'Ayuda Económica Mutual',
+        titulo: 'Ayuda Económica',
         subtitulo: 'Financiamiento solidario, humano y accesible',
         imagen: services.financiamiento,
-        colorGradient: 'from-green-600 to-accent',
-        colorLight: 'bg-green-600/10',
-        colorText: 'text-green-700',
-        colorBorder: 'border-green-600/30',
-        descripcion: `El acceso al financiamiento es uno de los mayores cuellos de botella para los emprendedores de la economía real. Los bancos piden garantías que no tenés. Las tarjetas te ahogan con tasas. Y los socios inversores quieren una parte que no estás dispuesta a dar.
+        colorGradient: 'from-primary to-secondary',
+        colorLight: 'bg-secondary/10',
+        colorText: 'text-secondary',
+        colorBorder: 'border-secondary/30',
+        descripcion: `El departamento de Ayuda Económica e Inversiones está orientada a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable.
 
-La Ayuda Económica de la Mutual AMES es diferente: es un sistema solidario de préstamos entre miembros, con tasas accesibles, evaluación personalizada y sin los requisitos imposibles del sistema financiero tradicional.`,
+Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles en la mutual, analizando cada situación de manera individual. El objetivo es facilitar alternativas acordes a cada perfil, promoviendo decisiones planificadas y sostenibles.
+
+En cuanto al área de Inversiones, ofrecemos información y asesoramiento sobre las opciones disponibles dentro del ámbito mutual, priorizando la transparencia, el análisis prudente y la adecuada comprensión de cada instrumento antes de su eventual adhesión.
+
+Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañamiento profesional, buscando que cada decisión financiera esté alineada con los objetivos y posibilidades reales de cada persona o empresa.`,
         beneficios: [
             'Préstamos mutuales con tasas muy por debajo del mercado',
             'Evaluación personalizada y humana, no solo scorings crediticios',
@@ -184,7 +188,7 @@ No es otro curso. Es un programa intensivo con mentores dedicados, cohortes de p
             'Workshops semanales de producto, ventas, finanzas y growth',
             'Acceso prioritario a la Ayuda Económica Mutual',
             'Demo Day para presentar tu proyecto a inversores y padrinos',
-            'Certificado de la Aceleradora AMES y sello de triple impacto',
+            'Certificado del programa Aceleradora de Impacto AMES y sello de triple impacto',
         ],
         paraCuando: [
             'Tenés un proyecto con 6+ meses de operación y primeras ventas',
@@ -194,7 +198,7 @@ No es otro curso. Es un programa intensivo con mentores dedicados, cohortes de p
         ],
         proceso: [
             { paso: '01', titulo: 'Postulás tu proyecto', desc: 'Completás el formulario de postulación con información de tu proyecto, métricas actuales y objetivos.' },
-            { paso: '02', titulo: 'Evaluación y entrevista', desc: 'El comité de la aceleradora evalúa tu postulación y te convoca a una entrevista de selección.' },
+            { paso: '02', titulo: 'Evaluación y entrevista', desc: 'El comité de AMES evalúa tu postulación y te convoca a una entrevista de selección.' },
             { paso: '03', titulo: 'Onboarding de cohorte', desc: 'Ingresás a la cohorte, conocés a tus compañeros y empezás a trabajar con tu mentor asignado.' },
             { paso: '04', titulo: 'Demo Day', desc: 'Al finalizar los 4 meses, presentás tu proyecto ante un panel de inversores, empresas y medios.' },
         ],
@@ -205,10 +209,10 @@ No es otro curso. Es un programa intensivo con mentores dedicados, cohortes de p
         titulo: 'Empresas Padrino',
         subtitulo: 'Crecé posicionando tu marca en el ecosistema',
         imagen: padrinos.alianza,
-        colorGradient: 'from-violet-700 to-secondary',
-        colorLight: 'bg-violet-700/10',
-        colorText: 'text-violet-700',
-        colorBorder: 'border-violet-700/30',
+        colorGradient: 'from-primary to-accent',
+        colorLight: 'bg-accent/10',
+        colorText: 'text-accent',
+        colorBorder: 'border-accent/30',
         descripcion: `El programa de Empresas Padrino es la forma en que grandes y medianas empresas de Rosario y la región conectan con el ecosistema emprendedor, generan RSE real y potencian su posicionamiento de marca.
 
 No se trata solo de poner un logo. Como Empresa Padrino, tu organización participa activamente en el crecimiento de emprendedores, accede a una red de potenciales clientes y proveedores, y construye reputación como empresa con propósito en la comunidad.`,
@@ -242,7 +246,7 @@ const ServicioSection = ({ servicio, reversed }) => {
             id={servicio.id}
             className="py-24 border-b border-gray-100 last:border-0 overflow-hidden"
         >
-            <div className="w-full max-w-7xl mx-auto px-10 lg:px-20">
+            <div className="w-full px-5 sm:px-8 lg:px-20">
                 {/* Header */}
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20 mb-20">
                     {/* Imagen */}
@@ -411,7 +415,7 @@ const ServiciosPage = () => {
                 <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] z-0" />
                 <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-accent/20 rounded-full blur-[80px] z-0" />
 
-                <div className="relative z-10 text-center px-6 py-36 max-w-5xl mx-auto">
+                <div className="relative z-10 text-center px-10 lg:px-24 py-36 w-full">
                     <motion.span
                         {...fadeUp(0.1)}
                         className="inline-block bg-secondary/20 border border-secondary/30 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase"
@@ -461,7 +465,7 @@ const ServiciosPage = () => {
 
             {/* ── Vista previa de los 6 servicios ──────────────────── */}
             <section className="py-20 bg-white border-b border-gray-100">
-                <div className="w-full max-w-7xl mx-auto px-10 lg:px-20">
+                <div className="w-full px-5 sm:px-8 lg:px-20">
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {servicios.map((s, i) => (
                             <motion.a
@@ -501,7 +505,7 @@ const ServiciosPage = () => {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]" />
                 <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/20 rounded-full blur-[100px]" />
 
-                <div className="relative z-10 w-full max-w-4xl mx-auto px-10 lg:px-20 text-center">
+                <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20 text-center">
                     <motion.div {...fadeUp(0)}>
                         <h2 className="text-4xl md:text-5xl font-heading font-black text-white mb-6 leading-tight">
                             ¿Cuál servicio necesitás<br />

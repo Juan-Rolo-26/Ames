@@ -1,133 +1,168 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { community } from '../../assets/images';
-import { TrendingUp, Users, Clock } from 'lucide-react';
+import { Users, TrendingUp, Award, Zap, MapPin, Star } from 'lucide-react';
 
-const stats = [
-    { num: '+500', label: 'Emprendedores', sub: 'en la comunidad', icon: <Users className="w-5 h-5" /> },
-    { num: '+50', label: 'Empresas Padrino', sub: 'aliadas estratégicas', icon: <TrendingUp className="w-5 h-5" /> },
-    { num: '24/7', label: 'Soporte', sub: 'comunidad activa', icon: <Clock className="w-5 h-5" /> },
+// ── Animación de número contador ────────────────────────────────
+function Counter({ to, suffix = '', duration = 2 }) {
+    const ref = useRef(null);
+    const motionVal = useMotionValue(0);
+    const rounded = useTransform(motionVal, (v) => Math.round(v));
+    const [inViewRef, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
+
+    useEffect(() => {
+        if (!inView) return;
+        const controls = animate(motionVal, to, { duration, ease: 'easeOut' });
+        return controls.stop;
+    }, [inView, to, duration, motionVal]);
+
+    return (
+        <span ref={(node) => { ref.current = node; inViewRef(node); }}>
+            <motion.span>{rounded}</motion.span>{suffix}
+        </span>
+    );
+}
+
+// ── Bandas de texto marquee (empresas/valores) ───────────────────
+const marqueeItems = [
+    'Rosario', 'Emprendedores', 'Mutual', 'Impacto Real',
+    'Networking', 'Aceleradora', 'Comunidad', 'Empresas Padrino',
 ];
 
-const logos = [
-    { name: "EXPANSIÓN", delay: 0 },
-    { name: "IMPACTO", delay: 0.12 },
-    { name: "ROSARIO", delay: 0.24 },
-    { name: "COMUNIDAD", delay: 0.36 },
-    { name: "MUTUAL", delay: 0.48 },
+function Marquee({ reverse = false }) {
+    const items = [...marqueeItems, ...marqueeItems];
+    return (
+        <div className="overflow-hidden whitespace-nowrap py-3">
+            <motion.div
+                className="inline-flex gap-10 will-change-transform"
+                animate={{ x: reverse ? ['0%', '100%'] : ['0%', '-100%'] }}
+                transition={{ duration: 22, repeat: Infinity, ease: 'linear', repeatType: 'loop' }}
+            >
+                {items.map((item, i) => (
+                    <span key={i} className="inline-flex items-center gap-3 text-white/25 text-sm font-bold tracking-widest uppercase">
+                        <span className="w-1.5 h-1.5 rounded-full bg-secondary/60 inline-block flex-shrink-0" />
+                        {item}
+                    </span>
+                ))}
+            </motion.div>
+        </div>
+    );
+}
+
+// ── Stats ────────────────────────────────────────────────────────
+const stats = [
+    {
+        num: 500, suffix: '+', label: 'Emprendedores',
+        sub: 'en la comunidad activa',
+        icon: <Users className="w-5 h-5" />,
+        grad: 'from-[#1A56DB] to-[#7C3AED]',
+        glow: 'rgba(26,86,219,0.35)',
+    },
+    {
+        num: 50, suffix: '+', label: 'Empresas Padrino',
+        sub: 'aliadas estratégicas',
+        icon: <Award className="w-5 h-5" />,
+        grad: 'from-[#7C3AED] to-[#1A56DB]',
+        glow: 'rgba(124,58,237,0.35)',
+    },
+    {
+        num: 120, suffix: '+', label: 'Proyectos Acelerados',
+        sub: 'con impacto real medible',
+        icon: <Zap className="w-5 h-5" />,
+        grad: 'from-[#1A56DB] to-[#7C3AED]',
+        glow: 'rgba(26,86,219,0.3)',
+    },
+    {
+        num: 3, suffix: ' años', label: 'De Trayectoria',
+        sub: 'creciendo en Argentina',
+        icon: <TrendingUp className="w-5 h-5" />,
+        grad: 'from-[#7C3AED] to-[#1A56DB]',
+        glow: 'rgba(124,58,237,0.3)',
+    },
 ];
 
 const Confianza = () => {
     return (
-        <section className="py-28 relative bg-primary overflow-hidden border-b border-white/10">
-            {/* Background Image — zoom-in desde grande */}
+        <section className="relative bg-[#040919] overflow-hidden border-b border-white/10">
+
+            {/* ── Fondo: fotografía con overlay fuerte ── */}
             <div className="absolute inset-0 z-0">
                 <motion.img
-                    initial={{ scale: 1.15, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 0.2 }}
-                    transition={{ duration: 2, ease: 'easeOut' }}
+                    initial={{ scale: 1.1, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 0.18 }}
+                    transition={{ duration: 2.5, ease: 'easeOut' }}
                     viewport={{ once: true }}
                     src={community.evento}
-                    alt="Evento AMES"
-                    className="w-full h-full object-cover"
+                    alt="Comunidad AMES Rosario"
+                    className="w-full h-full object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/85 to-primary/40" />
+                {/* Gradientes de profundidad */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#040919] via-transparent to-[#040919]" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#040919] via-transparent to-[#040919]" />
             </div>
 
-            {/* Glows decorativos */}
-            <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-secondary/15 rounded-full blur-3xl z-0 pointer-events-none" />
-            <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent/15 rounded-full blur-3xl z-0 pointer-events-none" />
+            {/* ── Glows ambientales ── */}
+            <div className="absolute top-0 left-1/3 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
+                style={{ background: 'radial-gradient(circle, rgba(26,86,219,0.12) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+            <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full pointer-events-none z-0"
+                style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.14) 0%, transparent 70%)', filter: 'blur(60px)' }} />
 
-            <div className="w-full px-10 lg:px-20 relative z-10">
+            {/* ── Marquee top ── */}
+            <div className="relative z-10 border-b border-white/6">
+                <Marquee />
+            </div>
 
-                {/* Subtítulo — viene de arriba */}
-                <motion.p
-                    initial={{ opacity: 0, y: -30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, ease: 'easeOut' }}
-                    className="text-center text-sm font-bold text-accent tracking-widest uppercase mb-5"
-                >
-                    Acompañados por la comunidad emprendedora de Rosario y la región
-                </motion.p>
+            {/* ── Contenido principal ── */}
+            <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20 py-10 lg:py-12">
 
-                {/* Título — viene de abajo con stagger */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.1 }}
-                    className="text-4xl md:text-5xl font-heading font-black text-white text-center mb-14 leading-tight"
-                >
-                    Ya <span className="text-secondary">confían</span> en AMES
-                </motion.h2>
-
-                {/* Logos/nombres — vienen de abajo con stagger alternando eje */}
-                <div className="flex flex-wrap justify-center gap-6 mb-20">
-                    {logos.map((item, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: i % 2 === 0 ? 40 : -40, scale: 0.85 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: item.delay, type: 'spring', stiffness: 80 }}
-                            whileHover={{ scale: 1.08, y: -4 }}
-                            className="flex items-center justify-center bg-white/5 border border-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 cursor-default hover:bg-white/10 hover:border-white/25 transition-all"
-                        >
-                            <h4 className="text-lg font-black font-heading text-white/70 hover:text-white transition-colors tracking-widest">
-                                {item.name}
-                            </h4>
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Stats — box glass — vienen de la izquierda, centro y derecha */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Grid de métricas */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4">
                     {stats.map((stat, i) => (
                         <motion.div
                             key={i}
-                            initial={{
-                                opacity: 0,
-                                x: i === 0 ? -70 : i === 2 ? 70 : 0,
-                                y: i === 1 ? 50 : 0,
-                                scale: 0.88,
+                            initial={{ opacity: 0, y: 40, scale: 0.92 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: true, margin: '-40px' }}
+                            transition={{ duration: 0.6, delay: i * 0.1, type: 'spring', stiffness: 90 }}
+                            whileHover={{ y: -5, scale: 1.02 }}
+                            className="relative rounded-2xl overflow-hidden cursor-default group"
+                            style={{
+                                background: 'rgba(255,255,255,0.04)',
+                                border: '1px solid rgba(255,255,255,0.08)',
+                                backdropFilter: 'blur(20px)',
                             }}
-                            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-                            viewport={{ once: true, margin: '-60px' }}
-                            transition={{ duration: 0.75, delay: i * 0.15, type: 'spring', stiffness: 70 }}
-                            whileHover={{ y: -6, scale: 1.02 }}
-                            className="text-center bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all shadow-xl cursor-default"
                         >
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
-                                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.3 + i * 0.12, type: 'spring' }}
-                                className="w-12 h-12 rounded-2xl bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-4"
-                            >
-                                {stat.icon}
-                            </motion.div>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.4 + i * 0.12 }}
-                                className="text-5xl font-black text-white font-heading mb-1"
-                            >
-                                {stat.num}
-                            </motion.p>
-                            <motion.p
-                                initial={{ opacity: 0, y: 15 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.5 + i * 0.12 }}
-                                className="text-white font-bold text-lg"
-                            >
-                                {stat.label}
-                            </motion.p>
-                            <p className="text-gray-400 text-sm mt-1">{stat.sub}</p>
+                            {/* Glow interno al hover */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                style={{ background: `radial-gradient(circle at 50% 0%, ${stat.glow} 0%, transparent 70%)` }} />
+
+                            {/* Línea superior con gradiente AMES */}
+                            <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${stat.grad}`} />
+
+                            <div className="relative z-10 p-4 lg:p-6 flex flex-col">
+                                {/* Ícono pequeño */}
+                                <div className={`w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-gradient-to-br ${stat.grad} text-white flex items-center justify-center mb-3 shadow-md`}>
+                                    {stat.icon}
+                                </div>
+
+                                {/* Número contador */}
+                                <p className="font-heading font-black text-white leading-none mb-1"
+                                    style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)' }}>
+                                    <Counter to={stat.num} suffix={stat.suffix} duration={2} />
+                                </p>
+
+                                <p className="text-white font-semibold text-sm mb-0.5">{stat.label}</p>
+                                <p className="text-white/40 text-xs">{stat.sub}</p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
+            </div>
+
+            {/* ── Marquee bottom ── */}
+            <div className="relative z-10 border-t border-white/6">
+                <Marquee reverse />
             </div>
         </section>
     );

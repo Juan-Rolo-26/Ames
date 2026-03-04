@@ -8,13 +8,14 @@ const serviciosData = [
         id: 'consultoria',
         icon: <Briefcase className="w-7 h-7" />,
         image: services.consultoria,
-        colorGrad: 'from-secondary to-violet-800',
+        colorGrad: 'from-primary to-secondary',
         colorText: 'text-secondary',
         colorBg: 'bg-secondary/10',
-        colorBorder: 'border-secondary/20',
+        colorBorder: 'border-secondary/25',
         badge: 'Mentorías incluidas',
         title: 'Consultoría Estratégica',
-        desc: 'Diagnóstico personalizado de tu negocio con especialistas que ya recorrieron el camino. Identificamos cuellos de botella y diseñamos un plan de acción concreto para que puedas implementar desde el primer día.',
+        alt: 'Servicios de mutual en Argentina - consultoría estratégica',
+        desc: 'El departamento de Consultoría Estratégica brinda acompañamiento profesional personalizado para emprendedores y empresas que necesitan ordenar su estructura y tomar decisiones con mayor claridad. Trabajamos sobre análisis financiero, estructura de costos, planificación impositiva, redes sociales, estrategia comercial y marketing, con un enfoque práctico y orientado a resultados. Nuestro objetivo es transformar la improvisación en planificación y convertir proyectos en estructuras sostenibles.',
         puntos: [
             'Sesión de diagnóstico de 90 min con especialista',
             'Plan de acción a 30/60/90 días',
@@ -25,13 +26,14 @@ const serviciosData = [
         id: 'networking',
         icon: <Users className="w-7 h-7" />,
         image: community.networking,
-        colorGrad: 'from-accent to-blue-700',
-        colorText: 'text-accent',
-        colorBg: 'bg-accent/10',
-        colorBorder: 'border-accent/20',
+        colorGrad: 'from-secondary to-blue-700',
+        colorText: 'text-secondary',
+        colorBg: 'bg-secondary/10',
+        colorBorder: 'border-secondary/25',
         badge: '+500 miembros',
-        title: 'Networking & Comunidad',
-        desc: 'El 80% de las oportunidades llegan a través de tu red. Accedé a un ecosistema real de emprendedores, proveedores y referentes que se juntan para hacer negocios con propósito y generar colaboraciones concretas.',
+        title: 'Networking y Comunidad',
+        alt: 'Networking empresarial de mutual en Rosario',
+        desc: 'El departamento de Networking está orientada a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales. Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercambio de valor.',
         puntos: [
             'Rondas de negocios mensuales estructuradas',
             'Directorio de emprendedores y proveedores',
@@ -42,13 +44,14 @@ const serviciosData = [
         id: 'escuela-express',
         icon: <GraduationCap className="w-7 h-7" />,
         image: services.escuela,
-        colorGrad: 'from-pink-600 to-secondary',
-        colorText: 'text-pink-600',
-        colorBg: 'bg-pink-600/10',
-        colorBorder: 'border-pink-600/20',
+        colorGrad: 'from-accent to-violet-900',
+        colorText: 'text-accent',
+        colorBg: 'bg-accent/10',
+        colorBorder: 'border-accent/25',
         badge: 'Formación práctica',
-        title: 'Escuela Express AMES',
-        desc: 'Capacitación intensiva y 100% orientada a la acción. Módulos de 4 a 8 horas sobre ventas, finanzas, marketing y liderazgo. Sin vueltas, sin teoría aburrida. Lo que aprendés hoy lo aplicás mañana en tu negocio.',
+        title: 'Academia Express AMES',
+        alt: 'Formación para emprendedores en mutual argentina',
+        desc: 'Academia Express es el departamento de formación de AMES. Está diseñado para acompañar a emprendedores desde la etapa inicial hasta la profesionalización de su negocio. Ofrece contenido práctico y enfocado en ejecución, abordando temas clave como finanzas, costos, ventas, marketing, comunicación y bases legales, de forma clara y aplicable. Formamos para aplicar, no solo para aprender.',
         puntos: [
             'Ventas, finanzas, marketing y liderazgo',
             'Módulos cortos con casos reales',
@@ -59,13 +62,14 @@ const serviciosData = [
         id: 'ayuda-economica',
         icon: <Banknote className="w-7 h-7" />,
         image: services.financiamiento,
-        colorGrad: 'from-green-600 to-teal-700',
-        colorText: 'text-green-700',
-        colorBg: 'bg-green-600/10',
-        colorBorder: 'border-green-600/20',
+        colorGrad: 'from-primary to-secondary',
+        colorText: 'text-secondary',
+        colorBg: 'bg-secondary/10',
+        colorBorder: 'border-secondary/25',
         badge: 'Sin garantías imposibles',
-        title: 'Ayuda Económica Mutual',
-        desc: 'Financiamiento solidario con tasas muy por debajo del mercado y evaluación humana (sin el papeleo imposible de los bancos). Desde $50.000 hasta $1.500.000 con plazos flexibles de 3 a 18 meses para capital de trabajo o inversión.',
+        title: 'Ayuda Económica',
+        alt: 'Ayuda económica mutual AMES',
+        desc: 'El departamento de Ayuda Económica e Inversiones está orientada a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable. Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles en la mutual. Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañamiento profesional.',
         puntos: [
             'Tasas muy por debajo del mercado',
             'Evaluación personalizada en 5 días',
@@ -76,12 +80,13 @@ const serviciosData = [
         id: 'aceleradora-de-impacto',
         icon: <Rocket className="w-7 h-7" />,
         image: services.aceleradora,
-        colorGrad: 'from-primary to-accent',
-        colorText: 'text-primary',
-        colorBg: 'bg-primary/10',
-        colorBorder: 'border-primary/20',
+        colorGrad: 'from-accent to-secondary',
+        colorText: 'text-accent',
+        colorBg: 'bg-accent/10',
+        colorBorder: 'border-accent/25',
         badge: 'Programa de 4 meses',
         title: 'Aceleradora de Impacto',
+        alt: 'Aceleradora de proyectos en mutual argentina',
         desc: 'Nuestro programa insignia. 4 meses de acompañamiento intensivo con mentor dedicado, cohortes de hasta 15 proyectos, workshops semanales y Demo Day ante inversores. Diseñado para proyectos con tracción que quieren escalar de verdad.',
         puntos: [
             'Mentor dedicado en tu industria',
@@ -93,12 +98,13 @@ const serviciosData = [
         id: 'empresas-padrinos',
         icon: <HeartHandshake className="w-7 h-7" />,
         image: padrinos.alianza,
-        colorGrad: 'from-violet-700 to-secondary',
-        colorText: 'text-violet-700',
-        colorBg: 'bg-violet-700/10',
-        colorBorder: 'border-violet-700/20',
+        colorGrad: 'from-primary to-accent',
+        colorText: 'text-primary',
+        colorBg: 'bg-primary/10',
+        colorBorder: 'border-primary/25',
         badge: 'Para empresas',
         title: 'Empresas Padrino',
+        alt: 'Empresas padrino en mutual de emprendedores',
         desc: 'Posicioná tu empresa siendo parte activa del ecosistema emprendedor. RSE real y medible, visibilidad de marca ante +500 emprendedores, acceso a talentos y proveedores innovadores. Categorías Platinum, Oro, Plata y Networking.',
         puntos: [
             'Visibilidad en todos los eventos AMES',
@@ -110,8 +116,8 @@ const serviciosData = [
 
 const Servicios = () => {
     return (
-        <section className="py-28 bg-background">
-            <div className="w-full px-10 lg:px-20">
+        <section className="py-16 lg:py-28 bg-background">
+            <div className="w-full px-5 sm:px-8 lg:px-20">
 
                 {/* Encabezado */}
                 <div className="text-center mb-20 max-w-3xl mx-auto">
@@ -131,7 +137,7 @@ const Servicios = () => {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-4xl md:text-5xl font-heading font-black text-primary mb-6 leading-tight"
                     >
-                        Todo lo que necesitás para que tu proyecto <span className="text-secondary">despegue de verdad</span>
+                        Servicios de Nuestra <span className="text-secondary">Mutual en Argentina</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -160,7 +166,7 @@ const Servicios = () => {
                             <div className="relative h-72 w-full overflow-hidden">
                                 <img
                                     src={servicio.image}
-                                    alt={servicio.title}
+                                    alt={servicio.alt}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 {/* Overlay degradado */}
@@ -182,17 +188,13 @@ const Servicios = () => {
                                 </h3>
                             </div>
 
-                            {/* Contenido de texto */}
+                            {/* Contenido de texto — sin descripción larga, queda en página de detalle */}
                             <div className="p-7 flex flex-col flex-grow">
-                                <p className="text-gray-600 leading-relaxed mb-5 text-sm">
-                                    {servicio.desc}
-                                </p>
-
                                 {/* Puntos clave */}
-                                <ul className="space-y-2 mb-7">
+                                <ul className="space-y-2.5 mb-7">
                                     {servicio.puntos.map((punto, i) => (
-                                        <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                                            <CheckCircle className={`w-4 h-4 mt-0.5 shrink-0 ${servicio.colorText}`} />
+                                        <li key={i} className="flex items-start gap-2.5 text-base text-gray-700">
+                                            <CheckCircle className={`w-5 h-5 mt-0.5 shrink-0 ${servicio.colorText}`} />
                                             <span>{punto}</span>
                                         </li>
                                     ))}

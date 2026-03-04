@@ -8,7 +8,7 @@
  *   import { community } from '../../assets/images';
  */
 
-import logoLocal from './logo.png';
+import logoLocal from './logo-ames.png';
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 export const hero = {

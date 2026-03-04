@@ -7,10 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#1A2B7C", // Azul Oscuro Profundo (fondo video)
-        secondary: "#682079", // Morado/Púrpura (texto encabezados, botón)
-        accent: "#0047BA", // Azul Vibrante (texto secundario, hovers)
-        background: "#F7F9FA",
+        // ── PALETA MUTUAL AMES ──────────────────────────────────
+        // Primario:  Azul naval profundo
+        primary: "#0D2054",
+        // Secundario: Azul vibrante (acción, links)
+        secondary: "#1A56DB",
+        // Terciario:  Violeta intenso
+        accent: "#7C3AED",
+        // Fondo:      Casi blanco azulado
+        background: "#F4F7FF",
+        // Extra: negro para contrastes fuertes
+        dark: "#080E1E",
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
