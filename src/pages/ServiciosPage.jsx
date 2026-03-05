@@ -498,7 +498,7 @@ const ServiciosPage = () => {
             </div>
 
             {/* ── CTA Final ─────────────────────────────────────────── */}
-            <section className="py-28 bg-primary relative overflow-hidden">
+            <section className="py-28 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1A56DB 0%, #1a3a8f 50%, #0D2054 100%)' }}>
                 <div className="absolute inset-0 opacity-10">
                     <img src={community.coworking} alt="" className="w-full h-full object-cover" />
                 </div>

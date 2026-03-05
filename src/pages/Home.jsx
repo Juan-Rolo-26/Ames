@@ -4,6 +4,7 @@ import Confianza from '../components/home/Confianza';
 import Servicios from '../components/home/Servicios';
 import ComoFunciona from '../components/home/ComoFunciona';
 import Testimonios from '../components/home/Testimonios';
+import AsociarseSection from '../components/home/AsociarseSection';
 import FAQ from '../components/home/FAQ';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             <Servicios />
             <ComoFunciona />
             <Testimonios />
+            <AsociarseSection />
             <FAQ />
         </>
     );
