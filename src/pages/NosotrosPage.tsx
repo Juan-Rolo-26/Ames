@@ -1,29 +1,30 @@
-import { motion } from 'framer-motion';
+import { motion, type Easing } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Heart, Users, Zap, Target, TrendingUp, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 import { about, community, avatars, testimonials } from '../assets/images';
 import { Link } from 'react-router-dom';
 
 // ── Animaciones reutilizables ──────────────────────────────────────
+const ease: Easing = 'easeOut';
 const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-80px' },
-    transition: { duration: 0.7, delay, ease: 'easeOut' },
+    transition: { duration: 0.7, delay, ease },
 });
 
 const fadeLeft = (delay = 0) => ({
     initial: { opacity: 0, x: -50 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true, margin: '-80px' },
-    transition: { duration: 0.7, delay, ease: 'easeOut' },
+    transition: { duration: 0.7, delay, ease },
 });
 
 const fadeRight = (delay = 0) => ({
     initial: { opacity: 0, x: 50 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true, margin: '-80px' },
-    transition: { duration: 0.7, delay, ease: 'easeOut' },
+    transition: { duration: 0.7, delay, ease },
 });
 
 // ── Datos del equipo ───────────────────────────────────────────────

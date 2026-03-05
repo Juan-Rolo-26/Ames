@@ -7,7 +7,9 @@ import {
 } from 'lucide-react';
 import { brand } from '../assets/images';
 
-const footerLinks = {
+interface FooterLink { label: string; to?: string; href?: string; }
+
+const footerLinks: { servicios: FooterLink[]; institucional: FooterLink[] } = {
     servicios: [
         { label: 'Consultoría Estratégica', to: '/servicios#consultoria' },
         { label: 'Networking & Comunidad', to: '/servicios#networking' },
@@ -204,7 +206,7 @@ const Footer = () => {
                                         <Phone size={18} className="text-white/70" />
                                     </div>
                                     <div className="text-white/60 group-hover:text-white transition-colors">
-                                        <p className="font-semibold text-xs text-white/40 mb-0.5">Impacto AMES</p>
+                                        <p className="font-semibold text-xs text-white/40 mb-0.5">Mutual AMES</p>
                                         <p className="text-base">+54 9 341 370-2972</p>
                                     </div>
                                 </a>

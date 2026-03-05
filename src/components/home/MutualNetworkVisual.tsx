@@ -14,15 +14,20 @@ const members = [
     { id: 7, photo: avatars.carlos, label: "Carlos M." },
 ];
 
-function polarToXY(cx, cy, radius, angleDeg) {
+function polarToXY(cx: number, cy: number, radius: number, angleDeg: number) {
     const a = (angleDeg * Math.PI) / 180;
     return { x: cx + radius * Math.cos(a), y: cy + radius * Math.sin(a) };
+}
+
+interface MutualNetworkVisualProps {
+    centerLabel?: string;
+    centerSub?: string;
 }
 
 export default function MutualNetworkVisual({
     centerLabel = "AMES",
     centerSub = "Red mutual",
-}) {
+}: MutualNetworkVisualProps) {
     const prefersReduced = useReducedMotion();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
@@ -68,7 +73,7 @@ export default function MutualNetworkVisual({
             />
 
             {/* “Card” contenedora */}
-            <div className="relative w-full max-w-[560px] aspect-square rounded-[28px] border border-primary/10 bg-white/60 backdrop-blur-xl shadow-[0_30px_120px_rgba(2,6,23,0.12)] overflow-hidden">
+            <div className="relative w-full max-w-[500px] xl:max-w-[540px] aspect-square rounded-[28px] border border-primary/10 bg-white/60 backdrop-blur-xl shadow-[0_30px_120px_rgba(2,6,23,0.12)] overflow-hidden">
                 {/* Grid puntitos muy sutil */}
                 <div
                     aria-hidden="true"

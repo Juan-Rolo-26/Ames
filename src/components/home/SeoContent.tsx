@@ -72,21 +72,21 @@ const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, margin: '-60px' },
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 const fadeLeft = (delay = 0) => ({
     initial: { opacity: 0, x: -48 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true, margin: '-60px' },
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 const fadeRight = (delay = 0) => ({
     initial: { opacity: 0, x: 48 },
     whileInView: { opacity: 1, x: 0 },
     viewport: { once: true, margin: '-60px' },
-    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
 const SeoContent = () => {
@@ -170,7 +170,7 @@ const SeoContent = () => {
                                 initial={{ opacity: 0, y: 48, scale: 0.95 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                 viewport={{ once: true, margin: '-40px' }}
-                                transition={{ duration: 0.6, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                                transition={{ duration: 0.6, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                                 whileHover={{ y: -8, scale: 1.02 }}
                                 className={`group rounded-3xl border ${s.border} ${s.bg} p-7 cursor-default hover:shadow-xl hover:shadow-primary/8 transition-all duration-300`}
                             >
@@ -188,7 +188,15 @@ const SeoContent = () => {
                         ))}
                     </div>
                 </div>
+            </div>
+        </section>
+    );
+};
 
+export const SeoContentBottom = () => {
+    return (
+        <section className="py-10 lg:py-20 bg-white border-b border-gray-100 overflow-hidden">
+            <div className="w-full px-5 sm:px-8 lg:px-20 space-y-24">
                 {/* ── Bloque 3: Ubicación + Contacto — horizontal ── */}
                 <motion.div
                     {...fadeUp(0)}
@@ -196,7 +204,6 @@ const SeoContent = () => {
                     style={{ background: 'linear-gradient(135deg, #1A56DB 0%, #7C3AED 100%)' }}
                 >
                     <div className="flex flex-col lg:flex-row">
-                        {/* Texto */}
                         <div className="flex-1 p-10 lg:p-14 text-white">
                             <motion.span {...fadeUp(0.05)} className="inline-block bg-white/15 text-white text-sm font-bold px-4 py-1.5 rounded-full mb-5 tracking-wide uppercase border border-white/25">
                                 Rosario, Santa Fe
@@ -208,13 +215,12 @@ const SeoContent = () => {
                                 Mutual AMES tiene sede en Rosario, brindando servicios a nivel local y nacional. Nuestra ubicación estratégica nos permite acompañar tanto a personas como empresas en toda la región.
                             </motion.p>
                         </div>
-                        {/* Datos de contacto */}
                         <div className="flex-1 bg-white/10 backdrop-blur-sm p-10 lg:p-14 flex flex-col justify-center gap-5">
                             {[
                                 { icon: <MapPin className="w-5 h-5 shrink-0" />, label: 'Dirección', val: 'Paraguay 751, Rosario' },
                                 { icon: <Mail className="w-5 h-5 shrink-0" />, label: 'Email', val: 'aceleradoraimpactobyames@gmail.com', href: 'mailto:aceleradoraimpactobyames@gmail.com' },
                                 { icon: <Phone className="w-5 h-5 shrink-0" />, label: 'Ayuda Económica', val: '3417483978', href: 'tel:+5493417483978' },
-                                { icon: <Phone className="w-5 h-5 shrink-0" />, label: 'Impacto by AMES', val: '3413702972', href: 'tel:+5493413702972' },
+                                { icon: <Phone className="w-5 h-5 shrink-0" />, label: 'Mutual AMES', val: '3413702972', href: 'tel:+5493413702972' },
                             ].map((item, i) => (
                                 <motion.div
                                     key={item.label}
@@ -241,7 +247,6 @@ const SeoContent = () => {
 
                 {/* ── Bloque 4: ¿Por qué elegirnos? + ¿Qué es una mutual? — dos columnas ── */}
                 <div className="flex flex-col lg:flex-row gap-16">
-                    {/* Por qué elegirnos */}
                     <div className="w-full lg:w-1/2">
                         <motion.span {...fadeUp(0)} className="inline-block bg-accent/10 text-accent text-sm font-bold px-4 py-1.5 rounded-full mb-5 border border-accent/20 tracking-wide uppercase">
                             Nuestros valores
@@ -257,7 +262,7 @@ const SeoContent = () => {
                                     initial={{ opacity: 0, x: -32 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                                    transition={{ duration: 0.5, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
                                     whileHover={{ x: 4, scale: 1.02 }}
                                     className="flex items-start gap-3 bg-gray-50 border border-gray-100 rounded-2xl p-4 hover:border-accent/30 hover:bg-accent/5 transition-all"
                                 >
@@ -268,7 +273,6 @@ const SeoContent = () => {
                         </div>
                     </div>
 
-                    {/* ¿Qué es una mutual? */}
                     <div className="w-full lg:w-1/2 flex flex-col justify-center">
                         <motion.span {...fadeUp(0.05)} className="inline-block bg-primary/10 text-primary text-sm font-bold px-4 py-1.5 rounded-full mb-5 border border-primary/20 tracking-wide uppercase">
                             Marco legal
@@ -285,7 +289,6 @@ const SeoContent = () => {
                         </motion.p>
                     </div>
                 </div>
-
             </div>
         </section>
     );

@@ -1,4 +1,12 @@
 import React, { useEffect, useState } from "react";
+
+interface NavLink {
+    name: string;
+    path: string;
+    action: () => void;
+    hasSubmenu?: boolean;
+    submenu?: { name: string; path: string }[];
+}
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { brand } from "../assets/images";
@@ -14,8 +22,8 @@ import {
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [hoveredLink, setHoveredLink] = useState(null);
-    const [activeSubmenu, setActiveSubmenu] = useState(null);
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -32,21 +40,21 @@ const Navbar = () => {
 
     useEffect(() => {
         if (!menuOpen) return;
-        const onKeyDown = (event) => {
+        const onKeyDown = (event: KeyboardEvent) => {
             if (event.key === "Escape") setMenuOpen(false);
         };
         window.addEventListener("keydown", onKeyDown);
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [menuOpen]);
 
-    const handleNavClick = (path) => {
+    const handleNavClick = (path: string) => {
         setMenuOpen(false);
         setActiveSubmenu(null);
         navigate(path);
         setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 80);
     };
 
-    const navLinks = [
+    const navLinks: NavLink[] = [
         {
             name: "INICIO",
             path: "/mutual-argentina",
@@ -465,9 +473,9 @@ const Navbar = () => {
                                                 width: "100%",
                                                 transition: "color 0.25s",
                                             }}
-                                            onHoverStart={(e) => { e.currentTarget.style.color = "#7C3AED"; }}
+                                            onHoverStart={(e) => { (e.currentTarget as HTMLElement).style.color = "#7C3AED"; }}
                                             onHoverEnd={(e) => {
-                                                e.currentTarget.style.color =
+                                                (e.currentTarget as HTMLElement).style.color =
                                                     location.pathname === link.path ? "#60a5fa" : "#fff";
                                             }}
                                         >
@@ -541,8 +549,8 @@ const Navbar = () => {
                                                 transition: "background 0.3s",
                                                 cursor: "pointer",
                                             }}
-                                            onHoverStart={(e) => { e.currentTarget.style.background = color + "33"; }}
-                                            onHoverEnd={(e) => { e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
+                                            onHoverStart={(e) => { (e.currentTarget as HTMLElement).style.background = color + "33"; }}
+                                            onHoverEnd={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
                                         >
                                             <Icon size={20} color="#fff" />
                                         </motion.a>

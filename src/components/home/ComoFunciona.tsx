@@ -70,9 +70,9 @@ const ComoFunciona = () => {
 
                             {/* Pasos */}
                             {[
-                                { num: 1, title: 'Te asociás', color: 'secondary', text: 'Elegís el plan de Membresía por Tiendup y te sumás a la mutual, accediendo a los primeros beneficios de red.' },
-                                { num: 2, title: 'Diagnosticamos', color: 'accent', text: 'En una primera consultoría con especialistas evaluamos el estado de tu proyecto y delineamos un plan de acción.' },
-                                { num: 3, title: 'Escalás', color: 'primary', text: 'Accedés a financiamiento mutuo, formás conexiones reales, te capacitás y llevás tu proyecto al siguiente nivel con éxito.' }
+                                { num: 1, title: 'Te asociás', color: 'secondary', text: 'Elegís el plan, te asociás y obtenés acceso a capacitaciones de nuestra Academia Express, ayuda económica e inversiones y además el uso de oficinas hasta 2 veces al mes para reuniones o trabajo profesional.' },
+                                { num: 2, title: 'Diagnosticamos', color: 'accent', text: 'Accedés a la comunidad de emprendedores, profesionales y empresas, generando networking estratégico y oportunidades dentro del ecosistema.' },
+                                { num: 3, title: 'Escalás', color: 'primary', text: 'Formás parte de un entorno que impulsa el crecimiento, donde podés intercambiar experiencias, generar alianzas y potenciar tu proyecto dentro de una comunidad activa.' }
                             ].map((paso, i) => (
                                 <motion.div
                                     key={i}

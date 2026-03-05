@@ -17,9 +17,9 @@ const serviciosData = [
         alt: 'Servicios de mutual en Argentina - consultoría estratégica',
         desc: 'El departamento de Consultoría Estratégica brinda acompañamiento profesional personalizado para emprendedores y empresas que necesitan ordenar su estructura y tomar decisiones con mayor claridad. Trabajamos sobre análisis financiero, estructura de costos, planificación impositiva, redes sociales, estrategia comercial y marketing, con un enfoque práctico y orientado a resultados. Nuestro objetivo es transformar la improvisación en planificación y convertir proyectos en estructuras sostenibles.',
         puntos: [
-            'Sesión de diagnóstico de 90 min con especialista',
-            'Plan de acción a 30/60/90 días',
-            'Seguimiento quincenal de avances',
+            'Sesión de 90 minutos con un especialista',
+            'Acompañamiento profesional adaptado a la etapa y necesidades de cada proyecto',
+            'Planes de acción concretos y aplicables',
         ],
     },
     {
@@ -35,9 +35,9 @@ const serviciosData = [
         alt: 'Networking empresarial de mutual en Rosario',
         desc: 'El departamento de Networking está orientada a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales. Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercambio de valor.',
         puntos: [
-            'Rondas de negocios mensuales estructuradas',
-            'Directorio de emprendedores y proveedores',
-            'Grupos de mastermind por industria',
+            'Acceso a las oficinas de AMES hasta 2 veces al mes para reuniones o trabajo profesional',
+            'Integración a una comunidad que prioriza acción, estructura y resultados',
+            'Acceso a una red activa de emprendedores, profesionales y empresas',
         ],
     },
     {
@@ -53,9 +53,9 @@ const serviciosData = [
         alt: 'Formación para emprendedores en mutual argentina',
         desc: 'Academia Express es el departamento de formación de AMES. Está diseñado para acompañar a emprendedores desde la etapa inicial hasta la profesionalización de su negocio. Ofrece contenido práctico y enfocado en ejecución, abordando temas clave como finanzas, costos, ventas, marketing, comunicación y bases legales, de forma clara y aplicable. Formamos para aplicar, no solo para aprender.',
         puntos: [
-            'Ventas, finanzas, marketing y liderazgo',
-            'Módulos cortos con casos reales',
-            'Descuento exclusivo para miembros AMES',
+            'Capacitaciones prácticas en modelo de negocio, finanzas, ventas, marketing, comunicación y bases legales',
+            'Herramientas listas para implementar en tu proyecto',
+            'Complemento directo a las consultorías y al ecosistema AMES',
         ],
     },
     {
@@ -71,9 +71,9 @@ const serviciosData = [
         alt: 'Ayuda económica mutual AMES',
         desc: 'El departamento de Ayuda Económica e Inversiones está orientada a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable. Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles en la mutual. Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañamiento profesional.',
         puntos: [
-            'Tasas muy por debajo del mercado',
-            'Evaluación personalizada en 5 días',
-            'Acreditación en 24/48 hs hábiles',
+            'Evaluación personalizada según perfil y necesidad',
+            'Opciones orientadas a capital de trabajo, inversión o crecimiento',
+            'Procesos ágiles con acompañamiento durante toda la gestión',
         ],
     },
     {
@@ -89,9 +89,9 @@ const serviciosData = [
         alt: 'Aceleradora de proyectos en mutual argentina',
         desc: 'Nuestro programa insignia. 4 meses de acompañamiento intensivo con mentor dedicado, cohortes de hasta 15 proyectos, workshops semanales y Demo Day ante inversores. Diseñado para proyectos con tracción que quieren escalar de verdad.',
         puntos: [
-            'Mentor dedicado en tu industria',
-            'Demo Day ante inversores y padrinos',
-            'Acceso prioritario a financiamiento',
+            'Diagnóstico estratégico inicial para detectar puntos críticos de crecimiento',
+            'Definición de modelo de negocio sólido y escalable',
+            'Ordenamiento financiero y proyección de expansión',
         ],
     },
     {
@@ -107,9 +107,9 @@ const serviciosData = [
         alt: 'Empresas padrino en mutual de emprendedores',
         desc: 'Posicioná tu empresa siendo parte activa del ecosistema emprendedor. RSE real y medible, visibilidad de marca ante +500 emprendedores, acceso a talentos y proveedores innovadores. Categorías Platinum, Oro, Plata y Networking.',
         puntos: [
-            'Visibilidad en todos los eventos AMES',
-            'Informe de impacto RSE certificado',
-            'Acceso a red de emprendedores activos',
+            'Presencia institucional dentro del ecosistema AMES',
+            'Vinculación directa con emprendedores y proyectos en crecimiento',
+            'Acceso temprano a iniciativas innovadoras antes de su expansión al mercado',
         ],
     },
 ];

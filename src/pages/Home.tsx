@@ -1,5 +1,5 @@
 import Hero from '../components/home/Hero';
-import SeoContent from '../components/home/SeoContent';
+import SeoContent, { SeoContentBottom } from '../components/home/SeoContent';
 import Confianza from '../components/home/Confianza';
 import Servicios from '../components/home/Servicios';
 import ComoFunciona from '../components/home/ComoFunciona';
@@ -11,12 +11,13 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <SeoContent />
             <Confianza />
+            <SeoContent />
+            <AsociarseSection />
+            <SeoContentBottom />
             <Servicios />
             <ComoFunciona />
             <Testimonios />
-            <AsociarseSection />
             <FAQ />
         </>
     );
