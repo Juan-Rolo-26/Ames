@@ -9,6 +9,8 @@
  */
 
 import logoLocal from './logo-ames.png';
+import caroImg from './caro imagen.jpeg';
+import lautiImg from './lauti imagen.jpeg';
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 export const hero = {
@@ -37,7 +39,7 @@ export const services = {
     /** Escuela / capacitación */
     escuela: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80',
     /** Financiamiento / ayuda económica */
-    financiamiento: 'https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=800&q=80',
+    financiamiento: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
     /** Aceleradora */
     aceleradora: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
 };
@@ -72,6 +74,8 @@ export const padrinos = {
 
 // ── Avatares (Hero) ──────────────────────────────────────────────────────────
 export const avatars = {
+    caro: caroImg,
+    lauti: lautiImg,
     maria: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80',
     juan: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80',
     laura: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80',

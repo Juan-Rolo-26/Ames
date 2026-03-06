@@ -29,8 +29,8 @@ const fadeRight = (delay = 0) => ({
 
 // ── Datos del equipo ───────────────────────────────────────────────
 const equipo = [
-    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.maria, bio: 'Fundadora de Mutual AMES y profesional especializada en finanzas, costos y planificación estratégica. Impulsó la creación de la mutual con el objetivo de brindar estructura, acompañamiento y herramientas reales a emprendedores y empresas que buscan crecer con orden y respaldo institucional. Desde su rol, lidera el desarrollo financiero y estratégico del ecosistema AMES.' },
-    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.carlos, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
+    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, bio: 'Fundadora de Mutual AMES y profesional especializada en finanzas, costos y planificación estratégica. Impulsó la creación de la mutual con el objetivo de brindar estructura, acompañamiento y herramientas reales a emprendedores y empresas que buscan crecer con orden y respaldo institucional. Desde su rol, lidera el desarrollo financiero y estratégico del ecosistema AMES.' },
+    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
 ];
 
 // ── Valores ────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@ const NosotrosPage = () => {
                                         <img
                                             src={miembro.foto}
                                             alt={miembro.nombre}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${miembro.nombre === 'Lautaro Zulian' ? 'object-top' : ''}`}
                                         />
                                     </div>
                                     {/* Dot indicador */}
@@ -381,16 +381,8 @@ const NosotrosPage = () => {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-secondary/30 hover:shadow-2xl transition-all"
                             >
-                                Quiero ser parte <ArrowRight className="w-5 h-5" />
+                                Quiero asociarme <ArrowRight className="w-5 h-5" />
                             </motion.a>
-                            <motion.div whileHover={{ scale: 1.05 }}>
-                                <Link
-                                    to="/servicios"
-                                    className="inline-flex items-center justify-center gap-2 bg-white text-primary px-10 py-4 rounded-full font-bold text-lg border-2 border-primary/20 hover:border-primary hover:shadow-lg transition-all"
-                                >
-                                    Ver nuestros servicios
-                                </Link>
-                            </motion.div>
                         </div>
 
                         {/* Mini trust indicators */}
