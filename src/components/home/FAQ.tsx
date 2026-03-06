@@ -6,23 +6,23 @@ import { AnimatePresence } from 'framer-motion';
 const faqs = [
     {
         q: "¿Qué significa ser parte de una mutual?",
-        a: "A diferencia de un club cerrado, en nuestra mutual el foco es el beneficio de la comunidad. Sos un asociado que accede a servicios al costo o subsidiados. Los aportes de todos los miembros financian los beneficios de cada uno, generando un círculo virtuoso de apoyo colectivo."
+        a: "Ser parte de una mutual significa integrarse a una comunidad donde los asociados acceden a servicios y beneficios pensados para el desarrollo colectivo. Los aportes de los miembros permiten ofrecer herramientas, actividades y oportunidades en condiciones más accesibles, promoviendo un sistema basado en la colaboración y el apoyo mutuo."
     },
     {
         q: "¿Quiénes se pueden sumar?",
-        a: "Emprendedores desde la etapa de idea, pymes en marcha, o profesionales independientes de todo el país. No importa el tamaño de tu proyecto — lo que importa es el compromiso con el crecimiento y el impacto positivo."
+        a: "Pueden sumarse emprendedores, profesionales y empresas que busquen desarrollar sus proyectos dentro de un ecosistema de crecimiento. No importa si estás en etapa de idea, con un emprendimiento en marcha o gestionando una empresa, lo importante es tener compromiso con el desarrollo, la mejora continua y el trabajo dentro de una comunidad que impulsa oportunidades, formación y herramientas para crecer."
     },
     {
         q: "¿Tienen sede física?",
-        a: "Sí, estamos en Paraguay 751, pleno centro de Rosario, donde realizamos encuentros, rondas de networking, mentorías presenciales y talleres de la Escuela Express. También tenemos formato remoto para miembros de otras ciudades."
+        a: "Sí. Nuestra sede está ubicada en Paraguay 751, en el centro de Rosario. Allí se realizan encuentros y espacios de vinculación entre miembros de la comunidad. Además, los asociados pueden utilizar las oficinas hasta 2 veces al mes para reuniones o trabajo profesional. Para quienes están en otras ciudades, también contamos con modalidades y actividades que pueden realizarse de forma remota."
     },
     {
         q: "¿Cómo funciona la Ayuda Económica?",
-        a: "Evaluamos tu proyecto o necesidad, tu capacidad de repago y tu historial dentro de la comunidad. Si calificás, te damos financiamiento con condiciones muy por debajo del mercado, pensadas para la realidad del emprendedor argentino. Los montos van de $50.000 a $1.500.000."
+        a: "El proceso comienza con una consulta inicial, donde se analiza el perfil del solicitante y el destino del financiamiento. Luego se realiza una evaluación crediticia y se reúne la documentación necesaria para presentar la carpeta al departamento de admisión. Si la solicitud es aprobada, se coordinan las condiciones y se realiza el otorgamiento de la ayuda económica."
     },
     {
         q: "¿Soy empresa, cómo me sumo como padrino?",
-        a: "Podés patrocinar a emprendedores directamente o apoyar la estructura de AMES en formatos con categorías Platinum, Oro, Plata y Networking. Cada categoría tiene beneficios diferenciados en visibilidad, eventos y acceso a la comunidad. Contactanos para recibir la propuesta personalizada."
+        a: "Las empresas pueden integrarse a AMES a través del Programa Empresas Padrino, una iniciativa que permite vincularse con emprendedores, profesionales y proyectos en desarrollo dentro del ecosistema. Ser Empresa Padrino brinda presencia institucional, acceso a la red de miembros y la posibilidad de detectar proyectos con potencial para acompañar o generar alianzas. Para conocer las modalidades disponibles y evaluar la participación, es necesario contactar al equipo de AMES."
     },
     {
         q: "¿Puedo unirme si no soy de Rosario?",

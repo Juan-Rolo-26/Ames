@@ -27,17 +27,41 @@ const Testimonios = () => {
     return (
         <section className="py-16 lg:py-28 bg-gray-50 border-t border-gray-100">
             <div className="w-full px-5 sm:px-8 lg:px-20">
-                <div className="text-center mb-16">
-                    <span className="inline-block bg-secondary/10 text-secondary text-sm font-bold px-4 py-1.5 rounded-full mb-5 border border-secondary/20 tracking-wide uppercase">
+                <motion.div
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.55 }}
+                    className="text-center mb-16"
+                >
+                    <motion.span
+                        initial={{ opacity: 0, y: -14 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.45, delay: 0.05 }}
+                        className="inline-block bg-secondary/10 text-secondary text-sm font-bold px-4 py-1.5 rounded-full mb-5 border border-secondary/20 tracking-wide uppercase"
+                    >
                         Casos de éxito
-                    </span>
-                    <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-5">
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, x: -56 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.12 }}
+                        className="text-4xl md:text-5xl font-heading font-extrabold text-primary mb-5"
+                    >
                         Emprendedores <span className="text-secondary">reales.</span><br className="hidden md:block" /> Resultados <span className="text-accent">reales.</span>
-                    </h2>
-                    <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, x: 56 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-lg text-gray-500 max-w-2xl mx-auto"
+                    >
                         Casos de éxito de quienes apostaron por la comunidad de AMES y lograron profesionalizar y crecer su proyecto.
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {testimoniosData.map((testimonio, index) => (

@@ -29,6 +29,31 @@ const casosVideos: CasoVideo[] = [
         title: 'Testimonio de RENTIFY',
         desc: 'Short con resultados y valor percibido por empresas que trabajan con AMES.',
     },
+    {
+        id: '4ZV8hkBWM0E',
+        title: 'Caso de exito AMES',
+        desc: 'Testimonio y experiencia compartida por miembros de la comunidad AMES.',
+    },
+    {
+        id: 'Mgba22fay5Y',
+        title: 'Caso de exito AMES',
+        desc: 'Video con recorrido de crecimiento y aprendizaje dentro del ecosistema.',
+    },
+    {
+        id: 'VlLRyQNmVJw',
+        title: 'Caso de exito AMES',
+        desc: 'Historia real con foco en acompanamiento, comunidad y resultados.',
+    },
+    {
+        id: '8fGK50hS8YA',
+        title: 'Caso de exito AMES',
+        desc: 'Experiencia de proyecto en desarrollo con impacto en su etapa de crecimiento.',
+    },
+    {
+        id: 'ThUtFptknEk',
+        title: 'Caso de exito AMES',
+        desc: 'Testimonio en video sobre vinculacion, herramientas y oportunidades de la mutual.',
+    },
 ];
 
 const CasosPage = () => {
@@ -102,7 +127,7 @@ const CasosPage = () => {
                                     </h2>
                                     <p className="text-gray-600 text-sm leading-relaxed mb-5">{video.desc}</p>
                                     <a
-                                        href={`https://www.youtube.com/shorts/${video.id}`}
+                                        href={`https://www.youtube.com/watch?v=${video.id}`}
                                         target="_blank"
                                         rel="noreferrer"
                                         className="inline-flex items-center gap-2 text-secondary font-semibold hover:text-primary transition-colors"

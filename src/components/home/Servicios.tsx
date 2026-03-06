@@ -7,7 +7,7 @@ const serviciosData = [
     {
         id: 'consultoria',
         icon: <Briefcase className="w-7 h-7" />,
-        image: services.consultoria,
+        image: services.consultoriaHome,
         colorGrad: 'from-primary to-secondary',
         colorText: 'text-secondary',
         colorBg: 'bg-secondary/10',
@@ -25,7 +25,7 @@ const serviciosData = [
     {
         id: 'networking',
         icon: <Users className="w-7 h-7" />,
-        image: community.networking,
+        image: community.networkingHome,
         colorGrad: 'from-secondary to-blue-700',
         colorText: 'text-secondary',
         colorBg: 'bg-secondary/10',
@@ -43,7 +43,7 @@ const serviciosData = [
     {
         id: 'escuela-express',
         icon: <GraduationCap className="w-7 h-7" />,
-        image: services.escuela,
+        image: services.escuelaHome,
         colorGrad: 'from-accent to-violet-900',
         colorText: 'text-accent',
         colorBg: 'bg-accent/10',
@@ -97,7 +97,7 @@ const serviciosData = [
     {
         id: 'empresas-padrinos',
         icon: <HeartHandshake className="w-7 h-7" />,
-        image: padrinos.alianza,
+        image: padrinos.alianzaHome,
         colorGrad: 'from-primary to-accent',
         colorText: 'text-primary',
         colorBg: 'bg-primary/10',
@@ -122,7 +122,7 @@ const Servicios = () => {
                 {/* Encabezado */}
                 <div className="text-center mb-20 max-w-3xl mx-auto">
                     <motion.span
-                        initial={{ opacity: 0, y: 10 }}
+                        initial={{ opacity: 0, y: -16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
@@ -131,8 +131,8 @@ const Servicios = () => {
                         Nuestros Servicios
                     </motion.span>
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-4xl md:text-5xl font-heading font-black text-primary mb-6 leading-tight"
@@ -140,8 +140,8 @@ const Servicios = () => {
                         Servicios de Nuestra <span className="text-secondary">Mutual en Argentina</span>
                     </motion.h2>
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-gray-600 leading-relaxed"
@@ -221,7 +221,15 @@ const Servicios = () => {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-center mt-16"
                 >
-                    <p className="text-gray-500 mb-5 text-base">¿Querés acceder a todos los servicios en un solo plan?</p>
+                    <motion.p
+                        initial={{ opacity: 0, y: -16 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.35 }}
+                        className="text-gray-500 mb-5 text-base"
+                    >
+                        ¿Querés acceder a todos los servicios en un solo plan?
+                    </motion.p>
                     <Link
                         to="/servicios"
                         className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold text-base hover:bg-secondary transition-colors shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
