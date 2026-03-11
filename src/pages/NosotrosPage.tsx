@@ -27,8 +27,10 @@ const fadeRight = (delay = 0) => ({
 
 // ── Datos del equipo ───────────────────────────────────────────────
 const equipo = [
-    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, bio: 'Fundadora de Mutual AMES y profesional especializada en finanzas, costos y planificación estratégica. Impulsó la creación de la mutual con el objetivo de brindar estructura, acompañamiento y herramientas reales a emprendedores y empresas que buscan crecer con orden y respaldo institucional. Desde su rol, lidera el desarrollo financiero y estratégico del ecosistema AMES.' },
-    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
+    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, iniciales: null, bio: 'Fundadora de Mutual AMES y profesional especializada en finanzas, costos y planificación estratégica. Impulsó la creación de la mutual con el objetivo de brindar estructura, acompañamiento y herramientas reales a emprendedores y empresas que buscan crecer con orden y respaldo institucional. Desde su rol, lidera el desarrollo financiero y estratégico del ecosistema AMES.' },
+    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, iniciales: null, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
+    { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, iniciales: null, bio: 'Especialista en marketing digital, estrategia comercial y desarrollo de negocios. Desde su rol en Mutual AMES aporta una mirada integral orientada al crecimiento de emprendedores, profesionales y empresas, trabajando en el análisis estratégico de proyectos, posicionamiento digital y optimización de ventas online. Su enfoque combina planificación, ejecución y medición de resultados, acompañando a los asociados en la construcción de estrategias concretas que fortalezcan su presencia digital, mejoren su comunicación y generen oportunidades reales de crecimiento dentro del ecosistema de AMES.' },
+    { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, iniciales: null, bio: 'Especialista en análisis financiero y planificación estratégica para emprendedores y empresas. Desde su rol en Mutual AMES acompaña a los asociados en el ordenamiento de la estructura financiera de sus negocios, trabajando sobre control de costos, rentabilidad, proyecciones y definición de indicadores clave. Su enfoque está orientado a transformar los números del negocio en información clara para la toma de decisiones, optimizando la gestión operativa y fortaleciendo la planificación para lograr resultados sostenibles dentro del ecosistema de AMES.' },
 ];
 
 // ── Valores ────────────────────────────────────────────────────────
@@ -43,10 +45,43 @@ const valores = [
 
 // ── Hitos de historia ──────────────────────────────────────────────
 const hitos = [
-    { año: '2022', titulo: 'Nace AMES en Rosario', desc: 'Comenzamos a construir una mutual pensada para emprendedores, profesionales y empresas que necesitan estructura, comunidad y respaldo institucional.' },
-    { año: '2023', titulo: 'Se consolida el ecosistema', desc: 'Sumamos consultoría estratégica, formación práctica y académica, planificación y diseño de planes de acción para acompañar cada etapa del crecimiento.' },
-    { año: '2024', titulo: 'Se amplían las herramientas', desc: 'Fortalecemos el networking de calidad, el acceso a ayuda económica e inversiones y la aceleración de proyectos con potencial de expansión.' },
-    { año: 'Hoy', titulo: 'Una comunidad en movimiento', desc: 'Más de 500 emprendedores, 50 Empresas Padrino y 100 proyectos acelerados forman parte del ecosistema AMES.' },
+    {
+        año: '2022',
+        titulo: 'Nacimiento de AMES',
+        desc: 'En octubre de 2022 se funda la Asociación Mutual de Emprendedores de Santa Fe con el objetivo de crear una comunidad que acompañe el desarrollo de emprendedores y empresas emergentes, promoviendo la cooperación, el aprendizaje y el acceso a herramientas concretas para crecer. Desde su origen, AMES se planteó una misión clara: generar un espacio donde emprendedores, profesionales y empresarios puedan encontrarse, compartir experiencias y construir oportunidades de desarrollo económico y empresarial.',
+        items: null,
+    },
+    {
+        año: '2023',
+        titulo: 'Primera Ronda de Proyectos',
+        desc: 'AMES organiza la Primera Ronda de Proyectos, un encuentro pensado para que emprendedores puedan presentar sus iniciativas ante empresarios, potenciales inversores y miembros de la comunidad. La Ronda se convirtió rápidamente en un espacio de vinculación estratégica donde los emprendedores no solo presentan sus ideas, sino que también reciben devoluciones, generan contactos y abren oportunidades concretas de crecimiento, incluyendo acuerdos de inversión, financiamiento y nuevas relaciones con padrinos empresariales.',
+        items: null,
+    },
+    {
+        año: '2024',
+        titulo: 'Segunda Ronda de Proyectos',
+        desc: 'AMES realizó la Segunda Ronda de Proyectos, consolidando el evento como uno de los espacios de encuentro más importantes de la comunidad emprendedora vinculada a la mutual. Esta edición permitió ampliar la red de contactos, sumar nuevos emprendedores y fortalecer el vínculo con empresarios interesados en apoyar proyectos innovadores. Emprendedores lograron acceder a financiamiento, acuerdos de inversión y nuevas alianzas estratégicas.',
+        items: null,
+    },
+    {
+        año: '2025',
+        titulo: 'Tercera Ronda de Proyectos',
+        desc: 'AMES llevó adelante la Tercera Ronda de Proyectos, confirmando la evolución y madurez del ecosistema emprendedor consolidado alrededor de la mutual. Esta edición reunió a emprendedores, empresarios, profesionales y miembros de la comunidad en un espacio de intercambio donde los proyectos pudieron presentar sus propuestas, compartir su visión y generar nuevas oportunidades de crecimiento, inversión y vínculos estratégicos con padrinos empresariales.',
+        items: null,
+    },
+    {
+        año: 'Hoy',
+        titulo: 'Un ecosistema en movimiento',
+        desc: 'A pocos años de su creación, AMES reúne a cientos de emprendedores vinculados a su comunidad y continúa desarrollando herramientas para acompañar su crecimiento. La mutual impulsa iniciativas clave:',
+        items: [
+            'Escuela Express de Emprendedores — plataforma de formación digital con contenidos de profesionales especializados en gestión y desarrollo empresarial.',
+            'Consultoría Profesional — asesoramiento estratégico personalizado para socios que buscan fortalecer, ordenar o escalar sus proyectos.',
+            'Networking Empresarial — espacio permanente de encuentro para generar vínculos estratégicos y oportunidades comerciales.',
+            'Acceso a Ayuda Económica — orientación y acompañamiento para el acceso a financiamiento acorde a cada etapa empresarial.',
+            'Herramientas de Inversión — vinculación de proyectos con padrinos empresariales interesados en iniciativas con alto potencial.',
+            'Aceleradora Impacto — programa selectivo para estructurar proyectos y conectarlos con padrinos, financiamiento e inversión.',
+        ],
+    },
 ];
 
 const NosotrosPage = () => {
@@ -232,6 +267,16 @@ const NosotrosPage = () => {
                                             <span className="text-secondary font-heading font-black text-4xl block mb-2">{hito.año}</span>
                                             <h3 className="text-white font-heading font-bold text-xl mb-3">{hito.titulo}</h3>
                                             <p className="text-gray-400 text-sm leading-relaxed">{hito.desc}</p>
+                                            {hito.items && (
+                                                <ul className={`mt-4 space-y-2 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                                    {hito.items.map((item, j) => (
+                                                        <li key={j} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2">
+                                                            <span className="text-secondary mt-1 shrink-0">▸</span>
+                                                            <span>{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
                                         </div>
                                     </div>
 
@@ -310,11 +355,19 @@ const NosotrosPage = () => {
                             >
                                 <div className="relative mb-5 mx-auto w-fit">
                                     <div className="w-36 h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white group-hover:border-secondary/50 transition-all mx-auto">
-                                        <img
-                                            src={miembro.foto}
-                                            alt={miembro.nombre}
-                                            className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${miembro.nombre === 'Lautaro Zulian' ? 'object-top' : ''}`}
-                                        />
+                                        {miembro.foto ? (
+                                            <img
+                                                src={miembro.foto}
+                                                alt={miembro.nombre}
+                                                className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${(miembro.nombre === 'Lautaro Zulian' || miembro.nombre === 'Diego Ballerini') ? 'object-top' : ''}`}
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                                                <span className="text-white font-heading font-black text-4xl tracking-tight">
+                                                    {miembro.iniciales}
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
                                     {/* Dot indicador */}
                                     <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary rounded-full border-2 border-white shadow" />
@@ -323,7 +376,7 @@ const NosotrosPage = () => {
                                     {miembro.nombre}
                                 </h3>
                                 <span className="text-accent text-sm font-semibold block mb-3">{miembro.rol}</span>
-                                <p className="text-gray-500 text-sm leading-relaxed">{miembro.bio}</p>
+                                <p className="text-gray-500 text-base leading-relaxed">{miembro.bio}</p>
                             </motion.div>
                         ))}
                     </div>

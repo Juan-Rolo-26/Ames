@@ -104,19 +104,7 @@ const Hero = () => {
                 <div className="h-full w-full border-y border-[#dbe6fb] bg-[#f7f9ff]">
                     <div className="h-full w-full p-5 sm:p-7 lg:p-8 xl:p-9 flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
                         <div className="w-full lg:w-[56%] flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-5">
-                            <motion.div
-                                initial={{ opacity: 0, y: -20, scale: 0.92 }}
-                                animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                                transition={{ duration: 0.55, delay: 0.04, type: 'spring', stiffness: 170 }}
-                                className="inline-flex items-center gap-2.5 bg-[#edf3ff] border border-[#c9d8fb] text-secondary px-5 py-2 rounded-full text-sm font-bold tracking-widest uppercase"
-                            >
-                                <motion.span
-                                    animate={prefersReducedMotion ? {} : { scale: [1, 1.35, 1], opacity: [1, 0.55, 1] }}
-                                    transition={{ repeat: Infinity, duration: 2.1 }}
-                                    className="w-2.5 h-2.5 rounded-full bg-secondary"
-                                />
-                                Mutual Argentina · Rosario, Santa Fe
-                            </motion.div>
+
 
                             <h1 id="hero-main-title" className="font-heading font-black leading-[1.02] tracking-tight text-primary text-balance">
                                 <motion.span
@@ -260,14 +248,7 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        <div className="flex lg:hidden w-full gap-3 pt-1">
-                            {mobileStats.map(({ id, n, l, c }) => (
-                                <div key={id} className="flex-1 rounded-2xl border border-[#d8e4fb] bg-white p-3 text-center shadow-[0_8px_22px_rgba(50,92,175,0.12)]">
-                                    <span className={`block font-black text-xl ${c}`}>{n}</span>
-                                    <span className="text-[11px] text-[#6b7d98] font-medium leading-tight block mt-0.5">{l}</span>
-                                </div>
-                            ))}
-                        </div>
+
                     </div>
                 </div>
             </div>
