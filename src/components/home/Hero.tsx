@@ -5,7 +5,7 @@ import { avatars } from '../../assets/images';
 import MutualNetworkVisual from './MutualNetworkVisual';
 
 const HERO_TITLE = 'Asociación mutual entre emprendedores de Santa Fe';
-const HERO_DESCRIPTION = 'Somos una Mutual ubicada en Rosario, Santa Fe que construye un ecosistema de crecimiento para personas, emprendedores y empresas. Impulsamos el desarrollo con una estructura: consultoría estratégica, capacitaciones, diagnóstico financiero, planificación, acceso a ayuda económica, aceleración de proyectos e inversiones.';
+const HERO_DESCRIPTION = 'Somos una Mutual ubicada en Rosario, Santa Fe. Construimos un ecosistema de crecimiento para emprendedores, empresas y profesionales. Impulsamos el despegue y desarrollo de nuestros asociados con consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, acceso a ayuda económica e inversiones y aceleración de proyectos.';
 const HERO_KEYWORDS = 'Mutual Argentina, Mutual en Rosario, servicios mutuales, ayuda económica mutual, aceleradora mutual, networking empresarial Rosario, mutual para emprendedores';
 const CANONICAL_URL = 'https://amesmutual.com/mutual-argentina';
 
@@ -18,13 +18,13 @@ const socialAvatars = [
 
 const desktopStats = [
     { id: 'empresas', n: '+50', l: 'Empresas Padrino', c: 'text-primary' },
-    { id: 'proyectos', n: '+120', l: 'Proyectos acelerados', c: 'text-accent' },
+    { id: 'proyectos', n: '+100', l: 'Proyectos acelerados', c: 'text-accent' },
 ];
 
 const mobileStats = [
-    { id: 'miembros', n: '+500', l: 'Miembros activos', c: 'text-secondary' },
+    { id: 'miembros', n: '+500', l: 'Emprendedores', c: 'text-secondary' },
     { id: 'empresas', n: '+50', l: 'Empresas Padrino', c: 'text-primary' },
-    { id: 'proyectos', n: '+120', l: 'Proyectos acelerados', c: 'text-accent' },
+    { id: 'proyectos', n: '+100', l: 'Proyectos acelerados', c: 'text-accent' },
 ];
 
 const Hero = () => {
@@ -151,7 +151,7 @@ const Hero = () => {
                                 transition={{ duration: 0.75, delay: 0.44 }}
                                 className="text-[#5f6f88] text-[0.99rem] md:text-[1.08rem] font-medium leading-relaxed max-w-2xl"
                             >
-                                Somos una Mutual ubicada en Rosario, Santa Fe que construye un ecosistema de crecimiento para personas, emprendedores y empresas. Impulsamos el desarrollo con una estructura: <strong className="text-primary font-semibold">consultoría estratégica</strong>, <strong className="text-secondary font-semibold">capacitaciones</strong>, <strong className="text-primary font-semibold">diagnóstico financiero</strong>, planificación, acceso a ayuda económica, <strong className="text-accent font-semibold">aceleración de proyectos</strong> e inversiones.
+                                Somos una Mutual ubicada en Rosario, Santa Fe. Construimos un ecosistema de crecimiento para emprendedores, empresas y profesionales. Impulsamos el despegue y desarrollo de nuestros asociados con <strong className="text-primary font-semibold">consultoría estratégica</strong>, <strong className="text-secondary font-semibold">formación práctica y académica</strong>, <strong className="text-primary font-semibold">planificación y planes de acción</strong>, networking de calidad, acceso a ayuda económica e inversiones y <strong className="text-accent font-semibold">aceleración de proyectos</strong>.
                             </motion.p>
 
                             <motion.div

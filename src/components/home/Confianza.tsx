@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Users, TrendingUp, Award, Zap } from "lucide-react";
+import { Users, Award, Zap, TrendingUp } from "lucide-react";
 
 interface CounterProps {
   to: number;
@@ -39,23 +39,26 @@ function Counter({ to, suffix = "", duration = 2 }: CounterProps) {
 
 const stats = [
   {
+    id: "emprendedores",
     num: 500,
     suffix: "+",
     label: "Emprendedores",
-    sub: "en la comunidad",
+    sub: "ya forman parte de la comunidad",
     icon: Users,
     color: "#1A56DB",
   },
   {
+    id: "padrinos",
     num: 50,
     suffix: "+",
     label: "Empresas Padrino",
-    sub: "aliadas estratégicas",
+    sub: "dentro del ecosistema",
     icon: Award,
     color: "#7C3AED",
   },
   {
-    num: 120,
+    id: "proyectos",
+    num: 100,
     suffix: "+",
     label: "Proyectos",
     sub: "acelerados",
@@ -63,10 +66,11 @@ const stats = [
     color: "#1A56DB",
   },
   {
-    num: 3,
+    id: "trayectoria",
+    num: 4,
     suffix: " años",
     label: "Trayectoria",
-    sub: "en Argentina",
+    sub: "desde 2022",
     icon: TrendingUp,
     color: "#7C3AED",
   },
@@ -74,18 +78,18 @@ const stats = [
 
 const Confianza = () => {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white pt-20 pb-24 lg:pt-24 lg:pb-28">
 
       <div className="w-full px-6 lg:px-20">
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center w-full">
 
           {stats.map((stat, i) => {
             const Icon = stat.icon;
 
             return (
               <motion.div
-                key={i}
+                key={stat.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

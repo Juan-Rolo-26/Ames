@@ -5,23 +5,23 @@ import { community } from '../../assets/images';
 const beneficios = [
     {
         icon: <Users className="w-5 h-5" />,
-        titulo: 'Red de emprendedores activos',
-        desc: 'Conectás con más de 500 socios que comparten desafíos, contactos y oportunidades reales.',
+        titulo: 'Comunidad que se potencia',
+        desc: 'No sos un cliente: formás parte de una red colaborativa donde cada socio aporta y recibe valor real.',
     },
     {
         icon: <BadgeCheck className="w-5 h-5" />,
-        titulo: 'Consultoría y acompañamiento',
-        desc: 'Accedés a sesiones con especialistas que diagnostican tu proyecto y te guían en cada etapa.',
+        titulo: 'Consultoría y planificación',
+        desc: 'Accedés a consultoría estratégica, planificación y diseño de planes de acción según tu etapa y objetivos.',
     },
     {
         icon: <Handshake className="w-5 h-5" />,
-        titulo: 'Ayuda económica mutua',
-        desc: 'Como mutual, podés acceder a financiamiento solidario para invertir y hacer crecer tu negocio.',
+        titulo: 'Networking, ayuda e inversiones',
+        desc: 'Conectás con networking de calidad y accedés a herramientas de ayuda económica e inversiones dentro del marco mutual.',
     },
     {
         icon: <CheckCircle2 className="w-5 h-5" />,
-        titulo: 'Sin permanencia mínima',
-        desc: 'Tu membresía es mensual. Sin contratos, sin letra chica. Cancelás cuando quieras.',
+        titulo: 'Formación y aceleración',
+        desc: 'Sumás formación práctica y académica, más programas de aceleración para proyectos con potencial de expansión.',
     },
 ];
 
@@ -62,11 +62,9 @@ const AsociarseSection = () => {
 
                         <motion.p
                             {...fadeUp(0.2)}
-                            className="text-lg text-gray-600 leading-relaxed mb-10 max-w-lg"
+                            className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl"
                         >
-                            AMES es una mutual sin fines de lucro. Cuando te asociás, no sos un cliente: sos
-                            parte de una comunidad que se potencia mutuamente. Cada socio aporta y recibe
-                            en igual medida — formación, red, financiamiento y acompañamiento real.
+                            AMES es una mutual interdisciplinaria. Cuando te asociás, no sos un cliente: sos parte de una comunidad que se potencia mutuamente, con fuertes lazos colaborativos. Cada socio aporta y recibe formación, red, financiamiento y acompañamiento real, generando sinergia y valor agregado para el ecosistema emprendedor argentino.
                         </motion.p>
 
                         {/* Beneficios */}
@@ -118,34 +116,14 @@ const AsociarseSection = () => {
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                         className="w-full lg:w-1/2 relative"
                     >
-                        {/* Imagen con overlay */}
+                        {/* Imagen principal */}
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                             <img
                                 src={community.networking}
                                 alt="Socios de la Mutual AMES Rosario"
                                 className="w-full h-72 sm:h-[420px] lg:h-[500px] object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-
-                            {/* Overlay card abajo */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6">
-                                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
-                                    <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-1">
-                                        Membresía mensual
-                                    </p>
-                                    <p className="text-white font-heading font-black text-2xl mb-3">
-                                        Acceso completo a AMES
-                                    </p>
-                                    <ul className="space-y-1.5">
-                                        {['Consultoría estratégica', 'Networking y comunidad', 'Escuela Express', 'Ayuda económica mutua'].map((item) => (
-                                            <li key={item} className="flex items-center gap-2 text-white/80 text-sm">
-                                                <CheckCircle2 className="w-4 h-4 text-secondary shrink-0" />
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/55 via-primary/10 to-transparent" />
                         </div>
 
                         {/* Badge flotante */}
@@ -159,7 +137,7 @@ const AsociarseSection = () => {
                             </div>
                             <div>
                                 <p className="font-black text-primary font-heading text-xl leading-none">+500</p>
-                                <p className="text-gray-500 text-xs">socios activos</p>
+                                <p className="text-gray-500 text-xs">emprendedores en comunidad</p>
                             </div>
                         </motion.div>
                     </motion.div>

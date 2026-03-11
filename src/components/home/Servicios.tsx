@@ -7,7 +7,7 @@ const serviciosData = [
     {
         id: 'consultoria',
         icon: <Briefcase className="w-7 h-7" />,
-        image: services.consultoriaHome,
+        image: services.consultoriaDetalle,
         colorGrad: 'from-primary to-secondary',
         colorText: 'text-secondary',
         colorBg: 'bg-secondary/10',
@@ -25,12 +25,12 @@ const serviciosData = [
     {
         id: 'networking',
         icon: <Users className="w-7 h-7" />,
-        image: community.networkingHome,
+        image: community.networkingDetalle,
         colorGrad: 'from-secondary to-blue-700',
         colorText: 'text-secondary',
         colorBg: 'bg-secondary/10',
         colorBorder: 'border-secondary/25',
-        badge: '+500 miembros',
+        badge: '+500 emprendedores',
         title: 'Networking y Comunidad',
         alt: 'Networking empresarial de mutual en Rosario',
         desc: 'El departamento de Networking está orientada a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales. Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercambio de valor.',
@@ -43,7 +43,7 @@ const serviciosData = [
     {
         id: 'escuela-express',
         icon: <GraduationCap className="w-7 h-7" />,
-        image: services.escuelaHome,
+        image: services.escuelaDetalle,
         colorGrad: 'from-accent to-violet-900',
         colorText: 'text-accent',
         colorBg: 'bg-accent/10',
@@ -97,7 +97,7 @@ const serviciosData = [
     {
         id: 'empresas-padrinos',
         icon: <HeartHandshake className="w-7 h-7" />,
-        image: padrinos.alianzaHome,
+        image: padrinos.alianzaDetalle,
         colorGrad: 'from-primary to-accent',
         colorText: 'text-primary',
         colorBg: 'bg-primary/10',

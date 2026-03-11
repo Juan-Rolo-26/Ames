@@ -1,8 +1,6 @@
 import { motion, type Easing } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Heart, Users, Zap, Target, TrendingUp, Globe, ArrowRight, CheckCircle } from 'lucide-react';
-import { about, community, avatars, testimonials } from '../assets/images';
-import { Link } from 'react-router-dom';
+import { about, community, avatars } from '../assets/images';
 
 // ── Animaciones reutilizables ──────────────────────────────────────
 const ease: Easing = 'easeOut';
@@ -39,16 +37,16 @@ const valores = [
     { icono: <Zap className="w-7 h-7" />, titulo: 'Impacto Real', desc: 'Medimos nuestro éxito en los resultados concretos de cada emprendedor. Nada de promesas vacías.', color: 'from-secondary to-accent' },
     { icono: <Globe className="w-7 h-7" />, titulo: 'Triple Impacto', desc: 'Economía, sociedad y medioambiente en equilibrio. Emprendemos con responsabilidad.', color: 'from-accent to-primary' },
     { icono: <Users className="w-7 h-7" />, titulo: 'Accesibilidad', desc: 'La mutual elimina barreras. El acompañamiento de calidad no debe ser un privilegio de pocos.', color: 'from-primary to-secondary' },
-    { icono: <Target className="w-7 h-7" />, titulo: 'Foco en Resultados', desc: 'Cada acción dentro de AMES está orientada a generar un avance concreto en tu proyecto.', color: 'from-accent to-secondary' },
+    { icono: <Target className="w-7 h-7" />, titulo: 'Inteligencia colaborativa', desc: 'Creemos en el valor de pensar, decidir y crecer en red, combinando miradas, experiencias y capacidades dentro de la comunidad.', color: 'from-accent to-secondary' },
     { icono: <TrendingUp className="w-7 h-7" />, titulo: 'Crecimiento Continuo', desc: 'La cultura de aprendizaje y la mejora constante son el motor de nuestra comunidad.', color: 'from-primary to-accent' },
 ];
 
 // ── Hitos de historia ──────────────────────────────────────────────
 const hitos = [
-    { año: '2018', titulo: 'El Primer Paso', desc: 'Carlos Rivera funda AMES en Rosario como una pequeña red de emprendedores que se reúnen para compartir desafíos y soluciones.' },
-    { año: '2020', titulo: 'La Mutual Nace', desc: 'AMES se formaliza como mutual, permitiendo acceder a herramientas de financiamiento colectivo y beneficios formales para sus miembros.' },
-    { año: '2022', titulo: 'Escuela Express', desc: 'Se lanza el programa de capacitación propio, con más de 200 emprendedores formados en el primer año en gestión, ventas y finanzas.' },
-    { año: '2024', titulo: '+500 Miembros', desc: 'La comunidad supera los 500 emprendedores activos, consolida el programa de Empresas Padrino y expande su alcance a toda la región.' },
+    { año: '2022', titulo: 'Nace AMES en Rosario', desc: 'Comenzamos a construir una mutual pensada para emprendedores, profesionales y empresas que necesitan estructura, comunidad y respaldo institucional.' },
+    { año: '2023', titulo: 'Se consolida el ecosistema', desc: 'Sumamos consultoría estratégica, formación práctica y académica, planificación y diseño de planes de acción para acompañar cada etapa del crecimiento.' },
+    { año: '2024', titulo: 'Se amplían las herramientas', desc: 'Fortalecemos el networking de calidad, el acceso a ayuda económica e inversiones y la aceleración de proyectos con potencial de expansión.' },
+    { año: 'Hoy', titulo: 'Una comunidad en movimiento', desc: 'Más de 500 emprendedores, 50 Empresas Padrino y 100 proyectos acelerados forman parte del ecosistema AMES.' },
 ];
 
 const NosotrosPage = () => {
@@ -75,7 +73,7 @@ const NosotrosPage = () => {
                         {...fadeUp(0.1)}
                         className="inline-block bg-secondary/20 border border-secondary/30 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase"
                     >
-                        Nuestra Historia
+                        Quiénes Somos
                     </motion.span>
                     <motion.h1
                         {...fadeUp(0.25)}
@@ -88,9 +86,9 @@ const NosotrosPage = () => {
                         {...fadeUp(0.4)}
                         className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
                     >
-                        AMES nace en 2022 en Rosario como una mutual enfocada en acompañar a emprendedores, profesionales y empresas mediante formación, comunidad, consultoría estratégica y herramientas económicas responsables.
+                        Somos una Mutual ubicada en Rosario, Santa Fe, y construimos un ecosistema de crecimiento para emprendedores, empresas y profesionales.
                         <br /><br />
-                        Impulsamos un ecosistema donde las ideas se planifican, se fortalecen y se transforman en proyectos sostenibles con impacto real en la región.
+                        Impulsamos el despegue y desarrollo de nuestros asociados con consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, acceso a ayuda económica e inversiones y aceleración de proyectos.
                     </motion.p>
                 </div>
 
@@ -131,7 +129,7 @@ const NosotrosPage = () => {
                                 </div>
                                 <div>
                                     <p className="text-2xl font-heading font-black text-primary">+500</p>
-                                    <p className="text-sm text-gray-500">Vidas impactadas</p>
+                                    <p className="text-sm text-gray-500">Emprendedores en comunidad</p>
                                 </div>
                             </motion.div>
                             <div className="absolute -top-8 -left-8 w-40 h-40 bg-secondary/10 rounded-full blur-3xl -z-10" />
@@ -148,13 +146,13 @@ const NosotrosPage = () => {
                                 </h2>
                                 <div className="space-y-4">
                                     <p className="text-lg text-gray-600 leading-relaxed font-medium">
-                                        Mutual AMES (Asociación Mutual de Emprendedores de Santa Fe) es una organización sin fines de lucro con sede en Rosario, Argentina. Desde 2022 desarrollamos un ecosistema integral de acompañamiento para emprendedores, trabajadores, profesionales y empresas que buscan crecer con estructura y respaldo institucional.
+                                        Mutual AMES (Asociación Mutual de Emprendedores de Santa Fe) es una organización con sede en Rosario, Argentina. Desde 2022 desarrollamos un ecosistema integral de acompañamiento para emprendedores, profesionales y empresas que buscan crecer con estructura y respaldo institucional.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed font-bold text-primary">
-                                        En AMES no solo brindamos apoyo económico. Construimos bases sólidas para el desarrollo.
+                                        En AMES no solo brindamos apoyo económico y profesional. Construimos bases sólidas para el desarrollo.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed">
-                                        Integramos formación práctica a través de Academia Express, espacios de networking presencial, consultoría estratégica profesional, herramientas de ayuda económica e inversiones dentro del marco mutual y programas como la Aceleradora Impacto para proyectos con potencial de expansión.
+                                        Integramos consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, herramientas de ayuda económica e inversiones y programas de aceleración para proyectos con potencial de expansión.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed font-semibold italic">
                                         Nuestro propósito es que cada persona o empresa pueda avanzar con planificación, comunidad activa y herramientas concretas para fortalecer su actividad.
@@ -164,7 +162,7 @@ const NosotrosPage = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                                 {[
-                                    { titulo: 'Nuestra Misión', texto: 'Impulsar el desarrollo económico de emprendedores, profesionales y empresas mediante formación, comunidad, asesoramiento estratégico y herramientas financieras responsables, promover crecimiento sostenible y ordenado.', icono: <Target className="w-5 h-5" /> },
+                                    { titulo: 'Nuestra Misión', texto: 'Impulsar el desarrollo económico de emprendedores, profesionales y empresas mediante formación, comunidad, asesoramiento estratégico y herramientas financieras responsables, en pos de promover un crecimiento sostenible y ordenado dentro de nuestra comunidad.', icono: <Target className="w-5 h-5" /> },
                                     { titulo: 'Nuestra Visión', texto: 'Consolidarnos como un ecosistema mutual de referencia en el interior del país, integrando educación, acompañamiento estratégico, ayuda económica e inversión dentro de una misma estructura institucional confiable y transparente.', icono: <TrendingUp className="w-5 h-5" /> }
                                 ].map((item, i) => (
                                     <motion.div
@@ -298,7 +296,7 @@ const NosotrosPage = () => {
                             Nuestro <span className="text-secondary">Equipo</span>
                         </h2>
                         <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                            Un grupo de profesionales apasionados con experiencia real en el mundo emprendedor.
+                            Un equipo que integra estrategia, comunidad y acompañamiento real para fortalecer el ecosistema AMES.
                         </p>
                     </motion.div>
 
@@ -338,12 +336,11 @@ const NosotrosPage = () => {
                     <img src={community.coworking} alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="relative z-10 w-full px-5 sm:px-8 lg:px-20">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
                         {[
-                            { num: '+500', label: 'Emprendedores', sub: 'en la comunidad' },
-                            { num: '+50', label: 'Empresas', sub: 'Padrino aliadas' },
-                            { num: '+120', label: 'Proyectos', sub: 'impulsados' },
-                            { num: '6', label: 'Años', sub: 'construyendo juntos' },
+                            { num: '+500', label: 'Emprendedores', sub: 'ya forman parte de la comunidad' },
+                            { num: '+50', label: 'Empresas Padrino', sub: 'dentro del ecosistema' },
+                            { num: '+100', label: 'Proyectos', sub: 'acelerados' },
                         ].map((stat, i) => (
                             <motion.div
                                 key={i}
@@ -387,7 +384,7 @@ const NosotrosPage = () => {
 
                         {/* Mini trust indicators */}
                         <motion.div {...fadeUp(0.3)} className="mt-12 flex flex-wrap items-center justify-center gap-6 text-gray-400 text-sm">
-                            {['Sin permanencia mínima', 'Cancelación en cualquier momento', 'Comunidad real, resultados concretos'].map((item, i) => (
+                            {['Comunidad que se potencia mutuamente', 'Acompañamiento real', 'Herramientas concretas para crecer'].map((item, i) => (
                                 <span key={i} className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-accent" />
                                     {item}

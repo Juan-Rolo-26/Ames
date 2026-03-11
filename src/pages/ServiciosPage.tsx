@@ -559,7 +559,7 @@ const ServiciosPage = () => {
                             <span className="text-secondary">para tu proyecto?</span>
                         </h2>
                         <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Con una membresía mensual accedés a todos los pilares de AMES. Sin permanencia, sin letra chica, con impacto real desde el primer día.
+                            Con una membresía mensual accedés a consultoría estratégica, formación, networking de calidad, ayuda económica e inversiones y acompañamiento real desde el primer día.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-5 justify-center">
                             <motion.a
@@ -586,7 +586,7 @@ const ServiciosPage = () => {
                         </div>
 
                         <motion.div {...fadeUp(0.3)} className="mt-12 flex flex-wrap items-center justify-center gap-6 text-gray-400 text-sm">
-                            {['Sin permanencia mínima', 'Cancelación cuando quieras', 'Soporte real desde el día 1'].map((item, i) => (
+                            {['Comunidad que se potencia mutuamente', 'Herramientas diseñadas a medida', 'Acompañamiento real desde el día 1'].map((item, i) => (
                                 <span key={i} className="flex items-center gap-2">
                                     <CheckCircle className="w-4 h-4 text-accent" />
                                     {item}

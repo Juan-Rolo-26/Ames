@@ -5,7 +5,7 @@ const serviciosSeo = [
     {
         icon: <TrendingUp className="w-6 h-6" />,
         titulo: 'Consultoría Estratégica',
-        texto: 'Asesoramiento profesional para empresas, emprendedores y organizaciones que buscan crecer de forma sostenible en Argentina.',
+        texto: 'Consultoría estratégica y acompañamiento profesional para emprendedores, empresas y profesionales que necesitan crecer con estructura.',
         grad: 'from-secondary to-accent',
         bg: 'bg-secondary/5',
         border: 'border-secondary/20',
@@ -13,8 +13,8 @@ const serviciosSeo = [
     },
     {
         icon: <Building2 className="w-6 h-6" />,
-        titulo: 'Ayuda Económica Mutual',
-        texto: 'Soluciones de ayuda económica accesibles, claras y seguras para asociados de nuestra mutual sin burocracia bancaria.',
+        titulo: 'Ayuda Económica e Inversiones',
+        texto: 'Acceso a herramientas de ayuda económica e inversiones dentro del marco mutual, con evaluación responsable y acompañamiento real.',
         grad: 'from-primary to-secondary',
         bg: 'bg-primary/5',
         border: 'border-primary/20',
@@ -22,8 +22,8 @@ const serviciosSeo = [
     },
     {
         icon: <TrendingUp className="w-6 h-6" />,
-        titulo: 'Aceleradora de Impacto',
-        texto: 'Proyectos innovadores con mentorías, networking y herramientas concretas para escalar hacia un modelo rentable y sostenible.',
+        titulo: 'Aceleración de Proyectos',
+        texto: 'Programas de aceleración para proyectos con potencial de expansión, mentoría y herramientas concretas para su despegue.',
         grad: 'from-accent to-secondary',
         bg: 'bg-accent/5',
         border: 'border-accent/20',
@@ -31,8 +31,8 @@ const serviciosSeo = [
     },
     {
         icon: <BookOpen className="w-6 h-6" />,
-        titulo: 'Escuela Express',
-        texto: 'Formación práctica para emprendedores y profesionales que desean mejorar sus habilidades y potenciar sus negocios.',
+        titulo: 'Formación Práctica y Académica',
+        texto: 'Capacitaciones y formación aplicada para fortalecer habilidades de gestión, ventas, planificación y desarrollo profesional.',
         grad: 'from-secondary to-primary',
         bg: 'bg-secondary/5',
         border: 'border-secondary/20',
@@ -49,8 +49,8 @@ const serviciosSeo = [
     },
     {
         icon: <Users className="w-6 h-6" />,
-        titulo: 'Red de Networking',
-        texto: 'Acceso exclusivo a +500 emprendedores, eventos mensuales y rondas de negocios para expandir contactos y oportunidades.',
+        titulo: 'Networking de Calidad',
+        texto: 'Espacios de vinculación, red de +500 emprendedores y encuentros de calidad para generar contactos y oportunidades reales.',
         grad: 'from-accent to-primary',
         bg: 'bg-accent/5',
         border: 'border-accent/20',
@@ -59,12 +59,12 @@ const serviciosSeo = [
 ];
 
 const razones = [
-    'Transparencia en cada proceso',
-    'Asesoramiento 100% personalizado',
-    'Impacto social y empresarial real',
-    'Red de networking activa +500 miembros',
-    'Enfoque en crecimiento sostenible',
-    'Sin burocracia bancaria ni avales imposibles',
+    'Ecosistema interdisciplinario para emprendedores, empresas y profesionales',
+    'Consultoría estratégica, planificación y planes de acción',
+    'Red de networking de calidad con +500 emprendedores',
+    'Acceso a ayuda económica e inversiones dentro del marco mutual',
+    'Regulación por INAES con transparencia y seguridad jurídica',
+    'Acompañamiento real para crecer con estructura y respaldo institucional',
 ];
 
 // Variantes reutilizables
@@ -91,67 +91,8 @@ const fadeRight = (delay = 0) => ({
 
 const SeoContent = () => {
     return (
-        <section className="py-14 lg:py-24 bg-white border-y border-gray-100 overflow-hidden">
-            <div className="w-full px-5 sm:px-8 lg:px-20 space-y-24">
-
-                {/* ── Bloque 1: ¿Qué es AMES? — dos columnas ── */}
-                <div className="flex flex-col lg:flex-row gap-16 items-center">
-                    {/* Izquierda: Título grande */}
-                    <motion.div {...fadeLeft(0)} className="w-full lg:w-5/12">
-                        <motion.span
-                            {...fadeUp(0.05)}
-                            className="inline-block bg-secondary/10 text-secondary text-sm font-bold px-4 py-1.5 rounded-full mb-5 border border-secondary/20 tracking-wide uppercase"
-                        >
-                            Conocé AMES
-                        </motion.span>
-                        <motion.h2
-                            {...fadeLeft(0.1)}
-                            className="text-4xl md:text-5xl font-heading font-black text-primary leading-tight mb-6"
-                        >
-                            ¿Qué es{' '}
-                            <span
-                                style={{
-                                    background: 'linear-gradient(90deg, #1A56DB 0%, #7C3AED 100%)',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text',
-                                }}
-                            >
-                                Mutual AMES?
-                            </span>
-                        </motion.h2>
-                        {/* Línea decorativa animada */}
-                        <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: '80px' }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="h-1 rounded-full mb-6"
-                            style={{ background: 'linear-gradient(90deg, #1A56DB, #7C3AED)' }}
-                        />
-                    </motion.div>
-
-                    {/* Derecha: Texto */}
-                    <motion.div {...fadeRight(0.15)} className="w-full lg:w-7/12 space-y-5">
-                        {[
-                            'Mutual AMES es una Mutual Argentina con sede en Rosario dedicada a brindar soluciones estratégicas a personas, emprendedores y empresas. Nuestro objetivo es generar impacto real a través de servicios mutuales modernos, ágiles y enfocados en el crecimiento.',
-                            'Trabajamos con una visión innovadora que combina asesoramiento profesional, networking, formación y acompañamiento financiero para que cada asociado pueda alcanzar su máximo potencial.',
-                        ].map((texto, i) => (
-                            <motion.p
-                                key={i}
-                                initial={{ opacity: 0, y: 24 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 + i * 0.12 }}
-                                className="text-gray-600 text-lg leading-relaxed"
-                            >
-                                {texto}
-                            </motion.p>
-                        ))}
-                    </motion.div>
-                </div>
-
-                {/* ── Bloque 2: Servicios — grid 3 columnas ── */}
+        <section className="pt-8 pb-24 lg:pt-12 lg:pb-32 bg-white border-y border-gray-100 overflow-hidden">
+            <div className="w-full px-5 sm:px-8 lg:px-20">
                 <div>
                     <div className="text-center mb-14">
                         <motion.span {...fadeUp(0)} className="inline-block bg-secondary/10 text-secondary text-sm font-bold px-4 py-1.5 rounded-full mb-4 border border-secondary/20 tracking-wide uppercase">
@@ -195,8 +136,8 @@ const SeoContent = () => {
 
 export const SeoContentBottom = () => {
     return (
-        <section className="py-10 lg:py-20 bg-white border-b border-gray-100 overflow-hidden">
-            <div className="w-full px-5 sm:px-8 lg:px-20 space-y-24">
+        <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 bg-white border-b border-gray-100 overflow-hidden">
+            <div className="w-full px-5 sm:px-8 lg:px-20 space-y-28 lg:space-y-32">
                 {/* ── Bloque 3: Ubicación + Contacto — horizontal ── */}
                 <motion.div
                     {...fadeUp(0)}
@@ -212,7 +153,7 @@ export const SeoContentBottom = () => {
                                 Mutual en Rosario,<br /> Argentina
                             </motion.h2>
                             <motion.p {...fadeUp(0.18)} className="text-white/80 text-lg leading-relaxed">
-                                Mutual AMES tiene sede en Rosario, brindando servicios a nivel local y nacional. Nuestra ubicación estratégica nos permite acompañar tanto a personas como empresas en toda la región.
+                                Mutual AMES tiene sede en Rosario, Santa Fe, y acompaña a emprendedores, empresas y profesionales tanto a nivel local como nacional.
                             </motion.p>
                         </div>
                         <div className="flex-1 bg-white/10 backdrop-blur-sm p-10 lg:p-14 flex flex-col justify-center gap-5">
@@ -282,10 +223,10 @@ export const SeoContentBottom = () => {
                             <span className="text-secondary">en Argentina?</span>
                         </motion.h2>
                         <motion.p {...fadeRight(0.18)} className="text-gray-600 text-lg leading-relaxed mb-6">
-                            Una mutual en Argentina es una entidad sin fines de lucro que brinda servicios y beneficios a sus asociados bajo el principio de ayuda mutua. Regulada por el INAES, garantiza transparencia y seguridad jurídica en cada operación.
+                            Una mutual en Argentina es una entidad que brinda servicios y beneficios a sus asociados bajo el principio de ayuda mutua. Regulada por el INAES, garantiza transparencia y seguridad jurídica en cada operación.
                         </motion.p>
                         <motion.p {...fadeRight(0.26)} className="text-gray-600 text-lg leading-relaxed">
-                            Mutual AMES trabaja bajo este modelo brindando ayuda económica, asesoramiento y oportunidades de crecimiento a sus miembros, combinando el marco legal mutual con innovación y tecnología.
+                            Mutual AMES trabaja bajo este modelo brindando acceso a ayuda económica, asesoramiento y oportunidades de crecimiento a sus socios, combinando el marco legal mutual con innovación y tecnología.
                         </motion.p>
                     </div>
                 </div>

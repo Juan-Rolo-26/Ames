@@ -3,17 +3,17 @@ import { CheckCircle, ArrowRight, Star, Shield, Zap } from 'lucide-react';
 
 const beneficios = [
     { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Acceso a red y comunidad de +500 emprendedores' },
-    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Descuentos exclusivos en Escuela Express' },
-    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Asesoramiento contable y legal inicial' },
-    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Derecho de solicitud de Ayuda Económica Mutual' },
-    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Rondas de negocios exclusivas mensuales' },
-    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Postulación a la Aceleradora de Impacto' },
+    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Formación práctica y académica' },
+    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Consultoría estratégica y planificación' },
+    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Acceso a ayuda económica e inversiones' },
+    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Networking de calidad y rondas de negocios' },
+    { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Aceleración de proyectos con potencial' },
 ];
 
 const highlights = [
     { icon: <Star className="w-5 h-5" />, label: 'Elegida por +500 emprendedores' },
-    { icon: <Shield className="w-5 h-5" />, label: 'Sin permanencia mínima' },
-    { icon: <Zap className="w-5 h-5" />, label: 'Activación inmediata' },
+    { icon: <Shield className="w-5 h-5" />, label: 'Comunidad que se potencia' },
+    { icon: <Zap className="w-5 h-5" />, label: 'Acompañamiento real' },
 ];
 
 const MembresiaPreview = () => {
@@ -61,7 +61,7 @@ const MembresiaPreview = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-lg text-gray-600 leading-relaxed"
                     >
-                        Tu membresía mensual te da acceso a red, mentorías, formación, beneficios económicos y generás impacto directo en la región desde el día uno.
+                        Tu membresía mensual te conecta con una comunidad activa y te da acceso a consultoría, formación, networking, ayuda económica e inversiones y acompañamiento real desde el día uno.
                     </motion.p>
                 </div>
 

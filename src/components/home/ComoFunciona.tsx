@@ -3,7 +3,7 @@ import { community } from '../../assets/images';
 
 const ComoFunciona = () => {
     return (
-        <section className="py-14 lg:py-24 bg-white relative overflow-hidden">
+        <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
             <div className="w-full px-5 sm:px-8 lg:px-20">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     {/* Columna Izquierda: Imagen */}
@@ -25,7 +25,7 @@ const ComoFunciona = () => {
                                 className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-white/20"
                             >
                                 <div className="text-secondary font-heading font-black text-3xl">+500</div>
-                                <div className="text-sm font-semibold text-gray-700 leading-tight">Miembros<br />Activos</div>
+                                <div className="text-sm font-semibold text-gray-700 leading-tight">Emprendedores<br />en comunidad</div>
                             </motion.div>
                         </div>
                         {/* Decoración */}

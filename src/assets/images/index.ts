@@ -11,14 +11,17 @@
 import logoLocal from './logo-ames.png';
 import caroImg from './caro imagen.jpeg';
 import lautiImg from './lauti imagen.jpeg';
-import consultoriaHomeImg from './consultoria estrategica.jpeg';
-import consultoriaDetalleImg from './consultoria estrategica2.jpeg';
 import academiaHomeImg from './academia express.jpeg';
 import academiaDetalleImg from './academia express2.jpeg';
 import networkingHomeImg from './networking y comunidad.jpeg';
 import networkingDetalleImg from './networking y comunidad (2).jpeg';
 import padrinoHomeImg from './empresas padrino.jpeg';
 import padrinoDetalleImg from './empresas padrino 2.jpeg';
+import aceleradoraImpactoImg from '../nuevas imageenes/aceleradoraimpacto.jpeg';
+import ayudaEconomicaImg from '../nuevas imageenes/ayudaeconoomica.jpeg';
+import caminoEmprendedoresImg from '../nuevas imageenes/caminoemprendedores.jpeg';
+import consultoriaEstrategicaImg from '../nuevas imageenes/consultoriaestrategica.jpeg';
+import serSocioImg from '../nuevas imageenes/sersocio.jpeg';
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 export const hero = {
@@ -31,13 +34,13 @@ export const hero = {
 // ── Comunidad ─────────────────────────────────────────────────────────────────
 export const community = {
     /** Grupo de emprendedores en reunión */
-    grupo: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=80',
+    grupo: caminoEmprendedoresImg,
     /** Networking y colaboración (Home) */
     networkingHome: networkingHomeImg,
     /** Networking y colaboración (Detalle) */
     networkingDetalle: networkingDetalleImg,
-    /** Networking y colaboración (compatibilidad) */
-    networking: networkingHomeImg,
+    /** Imagen para bloque Ser socio */
+    networking: serSocioImg,
     /** Evento comunitario */
     evento: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80',
     /** Coworking moderno */
@@ -47,11 +50,11 @@ export const community = {
 // ── Servicios ─────────────────────────────────────────────────────────────────
 export const services = {
     /** Consultoría / mentoría (Home) */
-    consultoriaHome: consultoriaHomeImg,
+    consultoriaHome: consultoriaEstrategicaImg,
     /** Consultoría / mentoría (Detalle) */
-    consultoriaDetalle: consultoriaDetalleImg,
+    consultoriaDetalle: consultoriaEstrategicaImg,
     /** Consultoría / mentoría (compatibilidad) */
-    consultoria: consultoriaHomeImg,
+    consultoria: consultoriaEstrategicaImg,
     /** Escuela / capacitación (Home) */
     escuelaHome: academiaHomeImg,
     /** Escuela / capacitación (Detalle) */
@@ -59,9 +62,9 @@ export const services = {
     /** Escuela / capacitación (compatibilidad) */
     escuela: academiaHomeImg,
     /** Financiamiento / ayuda económica */
-    financiamiento: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
+    financiamiento: ayudaEconomicaImg,
     /** Aceleradora */
-    aceleradora: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
+    aceleradora: aceleradoraImpactoImg,
 };
 
 // ── Nosotros / About ──────────────────────────────────────────────────────────
