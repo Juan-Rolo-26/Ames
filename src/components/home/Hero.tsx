@@ -1,13 +1,8 @@
-import { useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 import { avatars } from '../../assets/images';
 import MutualNetworkVisual from './MutualNetworkVisual';
-
-const HERO_TITLE = 'Asociación mutual entre emprendedores de Santa Fe';
-const HERO_DESCRIPTION = 'Somos una Mutual ubicada en Rosario, Santa Fe. Construimos un ecosistema de crecimiento para emprendedores, empresas y profesionales. Impulsamos el despegue y desarrollo de nuestros asociados con consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, acceso a ayuda económica e inversiones y aceleración de proyectos.';
-const HERO_KEYWORDS = 'Mutual Argentina, Mutual en Rosario, servicios mutuales, ayuda económica mutual, aceleradora mutual, networking empresarial Rosario, mutual para emprendedores';
-const CANONICAL_URL = 'https://amesmutual.com/mutual-argentina';
 
 const socialAvatars = [
     { id: 'maria', src: avatars.maria, alt: 'Emprendedora de AMES' },
@@ -29,50 +24,8 @@ const mobileStats = [
 
 const Hero = () => {
     const prefersReducedMotion = useReducedMotion();
+    const navigate = useNavigate();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-    useEffect(() => {
-        const setMetaByName = (name: string, content: string) => {
-            let tag = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-            if (!tag) {
-                tag = document.createElement('meta');
-                tag.setAttribute('name', name);
-                document.head.appendChild(tag);
-            }
-            tag.setAttribute('content', content);
-        };
-
-        const setMetaByProperty = (property: string, content: string) => {
-            let tag = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
-            if (!tag) {
-                tag = document.createElement('meta');
-                tag.setAttribute('property', property);
-                document.head.appendChild(tag);
-            }
-            tag.setAttribute('content', content);
-        };
-
-        let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-        if (!canonical) {
-            canonical = document.createElement('link');
-            canonical.setAttribute('rel', 'canonical');
-            document.head.appendChild(canonical);
-        }
-        canonical.setAttribute('href', CANONICAL_URL);
-
-        document.title = HERO_TITLE;
-        setMetaByName('description', HERO_DESCRIPTION);
-        setMetaByName('keywords', HERO_KEYWORDS);
-        setMetaByName('robots', 'index, follow');
-        setMetaByName('twitter:card', 'summary');
-        setMetaByName('twitter:title', HERO_TITLE);
-        setMetaByName('twitter:description', HERO_DESCRIPTION);
-        setMetaByProperty('og:type', 'website');
-        setMetaByProperty('og:locale', 'es_AR');
-        setMetaByProperty('og:title', HERO_TITLE);
-        setMetaByProperty('og:description', HERO_DESCRIPTION);
-        setMetaByProperty('og:url', CANONICAL_URL);
-    }, []);
 
     return (
         <section
@@ -148,15 +101,16 @@ const Hero = () => {
                                 transition={{ duration: 0.65, delay: 0.58 }}
                                 className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start"
                             >
-                                <motion.a
+                                <motion.div
                                     whileHover={{ scale: 1.04, y: -3, boxShadow: '0 18px 44px rgba(45,100,223,0.4)' }}
                                     whileTap={{ scale: 0.98 }}
-                                    href="/servicios"
-                                    className="relative inline-flex items-center justify-center gap-2 px-7 lg:px-8 py-3 lg:py-3.5 rounded-full font-bold text-base lg:text-lg text-white overflow-hidden"
+                                    className="relative inline-flex items-center justify-center gap-2 px-7 lg:px-8 py-3 lg:py-3.5 rounded-full font-bold text-base lg:text-lg text-white overflow-hidden cursor-pointer"
                                     style={{
                                         background: 'linear-gradient(135deg, #2d64df 0%, #7c3aed 100%)',
                                         boxShadow: '0 10px 30px rgba(45,100,223,0.3)',
                                     }}
+                                    onClick={() => navigate('/servicios')}
+                                    role="button"
                                     aria-label="Conocer servicios de la mutual"
                                 >
                                     <motion.span
@@ -176,7 +130,7 @@ const Hero = () => {
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </motion.svg>
-                                </motion.a>
+                                </motion.div>
 
                                 <motion.a
                                     whileHover={{ scale: 1.04, y: -3 }}

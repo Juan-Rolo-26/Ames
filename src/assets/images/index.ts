@@ -15,15 +15,14 @@ import diegoImg from './Diego.png';
 import rocioImg from './Rocio.jpeg';
 import academiaHomeImg from './academia express.jpeg';
 import academiaDetalleImg from './academia express2.jpeg';
-import networkingHomeImg from './networking y comunidad.jpeg';
-import networkingDetalleImg from './networking y comunidad (2).jpeg';
-import padrinoHomeImg from './empresas padrino.jpeg';
-import padrinoDetalleImg from './empresas padrino 2.jpeg';
 import aceleradoraImpactoImg from '../nuevas imageenes/aceleradoraimpacto.jpeg';
-import ayudaEconomicaImg from '../nuevas imageenes/ayudaeconoomica.jpeg';
 import caminoEmprendedoresImg from '../nuevas imageenes/caminoemprendedores.jpeg';
 import consultoriaEstrategicaImg from '../nuevas imageenes/consultoriaestrategica.jpeg';
+import empresasPadrinoImg from '../nuevas imageenes/empresaspadrino.jpeg';
+import empresasPadrinoDosImg from '../nuevas imageenes/empresaspadrino2.jpeg';
+import networkingYComunidadImg from '../nuevas imageenes/networkingycomunidad.jpeg';
 import serSocioImg from '../nuevas imageenes/sersocio.jpeg';
+import unaMutualQueTransformaImg from '../nuevas imageenes/unamutualquetransforma.jpeg';
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
 export const hero = {
@@ -38,9 +37,9 @@ export const community = {
     /** Grupo de emprendedores en reunión */
     grupo: caminoEmprendedoresImg,
     /** Networking y colaboración (Home) */
-    networkingHome: networkingHomeImg,
+    networkingHome: networkingYComunidadImg,
     /** Networking y colaboración (Detalle) */
-    networkingDetalle: networkingDetalleImg,
+    networkingDetalle: networkingYComunidadImg,
     /** Imagen para bloque Ser socio */
     networking: serSocioImg,
     /** Evento comunitario */
@@ -64,7 +63,7 @@ export const services = {
     /** Escuela / capacitación (compatibilidad) */
     escuela: academiaHomeImg,
     /** Financiamiento / ayuda económica */
-    financiamiento: ayudaEconomicaImg,
+    financiamiento: empresasPadrinoImg,
     /** Aceleradora */
     aceleradora: aceleradoraImpactoImg,
 };
@@ -76,7 +75,7 @@ export const about = {
     /** Rosario ciudad */
     rosario: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
     /** Fundadores charlando */
-    fundadores: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80',
+    fundadores: unaMutualQueTransformaImg,
 };
 
 // ── Testimonios ───────────────────────────────────────────────────────────────
@@ -94,11 +93,11 @@ export const padrinos = {
     /** Oficina corporativa */
     oficina: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1000&q=80',
     /** Handshake / alianza (Home) */
-    alianzaHome: padrinoHomeImg,
+    alianzaHome: empresasPadrinoDosImg,
     /** Handshake / alianza (Detalle) */
-    alianzaDetalle: padrinoDetalleImg,
+    alianzaDetalle: empresasPadrinoDosImg,
     /** Handshake / alianza (compatibilidad) */
-    alianza: padrinoHomeImg,
+    alianza: empresasPadrinoDosImg,
 };
 
 // ── Avatares (Hero) ──────────────────────────────────────────────────────────

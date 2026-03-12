@@ -5,17 +5,26 @@
 - `npm install`
 - `npm run dev`
 
-## Deploy en GitHub Pages
+## Deploy en amesmutual.com
 
-Este repo ya tiene workflow en [`.github/workflows/deploy-pages.yml`](/home/juampi26/Ames/.github/workflows/deploy-pages.yml) para compilar y publicar.
+Este repo ya tiene workflow en [`.github/workflows/deploy-pages.yml`](/home/juampi26/Ames/.github/workflows/deploy-pages.yml) para compilar y publicar en GitHub Pages con dominio custom.
+
+Archivos incluidos para producción:
+
+- `public/CNAME` con `amesmutual.com`
+- `public/robots.txt`
+- `public/sitemap.xml`
+- `public/.htaccess` para hosting Apache/cPanel
+- `public/_redirects` para fallback SPA en Netlify
 
 Configuración obligatoria en GitHub:
 
 1. Ir a `Settings > Pages`.
 2. En `Source`, seleccionar `GitHub Actions`.
-3. Hacer push a `main`.
+3. En `Custom domain`, configurar `amesmutual.com`.
+4. Hacer push a `main`.
 
-Si `Source` queda en `Deploy from a branch`, GitHub sirve el `index.html` de desarrollo (`/src/main.jsx`) y la web queda en blanco.
+La app está configurada para servir desde la raíz `/` del dominio, no desde una subcarpeta.
 
 ## Build de producción
 

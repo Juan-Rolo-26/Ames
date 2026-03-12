@@ -57,8 +57,8 @@ const Navbar = () => {
     const navLinks: NavLink[] = [
         {
             name: "INICIO",
-            path: "/mutual-argentina",
-            action: () => handleNavClick("/mutual-argentina"),
+            path: "/",
+            action: () => handleNavClick("/"),
         },
         {
             name: "SERVICIOS",
@@ -134,7 +134,7 @@ const Navbar = () => {
                     initial="initial"
                     whileHover="hover"
                     style={{ cursor: "pointer", display: "flex", alignItems: "center", flexShrink: 0 }}
-                    onClick={() => handleNavClick("/mutual-argentina")}
+                    onClick={() => handleNavClick("/")}
                 >
                     <img
                         src={brand.logoUrl}

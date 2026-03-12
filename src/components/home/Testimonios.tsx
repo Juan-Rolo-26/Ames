@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { testimonials } from '../../assets/images';
 
 const testimoniosData = [
@@ -24,6 +25,8 @@ const testimoniosData = [
 ];
 
 const Testimonios = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="py-16 lg:py-28 bg-gray-50 border-t border-gray-100">
             <div className="w-full px-5 sm:px-8 lg:px-20">
@@ -102,15 +105,16 @@ const Testimonios = () => {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <motion.a
-                        href={`${import.meta.env.BASE_URL}casos`}
+                    <motion.div
+                        onClick={() => navigate('/casos')}
+                        role="button"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center gap-2 bg-secondary text-white font-bold text-base px-7 py-3 rounded-full shadow-lg hover:bg-primary transition-colors"
+                        className="inline-flex items-center gap-2 bg-secondary text-white font-bold text-base px-7 py-3 rounded-full shadow-lg hover:bg-primary transition-colors cursor-pointer"
                     >
                         Ver más casos de éxito
                         <span>→</span>
-                    </motion.a>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -255,40 +255,61 @@ const NosotrosPage = () => {
                         </div>
 
                         <div className="space-y-12 md:space-y-0">
-                            {hitos.map((hito, i) => (
-                                <motion.div
-                                    key={i}
-                                    {...(i % 2 === 0 ? fadeLeft(i * 0.15) : fadeRight(i * 0.15))}
-                                    className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} mb-16`}
-                                >
-                                    {/* Contenido */}
-                                    <div className={`w-full md:w-5/12 ${i % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                                        <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-secondary/30 transition-all group`}>
-                                            <span className="text-secondary font-heading font-black text-4xl block mb-2">{hito.año}</span>
-                                            <h3 className="text-white font-heading font-bold text-xl mb-3">{hito.titulo}</h3>
-                                            <p className="text-gray-400 text-sm leading-relaxed">{hito.desc}</p>
-                                            {hito.items && (
-                                                <ul className={`mt-4 space-y-2 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                                                    {hito.items.map((item, j) => (
-                                                        <li key={j} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2">
-                                                            <span className="text-secondary mt-1 shrink-0">▸</span>
-                                                            <span>{item}</span>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
+                            {hitos.map((hito, i) => {
+                                const isCurrent = hito.año === 'Hoy';
+
+                                return (
+                                    <motion.div
+                                        key={i}
+                                        {...(i % 2 === 0 ? fadeLeft(i * 0.15) : fadeRight(i * 0.15))}
+                                        className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} mb-16`}
+                                    >
+                                        {/* Contenido */}
+                                        <div
+                                            className={`w-full md:w-5/12 ${
+                                                isCurrent
+                                                    ? 'text-center md:pr-12'
+                                                    : i % 2 === 0
+                                                      ? 'md:text-right md:pr-12'
+                                                      : 'md:text-left md:pl-12'
+                                            }`}
+                                        >
+                                            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-secondary/30 transition-all group">
+                                                <span className="text-secondary font-heading font-black text-4xl block mb-2">{hito.año}</span>
+                                                <h3 className="text-white font-heading font-bold text-xl mb-3">{hito.titulo}</h3>
+                                                <p className={`text-gray-400 text-sm leading-relaxed ${isCurrent ? 'mx-auto' : ''}`}>{hito.desc}</p>
+                                                {hito.items && (
+                                                    <ul
+                                                        className={`mt-4 space-y-2 ${
+                                                            isCurrent ? 'text-center' : i % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                                                        }`}
+                                                    >
+                                                        {hito.items.map((item, j) => (
+                                                            <li
+                                                                key={j}
+                                                                className={`text-gray-300 text-sm leading-relaxed flex items-start gap-2 ${
+                                                                    isCurrent ? 'justify-center text-center' : ''
+                                                                }`}
+                                                            >
+                                                                <span className="text-secondary mt-1 shrink-0">▸</span>
+                                                                <span>{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    {/* Punto central */}
-                                    <div className="hidden md:flex w-2/12 items-center justify-center z-10">
-                                        <div className="w-5 h-5 rounded-full bg-secondary border-4 border-primary shadow-lg shadow-secondary/50" />
-                                    </div>
+                                        {/* Punto central */}
+                                        <div className="hidden md:flex w-2/12 items-center justify-center z-10">
+                                            <div className="w-5 h-5 rounded-full bg-secondary border-4 border-primary shadow-lg shadow-secondary/50" />
+                                        </div>
 
-                                    {/* Espacio opuesto */}
-                                    <div className="hidden md:block w-5/12" />
-                                </motion.div>
-                            ))}
+                                        {/* Espacio opuesto */}
+                                        <div className="hidden md:block w-5/12" />
+                                    </motion.div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>

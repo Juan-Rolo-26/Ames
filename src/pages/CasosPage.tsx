@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, PlayCircle, HeartHandshake } from 'lucide-react';
 
@@ -108,26 +107,6 @@ const VideoCard = ({ video, index }: { video: CasoVideo; index: number }) => (
 );
 
 const CasosPage = () => {
-    useEffect(() => {
-        const title = 'Casos de Exito en Video | Mutual AMES Rosario';
-        const description = 'Conoce casos de exito reales de emprendedores y empresas que crecieron con Mutual AMES a traves de networking, formacion, consultoria y acompanamiento.';
-
-        const setMetaByName = (name: string, content: string) => {
-            let tag = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
-            if (!tag) {
-                tag = document.createElement('meta');
-                tag.setAttribute('name', name);
-                document.head.appendChild(tag);
-            }
-            tag.setAttribute('content', content);
-        };
-
-        document.title = title;
-        setMetaByName('description', description);
-        setMetaByName('twitter:title', title);
-        setMetaByName('twitter:description', description);
-    }, []);
-
     return (
         <div className="bg-background pt-28">
             <section className="py-12 lg:py-20">

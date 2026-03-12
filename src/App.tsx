@@ -8,16 +8,20 @@ import PadrinosPage from './pages/PadrinosPage';
 import CasosPage from './pages/CasosPage';
 import TerminosPage from './pages/TerminosPage';
 import PrivacidadPage from './pages/PrivacidadPage';
+import ScrollToTop from './components/ScrollToTop';
+import RouteEffects from './components/RouteEffects';
 
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
+      <RouteEffects />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Navigate to="/mutual-argentina" replace />} />
-            <Route path="/mutual-argentina" element={<Home />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/mutual-argentina" element={<Navigate to="/" replace />} />
             <Route path="/servicios" element={<ServiciosPage />} />
             <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/padrinos" element={<PadrinosPage />} />
