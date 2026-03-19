@@ -20,14 +20,16 @@ const logoModules = import.meta.glob('../../assets/padrinos-logos/*.{png,jpg,jpe
     import: 'default',
 }) as Record<string, string>;
 
+const stripCopySuffixes = (value: string) =>
+    value
+        .replace(/\s*\(\d+\)(?=\s|$)/g, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
 const formatLogoName = (filePath: string) => {
     const fileName = filePath.split('/').pop() ?? 'Empresa Padrino';
 
-    return fileName
-        .replace(/\.[^.]+$/, '')
-        .replace(/[-_]+/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
+    return stripCopySuffixes(fileName.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '));
 };
 
 const repeatUntilMin = <T,>(items: T[], minItems: number) => {
@@ -42,18 +44,27 @@ const repeatUntilMin = <T,>(items: T[], minItems: number) => {
     return result.slice(0, Math.max(minItems, items.length));
 };
 
+const seenLogoKeys = new Set<string>();
+
 const realLogos: LogoItem[] = Object.entries(logoModules)
     .sort(([left], [right]) => left.localeCompare(right))
-    .map(([filePath, src]) => {
+    .flatMap(([filePath, src]) => {
         const name = formatLogoName(filePath);
+        const dedupeKey = name.toLowerCase();
 
-        return {
+        if (seenLogoKeys.has(dedupeKey)) {
+            return [];
+        }
+
+        seenLogoKeys.add(dedupeKey);
+
+        return [{
             kind: 'logo' as const,
             id: filePath,
             src,
             name,
             alt: `Logo de ${name}`,
-        };
+        }];
     });
 
 const placeholderLogos: LogoItem[] = Array.from({ length: 8 }, (_, index) => ({
@@ -63,7 +74,7 @@ const placeholderLogos: LogoItem[] = Array.from({ length: 8 }, (_, index) => ({
 }));
 
 const baseLogos = realLogos.length > 0 ? repeatUntilMin(realLogos, 8) : placeholderLogos;
-const marqueeLogos = [...baseLogos, ...baseLogos];
+const marqueeCopies = [0, 1] as const;
 
 const PadrinosLogosCarousel = () => {
     return (
@@ -94,25 +105,27 @@ const PadrinosLogosCarousel = () => {
 
                     <div
                         className="padrinos-marquee-track relative flex w-max items-center"
-                        style={{ ['--marquee-gap' as string]: '2.5rem' }}
+                        style={{ ['--marquee-gap' as string]: '2rem' }}
                     >
-                        {marqueeLogos.map((logo, index) => (
-                            <div
-                                key={`${logo.id}-${index}`}
-                                className="group/logo flex w-[160px] shrink-0 flex-col items-center justify-center text-center sm:w-[190px] lg:w-[220px]"
-                            >
-                                {logo.kind === 'logo' ? (
-                                    <img
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        title={logo.name}
-                                        loading="lazy"
-                                        className="max-h-20 sm:max-h-16 lg:max-h-14 w-auto max-w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
-                                    />
-                                ) : (
-                                    <Building2 className="h-8 w-8 text-primary/45 transition-colors duration-300 group-hover/logo:text-primary/70" />
-                                )}
-                            </div>
+                        {marqueeCopies.map((copyIndex) => (
+                            baseLogos.map((logo) => (
+                                <div
+                                    key={`${logo.id}-copy-${copyIndex}`}
+                                    className="group/logo flex h-[88px] w-[170px] shrink-0 items-center justify-center px-3 text-center sm:h-[104px] sm:w-[210px] lg:h-[112px] lg:w-[240px]"
+                                >
+                                    {logo.kind === 'logo' ? (
+                                        <img
+                                            src={logo.src}
+                                            alt={logo.alt}
+                                            title={logo.name}
+                                            loading="lazy"
+                                            className="max-h-full w-auto max-w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
+                                        />
+                                    ) : (
+                                        <Building2 className="h-8 w-8 text-primary/45 transition-colors duration-300 group-hover/logo:text-primary/70" />
+                                    )}
+                                </div>
+                            ))
                         ))}
                     </div>
                 </div>
