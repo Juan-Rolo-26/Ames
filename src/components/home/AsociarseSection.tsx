@@ -43,7 +43,7 @@ const AsociarseSection = () => {
                 <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 items-center">
 
                     {/* ── Columna izquierda: texto + beneficios ── */}
-                    <div className="w-full lg:w-1/2">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
                         <motion.span
                             {...fadeUp(0)}
                             className="inline-flex items-center gap-2 bg-secondary/10 text-secondary font-bold text-sm px-4 py-2 rounded-full mb-6"
@@ -68,7 +68,7 @@ const AsociarseSection = () => {
                         </motion.p>
 
                         {/* Beneficios */}
-                        <div className="space-y-5 mb-10">
+                        <div className="space-y-5 mb-10 w-full">
                             {beneficios.map((b, i) => (
                                 <motion.div
                                     key={i}
@@ -78,7 +78,7 @@ const AsociarseSection = () => {
                                     <div className="shrink-0 w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
                                         {b.icon}
                                     </div>
-                                    <div>
+                                    <div className="text-left">
                                         <p className="font-bold text-primary text-base mb-0.5">{b.titulo}</p>
                                         <p className="text-gray-500 text-sm leading-relaxed">{b.desc}</p>
                                     </div>
@@ -87,12 +87,12 @@ const AsociarseSection = () => {
                         </div>
 
                         {/* CTAs */}
-                        <motion.div {...fadeUp(0.7)} className="flex flex-wrap gap-4">
+                        <motion.div {...fadeUp(0.7)} className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center lg:justify-start w-full">
                             <a
                                 href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-secondary/30 hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300"
+                                className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-secondary/30 hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto justify-center"
                             >
                                 Quiero asociarme
                                 <ArrowRight className="w-5 h-5" />
@@ -101,7 +101,7 @@ const AsociarseSection = () => {
                                 href="https://wa.me/5493413702972?text=Hola%2C%20quiero%20saber%20c%C3%B3mo%20asociarme%20a%20AMES"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="inline-flex items-center gap-2 border-2 border-primary/20 text-primary px-8 py-4 rounded-full font-bold text-base hover:border-primary hover:-translate-y-1 transition-all duration-300"
+                                className="inline-flex items-center gap-2 border-2 border-primary/20 text-primary px-8 py-4 rounded-full font-bold text-base hover:border-primary hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto justify-center"
                             >
                                 Tengo una consulta
                             </a>

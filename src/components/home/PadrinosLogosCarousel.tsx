@@ -107,7 +107,7 @@ const PadrinosLogosCarousel = () => {
                                         alt={logo.alt}
                                         title={logo.name}
                                         loading="lazy"
-                                        className="max-h-14 w-auto max-w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
+                                        className="max-h-20 sm:max-h-16 lg:max-h-14 w-auto max-w-full object-contain opacity-75 grayscale transition-all duration-300 group-hover/logo:opacity-100 group-hover/logo:grayscale-0"
                                     />
                                 ) : (
                                     <Building2 className="h-8 w-8 text-primary/45 transition-colors duration-300 group-hover/logo:text-primary/70" />

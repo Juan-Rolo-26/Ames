@@ -67,7 +67,7 @@ const serviciosData = [
         colorBg: 'bg-secondary/10',
         colorBorder: 'border-secondary/25',
         badge: 'Sin garantías imposibles',
-        title: 'Ayuda Económica y Inversión',
+        title: 'Ayuda Económica e Inversiones',
         alt: 'Ayuda económica mutual AMES',
         desc: 'El departamento de Ayuda Económica e Inversiones está orientada a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable. Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles en la mutual. Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañamiento profesional.',
         puntos: [

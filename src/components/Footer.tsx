@@ -14,7 +14,7 @@ const footerLinks: { servicios: FooterLink[]; institucional: FooterLink[] } = {
         { label: 'Consultoría Estratégica', to: '/servicios#consultoria' },
         { label: 'Networking & Comunidad', to: '/servicios#networking' },
         { label: 'Escuela Express', to: '/servicios#escuela-express' },
-        { label: 'Ayuda Económica y Inversión', to: '/servicios#ayuda-economica' },
+        { label: 'Ayuda Económica e Inversiones', to: '/servicios#ayuda-economica' },
         { label: 'Aceleradora de Impacto', to: '/servicios#aceleradora-de-impacto' },
         { label: 'Empresas Padrino', to: '/servicios#empresas-padrinos' },
     ],
@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
 
                     {/* Columna logo + descripción + socials */}
-                    <div className="lg:col-span-4">
+                    <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
                         {/* Logo principal */}
                         <div className="mb-7">
                             <div className="flex h-[88px] w-[220px] items-center justify-center overflow-hidden sm:h-[108px] sm:w-[280px]">
@@ -63,12 +63,12 @@ const Footer = () => {
                                 />
                             </div>
                         </div>
-                        <p className="text-white/60 text-base leading-relaxed mb-8 max-w-xs">
+                        <p className="text-white/60 text-base leading-relaxed mb-8 max-w-xs text-center lg:text-left">
                             La mutual de emprendedores de Rosario. Te acompañamos con formación, comunidad, consultoría y herramientas económicas para que tu negocio crezca con orden e impacto real.
                         </p>
 
                         {/* Redes sociales */}
-                        <div className="flex items-center gap-3 mb-8">
+                        <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">
                             {socials.map(({ Icon, href, label, gradient }) => (
                                 <motion.a
                                     key={label}
@@ -93,8 +93,8 @@ const Footer = () => {
                     </div>
 
                     {/* Servicios */}
-                    <div className="lg:col-span-3">
-                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15">
+                    <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
+                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15 w-full text-center lg:text-left">
                             Servicios
                         </h3>
                         <ul className="space-y-4">
@@ -125,8 +125,8 @@ const Footer = () => {
                     </div>
 
                     {/* Institucional */}
-                    <div className="lg:col-span-2">
-                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15">
+                    <div className="lg:col-span-2 flex flex-col items-center lg:items-start">
+                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15 w-full text-center lg:text-left">
                             Institucional
                         </h3>
                         <ul className="space-y-4">
@@ -157,8 +157,8 @@ const Footer = () => {
                     </div>
 
                     {/* Contacto */}
-                    <div className="lg:col-span-3">
-                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15">
+                    <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
+                        <h3 className="text-white font-heading font-bold text-xl mb-7 pb-3 border-b border-white/15 w-full text-center lg:text-left">
                             Contacto
                         </h3>
                         <ul className="space-y-5">
@@ -218,11 +218,11 @@ const Footer = () => {
                 </div>
 
                 {/* ── Línea inferior ── */}
-                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
                     <p className="text-white/40 text-sm">
                         © {new Date().getFullYear()} Asociación Mutual AMES. Todos los derechos reservados.
                     </p>
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-6 justify-center">
                         <Link to="/terminos" className="text-white/40 hover:text-white/80 transition-colors text-sm font-medium">
                             Términos y Condiciones
                         </Link>

@@ -16,7 +16,7 @@ const serviciosSeo = [
     {
         id: 'ayuda-economica',
         icon: <Building2 className="w-6 h-6" />,
-        titulo: 'Ayuda Económica y Inversión',
+        titulo: 'Ayuda Económica e Inversiones',
         texto: 'Acceso a herramientas de ayuda económica e inversiones dentro del marco mutual, con evaluación responsable y acompañamiento real.',
         grad: 'from-primary to-secondary',
         bg: 'bg-primary/5',

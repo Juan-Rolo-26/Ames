@@ -162,7 +162,7 @@ Formamos para aplicar, no solo para aprender.`,
     {
         id: 'ayuda-economica',
         icono: <Banknote className="w-8 h-8" />,
-        titulo: 'Ayuda Económica y Inversión',
+        titulo: 'Ayuda Económica e Inversiones',
         subtitulo: 'Inversión y financiamiento solidario, humano y accesible',
         imagen: services.financiamiento,
         colorGradient: 'from-primary to-secondary',
@@ -307,7 +307,7 @@ const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed:
                     {/* Texto */}
                     <motion.div
                         {...(reversed ? fadeLeft(0.1) : fadeRight(0.1))}
-                        className={`w-full lg:w-7/12 ${reversed ? 'lg:order-1' : ''}`}
+                        className={`w-full lg:w-7/12 ${reversed ? 'lg:order-1' : ''} flex flex-col items-center lg:items-start text-center lg:text-left`}
                     >
                         <span className={`inline-flex items-center gap-2 ${servicio.colorLight} ${servicio.colorText} text-sm font-bold px-4 py-1.5 rounded-full mb-5 border ${servicio.colorBorder}`}>
                             {servicio.icono && <span className="scale-75">{servicio.icono}</span>}
@@ -321,14 +321,14 @@ const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed:
                                 <p key={i}>{parrafo}</p>
                             ))}
                         </div>
-                        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                        <div className="mt-8 flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start w-full">
                             <motion.a
                                 whileHover={{ scale: 1.05, y: -2 }}
                                 whileTap={{ scale: 0.95 }}
                                 href={whatsappLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r ${servicio.colorGradient} text-white px-8 py-4 rounded-full font-bold text-base shadow-xl transition-all`}
+                                className={`inline-flex items-center justify-center gap-2 bg-gradient-to-r ${servicio.colorGradient} text-white px-8 py-4 rounded-full font-bold text-base shadow-xl transition-all w-full sm:w-auto`}
                             >
                                 <WhatsAppIcon className="w-4 h-4" />
                                 Quiero saber más
@@ -340,7 +340,7 @@ const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed:
                                     href={TIENDUP_MEMBRESIA_URL}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`inline-flex items-center justify-center gap-2 bg-white px-8 py-4 rounded-full font-bold text-base border-2 ${servicio.colorBorder} ${servicio.colorText} shadow-md hover:shadow-lg transition-all`}
+                                    className={`inline-flex items-center justify-center gap-2 bg-white px-8 py-4 rounded-full font-bold text-base border-2 ${servicio.colorBorder} ${servicio.colorText} shadow-md hover:shadow-lg transition-all w-full sm:w-auto`}
                                 >
                                     Asociate
                                     <ArrowRight className="w-4 h-4" />
@@ -430,11 +430,13 @@ const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed:
                                     {i < servicio.proceso.length - 1 && (
                                         <div className="hidden lg:block absolute top-5 left-full w-full h-px border-t-2 border-dashed border-gray-200 z-0" style={{ width: 'calc(100% - 2rem)', left: 'calc(100% - 1rem)' }} />
                                     )}
-                                    <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${servicio.colorGradient} text-white flex items-center justify-center font-heading font-black text-sm mb-3 shadow-md group-hover:scale-110 transition-transform`}>
-                                        {paso.paso}
+                                    <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                                        <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${servicio.colorGradient} text-white flex items-center justify-center font-heading font-black text-sm mb-3 shadow-md group-hover:scale-110 transition-transform`}>
+                                            {paso.paso}
+                                        </div>
+                                        <h4 className="font-heading font-bold text-primary text-base mb-2">{paso.titulo}</h4>
+                                        <p className="text-gray-500 text-sm leading-relaxed">{paso.desc}</p>
                                     </div>
-                                    <h4 className="font-heading font-bold text-primary text-base mb-2">{paso.titulo}</h4>
-                                    <p className="text-gray-500 text-sm leading-relaxed">{paso.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -462,7 +464,7 @@ const ServiciosPage = () => {
                 <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] z-0" />
                 <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-accent/20 rounded-full blur-[80px] z-0" />
 
-                <div className="relative z-10 text-center px-10 lg:px-24 py-36 w-full">
+                <div className="relative z-10 text-center px-6 lg:px-24 py-32 w-full">
                     <motion.span
                         {...fadeUp(0.1)}
                         className="inline-block bg-secondary/20 border border-secondary/30 text-secondary text-sm font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide uppercase"
@@ -471,7 +473,7 @@ const ServiciosPage = () => {
                     </motion.span>
                     <motion.h1
                         {...fadeUp(0.2)}
-                        className="text-5xl md:text-7xl font-heading font-black text-white mb-6 leading-[1.05]"
+                        className="text-4xl md:text-7xl font-heading font-black text-white mb-6 leading-[1.05]"
                     >
                         Todo lo que necesitás<br />
                         <span className="text-secondary">para que tu proyecto despegue</span>
@@ -545,7 +547,7 @@ const ServiciosPage = () => {
                         <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
                             Con una membresía mensual accedés a consultoría estratégica, formación, networking de calidad, ayuda económica e inversiones y acompañamiento real desde el primer día.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-5 justify-center">
+                        <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
                             <motion.a
                                 whileHover={{ scale: 1.05, y: -3 }}
                                 whileTap={{ scale: 0.95 }}

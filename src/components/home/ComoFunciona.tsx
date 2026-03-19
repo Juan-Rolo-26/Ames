@@ -34,8 +34,8 @@ const ComoFunciona = () => {
                     </motion.div>
 
                     {/* Columna Derecha: Contenido y Pasos */}
-                    <div className="w-full lg:w-1/2">
-                        <div className="mb-12 text-left">
+                    <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+                        <div className="mb-12 text-center lg:text-left">
                             <motion.h2
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const ComoFunciona = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.1 }}
-                                className="text-lg text-gray-600 max-w-lg"
+                                className="text-lg text-gray-600 max-w-lg mx-auto lg:mx-0"
                             >
                                 Seguí estos 3 simples pasos para formar parte de la comunidad AMES y acelerar el crecimiento de tu empresa.
                             </motion.p>
@@ -101,7 +101,7 @@ const ComoFunciona = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.8 }}
-                            className="mt-12"
+                            className="mt-12 flex justify-center lg:justify-start"
                         >
                             <a
                                 href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"

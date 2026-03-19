@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NavLink {
     name: string;
@@ -143,17 +143,19 @@ const Navbar = () => {
                     onClick={() => handleNavClick("/")}
                 >
                     <div
+                        className="ames-logo-container"
                         style={{
                             height: scrolled ? "56px" : "72px",
                             width: scrolled ? "170px" : "220px",
                             overflow: "hidden",
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "center",
+                            justifyContent: "flex-start",
                             transition: "all 0.4s ease",
                         }}
                     >
                         <img
+                            className="ames-logo-img"
                             src={brand.logoTransparentUrl}
                             alt="Asociación Mutual AMES"
                             style={{
@@ -368,11 +370,19 @@ const Navbar = () => {
                 </div>
             </motion.nav>
 
-            {/* ── Responsive: hide/show elements ── */}
             <style>{`
         @media (max-width: 960px) {
           .ames-desktop-links  { display: none !important; }
           .ames-location-badge { display: none !important; }
+          
+          .ames-logo-container {
+             width: 140px !important;
+             height: 50px !important;
+             margin-left: -5px !important; 
+          }
+          .ames-logo-img {
+             height: 150px !important;
+          }
         }
         @media (min-width: 961px) {
           .ames-hamburger { display: none !important; }
@@ -413,138 +423,203 @@ const Navbar = () => {
                             }}
                         />
 
-                        {/* Panel lateral */}
+                        {/* Panel fullscreen */}
                         <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "spring", damping: 28, stiffness: 200 }}
+                            initial={{ opacity: 0, y: 32 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            transition={{ type: "spring", damping: 32, stiffness: 220 }}
                             style={{
                                 position: "absolute",
-                                top: 0,
-                                right: 0,
-                                width: "100%",
-                                maxWidth: "580px",
-                                height: "100%",
-                                background: "#060c1a",
-                                padding: "clamp(28px,5vw,56px) clamp(24px,6vw,72px)",
+                                inset: 0,
                                 display: "flex",
                                 flexDirection: "column",
-                                justifyContent: "space-between",
-                                borderLeft: "1px solid rgba(26,86,219,0.25)",
-                                boxShadow: "-20px 0 80px rgba(0,0,0,0.5)",
+                                alignItems: "center",
+                                justifyContent: "center",
                                 zIndex: 2,
                                 pointerEvents: "auto",
-                                overflowY: "auto",
+                                overflow: "hidden",
                             }}
                             onClick={(event) => event.stopPropagation()}
                         >
-                            {/* Cerrar */}
-                            <button
+                            {/* Orbes decorativos de fondo */}
+                            <div style={{
+                                position: "absolute", top: "-80px", left: "50%", transform: "translateX(-50%)",
+                                width: "340px", height: "340px", borderRadius: "50%",
+                                background: "radial-gradient(circle, rgba(26,86,219,0.28) 0%, transparent 70%)",
+                                filter: "blur(40px)", pointerEvents: "none",
+                            }} />
+                            <div style={{
+                                position: "absolute", bottom: "-60px", right: "-40px",
+                                width: "280px", height: "280px", borderRadius: "50%",
+                                background: "radial-gradient(circle, rgba(124,58,237,0.22) 0%, transparent 70%)",
+                                filter: "blur(40px)", pointerEvents: "none",
+                            }} />
+
+                            {/* Botón cerrar */}
+                            <motion.button
                                 onClick={() => setMenuOpen(false)}
                                 type="button"
                                 aria-label="Cerrar menú"
+                                initial={{ opacity: 0, scale: 0.7 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.15 }}
+                                whileHover={{ scale: 1.1, rotate: 90 }}
+                                whileTap={{ scale: 0.9 }}
                                 style={{
                                     position: "absolute",
-                                    top: "28px",
-                                    right: "28px",
-                                    background: "rgba(255,255,255,0.06)",
-                                    border: "1px solid rgba(255,255,255,0.12)",
-                                    borderRadius: "10px",
+                                    top: "22px",
+                                    right: "22px",
+                                    background: "rgba(255,255,255,0.08)",
+                                    border: "1px solid rgba(255,255,255,0.16)",
+                                    borderRadius: "50%",
                                     color: "#fff",
                                     cursor: "pointer",
-                                    width: "44px",
-                                    height: "44px",
+                                    width: "48px",
+                                    height: "48px",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
                                     zIndex: 3,
+                                    backdropFilter: "blur(8px)",
+                                    transition: "background 0.2s",
                                 }}
                             >
-                                <CloseIcon size={22} color="#fff" />
-                            </button>
+                                <CloseIcon size={20} color="#fff" />
+                            </motion.button>
 
-                            {/* Links */}
-                            <div style={{ marginTop: "60px" }}>
-                                {navLinks.map((link, i) => (
-                                    <motion.div
-                                        key={link.name}
-                                        initial={{ opacity: 0, x: -40 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: i * 0.09 + 0.2, ease: "easeOut" }}
-                                    >
-                                        <motion.button
-                                            onClick={link.action}
-                                            type="button"
-                                            whileHover={{ x: 18 }}
-                                            style={{
-                                                background: "none",
-                                                border: "none",
-                                                color: location.pathname === link.path ? "#60a5fa" : "#fff",
-                                                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                                                fontWeight: "700",
-                                                letterSpacing: "2px",
-                                                cursor: "pointer",
-                                                marginBottom: "12px",
-                                                textAlign: "left",
-                                                display: "block",
-                                                width: "100%",
-                                                transition: "color 0.25s",
-                                            }}
-                                            onHoverStart={(e) => { (e.currentTarget as HTMLElement).style.color = "#7C3AED"; }}
-                                            onHoverEnd={(e) => {
-                                                (e.currentTarget as HTMLElement).style.color =
-                                                    location.pathname === link.path ? "#60a5fa" : "#fff";
-                                            }}
+                            {/* Logo arriba */}
+                            <motion.div
+                                initial={{ opacity: 0, y: -16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                style={{
+                                    position: "absolute",
+                                    top: "18px",
+                                    left: "20px",
+                                    overflow: "hidden",
+                                    width: "120px",
+                                    height: "44px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "flex-start",
+                                }}
+                            >
+                                <img
+                                    src={brand.logoTransparentUrl}
+                                    alt="AMES"
+                                    style={{ height: "130px", width: "auto", filter: "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))" }}
+                                />
+                            </motion.div>
+
+                            {/* Links principales */}
+                            <nav style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px", width: "100%", padding: "0 24px" }}>
+                                {navLinks.map((link, i) => {
+                                    const isActive = location.pathname === link.path;
+                                    return (
+                                        <motion.div
+                                            key={link.name}
+                                            initial={{ opacity: 0, y: 24 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: i * 0.07 + 0.18, ease: [0.22, 1, 0.36, 1] }}
+                                            style={{ width: "100%", display: "flex", justifyContent: "center" }}
                                         >
-                                            {link.name}
-                                        </motion.button>
-                                    </motion.div>
-                                ))}
+                                            <motion.button
+                                                onClick={link.action}
+                                                type="button"
+                                                whileTap={{ scale: 0.96 }}
+                                                style={{
+                                                    background: isActive
+                                                        ? "linear-gradient(135deg, rgba(26,86,219,0.18), rgba(124,58,237,0.18))"
+                                                        : "transparent",
+                                                    border: isActive ? "1px solid rgba(96,165,250,0.25)" : "1px solid transparent",
+                                                    borderRadius: "16px",
+                                                    color: isActive ? "#60a5fa" : "rgba(255,255,255,0.88)",
+                                                    fontSize: "clamp(1.1rem, 5vw, 1.5rem)",
+                                                    fontWeight: "700",
+                                                    letterSpacing: "3px",
+                                                    cursor: "pointer",
+                                                    padding: "14px 32px",
+                                                    textAlign: "center",
+                                                    width: "100%",
+                                                    maxWidth: "340px",
+                                                    transition: "all 0.2s",
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                    gap: "10px",
+                                                }}
+                                            >
+                                                {isActive && (
+                                                    <span style={{
+                                                        width: "6px", height: "6px", borderRadius: "50%",
+                                                        background: "linear-gradient(135deg, #60a5fa, #7C3AED)",
+                                                        display: "inline-block", flexShrink: 0,
+                                                    }} />
+                                                )}
+                                                {link.name}
+                                            </motion.button>
+                                        </motion.div>
+                                    );
+                                })}
+                            </nav>
 
-                                {/* CTA mobile */}
+                            {/* CTA principal */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: navLinks.length * 0.07 + 0.28 }}
+                                style={{ marginTop: "28px", width: "100%", padding: "0 24px", maxWidth: "388px" }}
+                            >
                                 <motion.a
-                                    initial={{ opacity: 0, y: 16 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: navLinks.length * 0.09 + 0.25 }}
                                     href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
                                     target="_blank" rel="noreferrer"
                                     onClick={() => setMenuOpen(false)}
+                                    whileHover={{ scale: 1.03, y: -2 }}
+                                    whileTap={{ scale: 0.97 }}
                                     style={{
-                                        display: "inline-flex",
+                                        display: "flex",
                                         alignItems: "center",
+                                        justifyContent: "center",
                                         gap: "10px",
-                                        marginTop: "28px",
                                         background: "linear-gradient(135deg, #1A56DB, #7C3AED)",
                                         color: "#fff",
-                                        fontWeight: "700",
+                                        fontWeight: "800",
                                         fontSize: "1rem",
-                                        letterSpacing: "0.05em",
-                                        padding: "14px 32px",
-                                        borderRadius: "99px",
+                                        letterSpacing: "0.06em",
+                                        padding: "16px 32px",
+                                        borderRadius: "16px",
                                         textDecoration: "none",
-                                        boxShadow: "0 8px 28px rgba(26,86,219,0.45)",
+                                        boxShadow: "0 8px 32px rgba(26,86,219,0.50), 0 2px 8px rgba(0,0,0,0.3)",
+                                        width: "100%",
                                     }}
                                 >
                                     Sumarme ahora
                                     <ArrowRightIcon size={18} color="#fff" />
                                 </motion.a>
-                            </div>
+                            </motion.div>
 
-                            {/* Footer del panel */}
+                            {/* Footer — redes + contacto */}
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                transition={{ delay: 0.7 }}
-                            >
-                                {/* Redes */}
-                                <div style={{
+                                transition={{ delay: 0.65 }}
+                                style={{
+                                    position: "absolute",
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    padding: "20px 24px",
+                                    borderTop: "1px solid rgba(255,255,255,0.07)",
                                     display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
                                     gap: "14px",
-                                    marginBottom: "32px",
-                                    borderTop: "1px solid rgba(255,255,255,0.08)",
-                                    paddingTop: "32px",
-                                }}>
+                                    background: "rgba(0,0,0,0.15)",
+                                    backdropFilter: "blur(8px)",
+                                }}
+                            >
+                                <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
                                     {[
                                         { Icon: InstagramIcon, href: "https://www.instagram.com/mutual.ames/", color: "#E4405F" },
                                         { Icon: LinkedinIcon, href: "https://www.linkedin.com/company/mutual-ames/", color: "#0077B5" },
@@ -554,45 +629,29 @@ const Navbar = () => {
                                             key={i}
                                             href={href}
                                             target="_blank" rel="noreferrer"
-                                            whileHover={{ y: -5 }}
+                                            whileHover={{ y: -4, scale: 1.1 }}
+                                            whileTap={{ scale: 0.9 }}
                                             style={{
-                                                width: "48px",
-                                                height: "48px",
-                                                borderRadius: "50%",
-                                                background: "rgba(255,255,255,0.05)",
+                                                width: "42px",
+                                                height: "42px",
+                                                borderRadius: "12px",
+                                                background: "rgba(255,255,255,0.06)",
                                                 border: "1px solid rgba(255,255,255,0.1)",
                                                 display: "flex",
                                                 alignItems: "center",
                                                 justifyContent: "center",
-                                                transition: "background 0.3s",
                                                 cursor: "pointer",
                                             }}
-                                            onHoverStart={(e) => { (e.currentTarget as HTMLElement).style.background = color + "33"; }}
-                                            onHoverEnd={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
+                                            onHoverStart={(e) => { (e.currentTarget as HTMLElement).style.background = color + "30"; }}
+                                            onHoverEnd={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.06)"; }}
                                         >
-                                            <Icon size={20} color="#fff" />
+                                            <Icon size={18} color="#fff" />
                                         </motion.a>
                                     ))}
                                 </div>
-
-                                {/* Contacto */}
-                                <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem", marginBottom: "8px" }}>
+                                <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.78rem", letterSpacing: "0.06em", margin: 0, textAlign: "center" }}>
                                     Rosario, Santa Fe — Argentina
                                 </p>
-                                <motion.a
-                                    href="https://wa.me/5493413702972"
-                                    whileHover={{ x: 6 }}
-                                    target="_blank" rel="noreferrer"
-                                    style={{
-                                        color: "#60a5fa",
-                                        textDecoration: "none",
-                                        fontSize: "1.05rem",
-                                        fontWeight: "600",
-                                        display: "inline-block",
-                                    }}
-                                >
-                                    +54 9 341 370-2972
-                                </motion.a>
                             </motion.div>
                         </motion.div>
                     </motion.div>

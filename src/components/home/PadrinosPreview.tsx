@@ -23,7 +23,7 @@ const PadrinosPreview = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between gap-16">
 
                     {/* Columna izquierda — texto viene de la izquierda */}
-                    <div className="md:w-1/2">
+                    <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left w-full">
                         {/* Badge — viene de arriba */}
                         <motion.span
                             initial={{ opacity: 0, y: -30 }}
@@ -73,7 +73,7 @@ const PadrinosPreview = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: 0.2 }}
-                            className="flex flex-wrap gap-2 mb-7"
+                            className="flex flex-wrap gap-2 mb-7 justify-center md:justify-start"
                         >
                             {categorias.map((cat, i) => (
                                 <motion.span
