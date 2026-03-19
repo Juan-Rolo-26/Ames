@@ -25,6 +25,10 @@ import networkingYComunidadImg from '../nuevas imageenes/networkingycomunidad.jp
 import serSocioImg from '../nuevas imageenes/sersocio.jpeg';
 import unaMutualQueTransformaImg from '../nuevas imageenes/unamutualquetransforma.jpeg';
 
+import testimonio1Img from './testimonio1.png';
+import testimonio2Img from './testimonio2(1).jpg.jpeg';
+import testimonio3Img from './testimonio3.webp';
+
 // ── Hero ──────────────────────────────────────────────────────────────────────
 export const hero = {
     /** Fondo principal del hero con emprendedores */
@@ -81,12 +85,12 @@ export const about = {
 
 // ── Testimonios ───────────────────────────────────────────────────────────────
 export const testimonials = {
-    /** Emprendedora mujer */
-    carolina: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80',
-    /** Emprendedor hombre */
-    sebastian: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80',
-    /** Emprendedora gastronomía */
-    florencia: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&q=80',
+    /** Testimonio 1 - Glassé ecodiseño */
+    testimonio1: testimonio1Img,
+    /** Testimonio 2 - Rentify */
+    testimonio2: testimonio2Img,
+    /** Testimonio 3 - Admiup */
+    testimonio3: testimonio3Img,
 };
 
 // ── Padrinos / Empresas ───────────────────────────────────────────────────────

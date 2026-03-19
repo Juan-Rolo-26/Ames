@@ -112,10 +112,6 @@ const PadrinosLogosCarousel = () => {
                                 ) : (
                                     <Building2 className="h-8 w-8 text-primary/45 transition-colors duration-300 group-hover/logo:text-primary/70" />
                                 )}
-
-                                <span className="mt-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[#6b7b96] transition-colors duration-300 group-hover/logo:text-primary sm:text-xs">
-                                    {logo.name}
-                                </span>
                             </div>
                         ))}
                     </div>

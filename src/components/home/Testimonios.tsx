@@ -5,22 +5,22 @@ import { testimonials } from '../../assets/images';
 
 const testimoniosData = [
     {
-        name: 'Carolina M.',
-        empresa: 'Startup Tecnológica',
-        cita: "La consultoría y red de contactos me permitieron destrabar procesos comerciales críticos. Ames entiende al emprendedor.",
-        foto: testimonials.carolina,
+        name: 'Glassé ecodiseño',
+        empresa: '',
+        cita: "Nuestro pasaje por AMES ha sido un punto bisagra en la historia de Glassé. Nos ha permitido cuestionar y repensar todo lo construido hasta entonces, para reafirmar lo bueno y redefinir lo que teníamos en dudas. La calidad profesional que acompaña, sumado a una metodología práctica y concreta hacen la diferencia. Un gusto haber pasado por este proceso.",
+        foto: testimonials.testimonio1,
     },
     {
-        name: 'Sebastián R.',
-        empresa: 'Logística Sur',
-        cita: "Acceder a la ayuda económica para comprar nuevas unidades fue muy rápido y humano. Ahora el negocio escala en serio.",
-        foto: testimonials.sebastian,
+        name: 'Rentify',
+        empresa: '',
+        cita: "Queremos agradecer a AMES por acompañarnos en todo el proceso de nuestro proyecto. Su red de contactos nos abrió puertas concretas y las mentorías personalizadas nos ayudaron a ordenar ideas, tomar mejores decisiones y avanzar con mas claridad.",
+        foto: testimonials.testimonio2,
     },
     {
-        name: 'Florencia T.',
-        empresa: 'Gastronomía Local',
-        cita: "Participar de la Escuela Express y del Networking nos ayudó enormemente a cambiar la mentalidad hacia un modelo rentable.",
-        foto: testimonials.florencia,
+        name: 'Admiup',
+        empresa: '',
+        cita: "AMES me abrió oportunidades, encontré no solo comunidad y mentorías, sino también la gran posibilidad de presentar mi proyecto a personas que me ayudan a crecer y avanzar! Acompañándome en cada detalle para poder llegar a ese momento preparada y confiada, entendiendo mis puntos fuerte y aquellos de mejoras. Es un camino que comienza en conocerlos y sigue día a día encontrando apoyo y guía en mis decisiones",
+        foto: testimonials.testimonio3,
     }
 ];
 
@@ -93,7 +93,7 @@ const Testimonios = () => {
                                     whileHover={{ scale: 1.1, rotate: 5 }}
                                     src={testimonio.foto}
                                     alt={testimonio.name}
-                                    className="w-14 h-14 rounded-full object-cover border-4 border-secondary/20 shadow-md shrink-0"
+                                    className="w-14 h-14 rounded-full object-contain bg-white p-1 border-4 border-secondary/20 shadow-md shrink-0"
                                 />
                                 <div>
                                     <h4 className="font-bold text-primary text-base">{testimonio.name}</h4>
