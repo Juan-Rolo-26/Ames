@@ -143,7 +143,6 @@ const Confianza = () => {
           })}
 
         </div>
-
       </div>
 
     </section>

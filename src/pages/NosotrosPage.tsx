@@ -317,7 +317,7 @@ const NosotrosPage = () => {
                             Lo que nos guía
                         </span>
                         <h2 className="text-4xl md:text-5xl font-heading font-black text-primary mb-4 leading-tight">
-                            Nuestros Valores
+                            Nuestros Pilares
                         </h2>
                         <p className="text-gray-500 text-lg max-w-2xl mx-auto">
                             Estos principios definen cómo trabajamos, cómo nos relacionamos y cómo medimos el éxito.
@@ -374,7 +374,13 @@ const NosotrosPage = () => {
                                             <img
                                                 src={miembro.foto}
                                                 alt={miembro.nombre}
-                                                className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${(miembro.nombre === 'Lautaro Zulian' || miembro.nombre === 'Diego Ballerini') ? 'object-top' : ''}`}
+                                                className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${
+                                                    miembro.nombre === 'Carolina Gazquez'
+                                                        ? 'object-[center_28%]'
+                                                        : (miembro.nombre === 'Lautaro Zulian' || miembro.nombre === 'Diego Ballerini')
+                                                            ? 'object-top'
+                                                            : ''
+                                                }`}
                                             />
                                         ) : (
                                             <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">

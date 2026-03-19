@@ -75,6 +75,11 @@ const Navbar = () => {
             path: "/casos",
             action: () => handleNavClick("/casos"),
         },
+        {
+            name: "PREGUNTAS FRECUENTES",
+            path: "/preguntas-frecuentes",
+            action: () => handleNavClick("/preguntas-frecuentes"),
+        },
     ];
 
     const getRouteName = () => {
@@ -82,6 +87,7 @@ const Navbar = () => {
         if (location.pathname.includes("/padrinos")) return "PADRINOS";
         if (location.pathname.includes("/servicios")) return "SERVICIOS";
         if (location.pathname.includes("/casos")) return "CASOS";
+        if (location.pathname.includes("/preguntas-frecuentes")) return "FAQ";
         return "MUTUAL AMES";
     };
 
@@ -128,7 +134,7 @@ const Navbar = () => {
                         : "0 4px 24px rgba(0,0,0,0.28)",
                 }}
             >
-                {/* ── Logo (mix-blend-mode:screen elimina el fondo blanco del PNG) ── */}
+                {/* ── Logo principal ── */}
                 <motion.div
                     variants={logoVariants}
                     initial="initial"
@@ -136,17 +142,29 @@ const Navbar = () => {
                     style={{ cursor: "pointer", display: "flex", alignItems: "center", flexShrink: 0 }}
                     onClick={() => handleNavClick("/")}
                 >
-                    <img
-                        src={brand.logoUrl}
-                        alt="Asociación Mutual AMES"
+                    <div
                         style={{
-                            height: scrolled ? "38px" : "50px",
-                            width: "auto",
-                            transition: "height 0.4s ease",
-                            display: "block",
-                            mixBlendMode: "screen",
+                            height: scrolled ? "56px" : "72px",
+                            width: scrolled ? "170px" : "220px",
+                            overflow: "hidden",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            transition: "all 0.4s ease",
                         }}
-                    />
+                    >
+                        <img
+                            src={brand.logoTransparentUrl}
+                            alt="Asociación Mutual AMES"
+                            style={{
+                                height: scrolled ? "180px" : "230px",
+                                width: "auto",
+                                transition: "height 0.4s ease",
+                                display: "block",
+                                filter: "drop-shadow(0 8px 18px rgba(0,0,0,0.18))",
+                            }}
+                        />
+                    </div>
                 </motion.div>
 
                 {/* ── Desktop Nav Links (centrado absoluto sobre el nav) ── */}

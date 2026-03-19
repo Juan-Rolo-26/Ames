@@ -14,7 +14,7 @@ const footerLinks: { servicios: FooterLink[]; institucional: FooterLink[] } = {
         { label: 'Consultoría Estratégica', to: '/servicios#consultoria' },
         { label: 'Networking & Comunidad', to: '/servicios#networking' },
         { label: 'Escuela Express', to: '/servicios#escuela-express' },
-        { label: 'Ayuda Económica', to: '/servicios#ayuda-economica' },
+        { label: 'Ayuda Económica y Inversión', to: '/servicios#ayuda-economica' },
         { label: 'Aceleradora de Impacto', to: '/servicios#aceleradora-de-impacto' },
         { label: 'Empresas Padrino', to: '/servicios#empresas-padrinos' },
     ],
@@ -52,14 +52,16 @@ const Footer = () => {
 
                     {/* Columna logo + descripción + socials */}
                     <div className="lg:col-span-4">
-                        {/* Logo sin fondo blanco con mix-blend-mode */}
+                        {/* Logo principal */}
                         <div className="mb-7">
-                            <img
-                                src={brand.logoUrl}
-                                alt="Logo de Mutual AMES Rosario"
-                                className="h-16 w-auto"
-                                style={{ mixBlendMode: 'screen' }}
-                            />
+                            <div className="flex h-[88px] w-[220px] items-center justify-center overflow-hidden sm:h-[108px] sm:w-[280px]">
+                                <img
+                                    src={brand.logoTransparentUrl}
+                                    alt="Logo de Mutual AMES Rosario"
+                                    className="w-auto"
+                                    style={{ height: '290px', filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.18))' }}
+                                />
+                            </div>
                         </div>
                         <p className="text-white/60 text-base leading-relaxed mb-8 max-w-xs">
                             La mutual de emprendedores de Rosario. Te acompañamos con formación, comunidad, consultoría y herramientas económicas para que tu negocio crezca con orden e impacto real.

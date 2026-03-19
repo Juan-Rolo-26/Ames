@@ -38,6 +38,11 @@ const routeMeta: Record<string, RouteMeta> = {
         description: 'Conocé casos de exito reales de emprendedores y empresas que crecieron con Mutual AMES a traves de networking, formacion, consultoria y acompanamiento.',
         canonicalPath: '/casos',
     },
+    '/preguntas-frecuentes': {
+        title: 'Preguntas Frecuentes | Mutual AMES',
+        description: 'Respondemos las dudas más comunes sobre Mutual AMES, membresía, comunidad, sede, ayuda económica y Empresas Padrino.',
+        canonicalPath: '/preguntas-frecuentes',
+    },
     '/terminos': {
         title: 'Términos y Condiciones | Mutual AMES',
         description: 'Leé los términos y condiciones de Asociación Mutual AMES para el uso del sitio y los servicios ofrecidos a sus asociados.',

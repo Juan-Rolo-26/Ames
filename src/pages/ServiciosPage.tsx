@@ -162,8 +162,8 @@ Formamos para aplicar, no solo para aprender.`,
     {
         id: 'ayuda-economica',
         icono: <Banknote className="w-8 h-8" />,
-        titulo: 'Ayuda Económica',
-        subtitulo: 'Financiamiento solidario, humano y accesible',
+        titulo: 'Ayuda Económica y Inversión',
+        subtitulo: 'Inversión y financiamiento solidario, humano y accesible',
         imagen: services.financiamiento,
         colorGradient: 'from-primary to-secondary',
         colorLight: 'bg-secondary/10',
@@ -482,22 +482,6 @@ const ServiciosPage = () => {
                     >
                         Seis pilares diseñados para acompañarte en cada etapa del camino emprendedor: desde el diagnóstico hasta la aceleración.
                     </motion.p>
-
-                    {/* Navegación ancla a servicios */}
-                    <motion.div
-                        {...fadeUp(0.45)}
-                        className="flex flex-wrap justify-center gap-3"
-                    >
-                        {servicios.map(s => (
-                            <a
-                                key={s.id}
-                                href={`#${s.id}`}
-                                className="text-sm font-semibold text-white/70 hover:text-white border border-white/20 hover:border-white/50 px-4 py-2 rounded-full transition-all"
-                            >
-                                {s.titulo}
-                            </a>
-                        ))}
-                    </motion.div>
                 </div>
 
                 {/* Scroll indicator */}

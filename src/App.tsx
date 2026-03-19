@@ -6,6 +6,7 @@ import ServiciosPage from './pages/ServiciosPage';
 import NosotrosPage from './pages/NosotrosPage';
 import PadrinosPage from './pages/PadrinosPage';
 import CasosPage from './pages/CasosPage';
+import PreguntasFrecuentesPage from './pages/PreguntasFrecuentesPage';
 import TerminosPage from './pages/TerminosPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import ScrollToTop from './components/ScrollToTop';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/nosotros" element={<NosotrosPage />} />
             <Route path="/padrinos" element={<PadrinosPage />} />
             <Route path="/casos" element={<CasosPage />} />
+            <Route path="/preguntas-frecuentes" element={<PreguntasFrecuentesPage />} />
             <Route path="/terminos" element={<TerminosPage />} />
             <Route path="/privacidad" element={<PrivacidadPage />} />
           </Routes>

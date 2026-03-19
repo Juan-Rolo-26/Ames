@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, PlayCircle, HeartHandshake } from 'lucide-react';
+import ComoFunciona from '../components/home/ComoFunciona';
 
 interface CasoVideo {
     id: string;
@@ -109,7 +110,9 @@ const VideoCard = ({ video, index }: { video: CasoVideo; index: number }) => (
 const CasosPage = () => {
     return (
         <div className="bg-background pt-28">
-            <section className="py-12 lg:py-20">
+            <ComoFunciona />
+
+            <section className="pb-12 pt-4 lg:pb-20 lg:pt-8">
                 <div className="w-full px-5 sm:px-8 lg:px-20">
                     <motion.div
                         initial={{ opacity: 0, y: 24 }}

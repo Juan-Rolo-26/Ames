@@ -109,6 +109,16 @@
   }
 }
 
+@keyframes padrinosMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - (var(--marquee-gap, 1rem) / 2)));
+  }
+}
+
 /* ── CLASES UTILITARIAS ── */
 @layer utilities {
   .text-balance {
@@ -155,6 +165,16 @@
 
   .border-glow-anim {
     animation: borderGlow 3s ease-in-out infinite;
+  }
+
+  .padrinos-marquee-track {
+    gap: var(--marquee-gap, 1rem);
+    animation: padrinosMarquee 28s linear infinite;
+    will-change: transform;
+  }
+
+  .padrinos-marquee-track:hover {
+    animation-play-state: paused;
   }
 
   /* Hover premium en cards */

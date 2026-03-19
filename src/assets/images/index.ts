@@ -9,10 +9,11 @@
  */
 
 import logoLocal from './logo-ames.png';
-import caroImg from './caro imagen.jpeg';
-import lautiImg from './lauti imagen.jpeg';
+import logoTransparentLocal from './AMES_LOGO_FONDO_AZUL__2_-removebg-preview.png';
+import caroImg from './Caro_imagen.png';
+import lautiImg from './Lautaro_imagen.png';
 import diegoImg from './Diego.png';
-import rocioImg from './Rocio.jpeg';
+import rocioImg from './Ro_imagen.png';
 import academiaHomeImg from './academia express.jpeg';
 import academiaDetalleImg from './academia express2.jpeg';
 import aceleradoraImpactoImg from '../nuevas imageenes/aceleradoraimpacto.jpeg';
@@ -117,7 +118,11 @@ export const avatars = {
 
 // ── Logos / Marca ─────────────────────────────────────────────────────────────
 export const brand = {
-    /** Logo AMES oficial */
+    /** Logo AMES con fondo, ideal para favicon y piezas sólidas */
+    logoSolidUrl: logoLocal,
+    /** Logo AMES transparente para UI sobre fondos oscuros o claros */
+    logoTransparentUrl: logoTransparentLocal,
+    /** Compatibilidad con usos existentes */
     logoUrl: logoLocal,
 };
 
