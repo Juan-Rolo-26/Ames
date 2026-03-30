@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Users, Handshake, ArrowRight, BadgeCheck } from 'lucide-react';
 import { community } from '../../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../../utils/tiendup';
 
 const beneficios = [
     {
@@ -49,22 +50,21 @@ const AsociarseSection = () => {
                             className="inline-flex items-center gap-2 bg-secondary/10 text-secondary font-bold text-sm px-4 py-2 rounded-full mb-6"
                         >
                             <Users className="w-4 h-4" />
-                            Asociate a la Mutual
+                            Asociarte a AMES
                         </motion.span>
 
                         <motion.h2
                             {...fadeUp(0.1)}
                             className="text-4xl md:text-5xl font-heading font-black text-primary leading-tight mb-5"
                         >
-                            Ser socio de AMES es{' '}
-                            <span className="text-secondary">más que una membresía</span>
+                            Formar parte de <span className="text-secondary">AMES</span> es entrar en una comunidad que te impulsa
                         </motion.h2>
 
                         <motion.p
                             {...fadeUp(0.2)}
                             className="text-lg text-gray-600 leading-relaxed mb-10 max-w-xl"
                         >
-                            AMES es una mutual interdisciplinaria. Cuando te asociás, no sos un cliente: sos parte de una comunidad que se potencia mutuamente, con fuertes lazos colaborativos. Cada socio aporta y recibe formación, red, financiamiento y acompañamiento real, generando sinergia y valor agregado para el ecosistema emprendedor argentino.
+                            Cuando formás parte de la comunidad AMES, te potenciás con los demás miembros, generás lazos colaborativos y accedés a formación, red, financiamiento y acompañamiento real para crecer con más orden, respaldo y oportunidades concretas.
                         </motion.p>
 
                         {/* Beneficios */}
@@ -89,12 +89,12 @@ const AsociarseSection = () => {
                         {/* CTAs */}
                         <motion.div {...fadeUp(0.7)} className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center lg:justify-start w-full">
                             <a
-                                href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                href={TIENDUP_MEMBRESIA_URL}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-secondary/30 hover:shadow-secondary/50 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto justify-center"
                             >
-                                Quiero asociarme
+                                Empezá hoy
                                 <ArrowRight className="w-5 h-5" />
                             </a>
                             <a

@@ -149,7 +149,7 @@
   - Botón fijo/flotante que te permita elegir con quién hablar:
     1. "Ayuda Económica" -> Deriva a `wa.me/5493417483978?text=Hola,%20quiero%20consultar%20sobre%20Ayuda%20Econ%C3%B3mica.`
     2. "Impacto by AMES" -> Deriva a `wa.me/5493413702972?text=Hola,%20quiero%20conocer%20sobre%20asesoramiento%20e%20Impacto.`
-- **Ruteo Membresía:** En home, página de planes, y en footer, botones directos a: `https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames`.
+- **Ruteo Membresía:** En home, página de planes, y en footer, botones directos a: `https://mutualames.tiendup.com/p/membresia-mensual`.
 - **Formulario de Contacto:** Campos: `Nombre`, `Email`, `WhatsApp`, `Motivo (Servicio/Padrino/General)`, `Mensaje`. Envío directo a `aceleradoraimpactobyames@gmail.com`.
 
 ---

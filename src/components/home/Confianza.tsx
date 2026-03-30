@@ -51,7 +51,7 @@ const stats = [
     id: "padrinos",
     num: 50,
     suffix: "+",
-    label: "Empresas Padrino",
+    label: "Padrinos AMES",
     sub: "dentro del ecosistema",
     icon: Award,
     color: "#7C3AED",

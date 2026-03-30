@@ -10,6 +10,7 @@ interface NavLink {
 import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { brand } from "../assets/images";
+import { TIENDUP_MEMBRESIA_URL } from "../utils/tiendup";
 import {
     CloseIcon,
     InstagramIcon,
@@ -572,7 +573,7 @@ const Navbar = () => {
                                 style={{ marginTop: "28px", width: "100%", padding: "0 24px", maxWidth: "388px" }}
                             >
                                 <motion.a
-                                    href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                    href={TIENDUP_MEMBRESIA_URL}
                                     target="_blank" rel="noreferrer"
                                     onClick={() => setMenuOpen(false)}
                                     whileHover={{ scale: 1.03, y: -2 }}

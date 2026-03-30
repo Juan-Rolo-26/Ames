@@ -10,8 +10,8 @@ const secciones = [
         'AMES se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán publicados en este sitio web y entrarán en vigor desde su publicación. Es responsabilidad del usuario revisar periódicamente estos términos.',
     ]),
     seccion('Descripción de los Servicios', <FileText className="w-6 h-6" />, [
-        'AMES es una asociación mutual sin fines de lucro que ofrece a sus miembros: consultoría estratégica, networking y comunidad, formación a través de la Escuela Express, ayuda económica mutual, programa Aceleradora de Impacto y gestión de Empresas Padrino.',
-        'El acceso a los distintos servicios está condicionado a la vigencia de la membresía mensual contratada a través de la plataforma Tiendup. Algunos servicios específicos (como la Aceleradora de Impacto) pueden requerir un proceso adicional de postulación y selección.',
+        'AMES es una asociación mutual sin fines de lucro que ofrece a sus miembros: consultoría estratégica, networking y comunidad, formación a través de Academia Express AMES, ayuda económica mutual, programa Aceleradora de Impacto By AMES y Programa Padrinos.',
+        'El acceso a los distintos servicios está condicionado a la vigencia de la membresía mensual contratada a través de la plataforma Tiendup. Algunos servicios específicos (como la Aceleradora de Impacto By AMES) pueden requerir un proceso adicional de postulación y selección.',
         'AMES no garantiza resultados específicos de ningún tipo. Los resultados dependen del esfuerzo, dedicación y contexto particular de cada emprendedor.',
     ]),
     seccion('Membresía y Condiciones de Uso', <CheckCircle className="w-6 h-6" />, [
@@ -28,7 +28,7 @@ const secciones = [
     ]),
     seccion('Propiedad Intelectual', <FileText className="w-6 h-6" />, [
         'Todo el contenido publicado en el sitio web de AMES (textos, imágenes, logos, materiales de formación, metodologías) es propiedad exclusiva de AMES o está bajo licencia de uso. Está prohibida su reproducción total o parcial sin autorización expresa y por escrito.',
-        'Los materiales entregados en el marco de la Escuela Express y otros programas de formación son de uso personal del miembro y no pueden ser redistribuidos, vendidos o publicados sin consentimiento previo.',
+        'Los materiales entregados en el marco de Academia Express AMES y otros programas de formación son de uso personal del miembro y no pueden ser redistribuidos, vendidos o publicados sin consentimiento previo.',
     ]),
     seccion('Limitación de Responsabilidad', <XCircle className="w-6 h-6" />, [
         'AMES actúa como intermediario y facilitador entre emprendedores. No se responsabiliza por los acuerdos, contratos o transacciones que los miembros realicen entre sí o con terceros a través de la red de la mutual.',

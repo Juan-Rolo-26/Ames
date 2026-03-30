@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, ArrowRight, Star, Shield, Zap } from 'lucide-react';
+import { TIENDUP_STORE_URL } from '../../utils/tiendup';
 
 const beneficios = [
     { icon: <CheckCircle className="w-5 h-5 shrink-0" />, text: 'Acceso a red y comunidad de +500 emprendedores' },
@@ -177,7 +178,7 @@ const MembresiaPreview = () => {
                                     El costo se actualiza periódicamente. Ingresá a Tiendup para ver el precio actual y suscribirte.
                                 </motion.p>
                                 <motion.a
-                                    href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                    href={TIENDUP_STORE_URL}
                                     target="_blank"
                                     rel="noreferrer"
                                     whileHover={{ scale: 1.04, y: -3 }}

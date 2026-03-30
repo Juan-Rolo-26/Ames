@@ -1,6 +1,7 @@
 import { motion, type Easing } from 'framer-motion';
 import { Heart, Users, Zap, Target, TrendingUp, Globe, ArrowRight, CheckCircle } from 'lucide-react';
 import { about, community, avatars } from '../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../utils/tiendup';
 
 // ── Animaciones reutilizables ──────────────────────────────────────
 const ease: Easing = 'easeOut';
@@ -35,10 +36,10 @@ const equipo = [
 
 // ── Valores ────────────────────────────────────────────────────────
 const valores = [
-    { icono: <Heart className="w-7 h-7" />, titulo: 'Comunidad', desc: 'Creemos que los emprendedores que se apoyan mutuamente llegan más lejos. La red lo es todo.', color: 'from-secondary to-primary' },
+    { icono: <Heart className="w-7 h-7" />, titulo: 'Comunidad', desc: 'Creemos que los emprendedores que se apoyan mutuamente llegan más lejos. La red colaborativa es la base esencial del crecimiento.', color: 'from-secondary to-primary' },
     { icono: <Zap className="w-7 h-7" />, titulo: 'Impacto Real', desc: 'Medimos nuestro éxito en los resultados concretos de cada emprendedor. Nada de promesas vacías.', color: 'from-secondary to-accent' },
     { icono: <Globe className="w-7 h-7" />, titulo: 'Triple Impacto', desc: 'Economía, sociedad y medioambiente en equilibrio. Emprendemos con responsabilidad.', color: 'from-accent to-primary' },
-    { icono: <Users className="w-7 h-7" />, titulo: 'Accesibilidad', desc: 'La mutual elimina barreras. El acompañamiento de calidad no debe ser un privilegio de pocos.', color: 'from-primary to-secondary' },
+    { icono: <Users className="w-7 h-7" />, titulo: 'Accesibilidad', desc: 'AMES elimina barreras brindando acompañamiento de calidad a todo el sector emprendedor, uniendo fuerzas con instituciones y empresas que conocen y transitaron los mismos procesos que requiere la difícil tarea de emprender.', color: 'from-primary to-secondary' },
     { icono: <Target className="w-7 h-7" />, titulo: 'Inteligencia colaborativa', desc: 'Creemos en el valor de pensar, decidir y crecer en red, combinando miradas, experiencias y capacidades dentro de la comunidad.', color: 'from-accent to-secondary' },
     { icono: <TrendingUp className="w-7 h-7" />, titulo: 'Crecimiento Continuo', desc: 'La cultura de aprendizaje y la mejora constante son el motor de nuestra comunidad.', color: 'from-primary to-accent' },
 ];
@@ -48,7 +49,7 @@ const hitos = [
     {
         año: '2022',
         titulo: 'Nacimiento de AMES',
-        desc: 'En octubre de 2022 se funda la Asociación Mutual de Emprendedores de Santa Fe con el objetivo de crear una comunidad que acompañe el desarrollo de emprendedores y empresas emergentes, promoviendo la cooperación, el aprendizaje y el acceso a herramientas concretas para crecer. Desde su origen, AMES se planteó una misión clara: generar un espacio donde emprendedores, profesionales y empresarios puedan encontrarse, compartir experiencias y construir oportunidades de desarrollo económico y empresarial.',
+        desc: 'En octubre de 2022 nace la Asociación Mutual entre Emprendedores de Santa Fe con el objetivo de crear una comunidad que acompañe el desarrollo de emprendedores y empresas emergentes, promoviendo la cooperación, el aprendizaje y el acceso a herramientas concretas para crecer. Desde su origen, AMES se planteó una misión clara: generar un espacio donde emprendedores, profesionales y empresarios puedan encontrarse, compartir experiencias y construir oportunidades de desarrollo económico y empresarial.',
         items: null,
     },
     {
@@ -71,8 +72,8 @@ const hitos = [
     },
     {
         año: 'Hoy',
-        titulo: 'Un ecosistema en movimiento',
-        desc: 'AMES llevó adelante la Tercera Ronda de Proyectos, confirmando la evolución y madurez del ecosistema emprendedor consolidado alrededor de la mutual. Esta edición reunió a emprendedores, empresarios, profesionales y miembros de la comunidad en un espacio de intercambio donde los proyectos pudieron presentar sus propuestas, compartir su visión y generar nuevas oportunidades de crecimiento, inversión y vínculos estratégicos con padrinos empresariales.',
+        titulo: 'Bases sólidas para crecer',
+        desc: 'Hoy AMES continúa consolidando un ecosistema integral de acompañamiento para emprendedores, profesionales y empresas que buscan crecer con estructura y respaldo institucional. Integramos consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, herramientas de ayuda económica e inversiones y programas de aceleración para proyectos con potencial de expansión.',
         items: null,
     },
 ];
@@ -170,20 +171,20 @@ const NosotrosPage = () => {
                                     ¿Quiénes Somos?
                                 </span>
                                 <h2 className="text-4xl md:text-5xl font-heading font-black text-primary leading-tight mb-6">
-                                    Una mutual que transforma <span className="text-secondary">acompañamiento en crecimiento</span>
+                                    Una mutual que construye bases sólidas <span className="text-secondary">para crecer</span>
                                 </h2>
                                 <div className="space-y-4">
                                     <p className="text-lg text-gray-600 leading-relaxed font-medium">
-                                        Mutual AMES (Asociación Mutual de Emprendedores de Santa Fe) es una organización con sede en Rosario, Argentina. Desde 2022 desarrollamos un ecosistema integral de acompañamiento para emprendedores, profesionales y empresas que buscan crecer con estructura y respaldo institucional.
+                                        Mutual AMES (Asociación Mutual entre Emprendedores de Santa Fe) es una organización con sede en Rosario, Argentina. Desde 2022 desarrollamos un ecosistema integral de acompañamiento para emprendedores, profesionales y empresas que buscan crecer con estructura y respaldo institucional.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed font-bold text-primary">
-                                        En AMES no solo brindamos apoyo económico y profesional. Construimos bases sólidas para el desarrollo.
+                                        En AMES no solo brindamos apoyo económico y profesional. Construimos bases sólidas para el desarrollo económico de la región.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed">
                                         Integramos consultoría estratégica, formación práctica y académica, planificación, diseño de planes de acción, networking de calidad, herramientas de ayuda económica e inversiones y programas de aceleración para proyectos con potencial de expansión.
                                     </p>
                                     <p className="text-lg text-gray-600 leading-relaxed font-semibold italic">
-                                        Nuestro propósito es que cada persona o empresa pueda avanzar con planificación, comunidad activa y herramientas concretas para fortalecer su actividad.
+                                        Nuestro propósito es que cada persona y empresa pueda avanzar con planificación, comunidad activa y herramientas concretas para fortalecer su actividad.
                                     </p>
                                 </div>
                             </motion.div>
@@ -413,7 +414,7 @@ const NosotrosPage = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-6xl mx-auto">
                         {[
                             { num: '+500', label: 'Emprendedores', sub: 'ya forman parte de la comunidad' },
-                            { num: '+50', label: 'Empresas Padrino', sub: 'dentro del ecosistema' },
+                            { num: '+50', label: 'Padrinos AMES', sub: 'dentro del ecosistema' },
                             { num: '+100', label: 'Proyectos', sub: 'acelerados' },
                         ].map((stat, i) => (
                             <motion.div
@@ -438,16 +439,16 @@ const NosotrosPage = () => {
                             Sumate
                         </span>
                         <h2 className="text-4xl md:text-5xl font-heading font-black text-primary mb-6 leading-tight">
-                            Sé parte de la comunidad que <span className="text-secondary">transforma</span> Rosario
+                            Sé parte de la comunidad que <span className="text-secondary">transforma el mundo emprendedor</span>
                         </h2>
                         <p className="text-gray-600 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-                            Si creés en el poder del trabajo colectivo y querés llevar tu proyecto al siguiente nivel, AMES tiene un lugar para vos.
+                            Si creés en el poder del trabajo colaborativo y querés llevar tu proyecto al siguiente nivel, AMES tiene un lugar para vos.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <motion.a
                                 whileHover={{ scale: 1.05, y: -3 }}
                                 whileTap={{ scale: 0.95 }}
-                                href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                href={TIENDUP_MEMBRESIA_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl shadow-secondary/30 hover:shadow-2xl transition-all"

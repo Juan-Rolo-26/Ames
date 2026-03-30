@@ -1,13 +1,32 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 type FAQItem = {
     q: string;
-    a: string;
+    a: ReactNode;
 };
 
 const faqs: FAQItem[] = [
+    {
+        q: '¿Qué incluye mi membresía?',
+        a: (
+            <div className="space-y-4">
+                <p>
+                    Tu membresía en AMES te da acceso a herramientas concretas para formarte, ordenar tu negocio y crecer
+                    con acompañamiento real dentro de la comunidad.
+                </p>
+                <ul className="list-disc space-y-2 pl-5">
+                    <li>Acceso a la Academia de capacitación Express.</li>
+                    <li>Uso del espacio físico de AMES hasta 2 veces por mes.</li>
+                    <li>Consultorías grupales mensuales sin cargo.</li>
+                    <li>Descuentos importantes en consultorías individuales.</li>
+                    <li>Beneficios exclusivos en herramientas de inversión y financiamiento.</li>
+                    <li>Descuentos importantes y facilidad de financiamiento en el plan de Aceleración de Proyectos Impacto By AMES.</li>
+                </ul>
+            </div>
+        ),
+    },
     {
         q: '¿Qué significa ser parte de una mutual?',
         a: 'Ser parte de una mutual significa integrarse a una comunidad donde los asociados acceden a servicios y beneficios pensados para el desarrollo colectivo. Los aportes de los miembros permiten ofrecer herramientas, actividades y oportunidades en condiciones más accesibles, promoviendo un sistema basado en la colaboración y el apoyo mutuo.',
@@ -22,15 +41,15 @@ const faqs: FAQItem[] = [
     },
     {
         q: '¿Cómo funciona la Ayuda Económica?',
-        a: 'El proceso comienza con una consulta inicial, donde se analiza el perfil del solicitante y el destino del financiamiento. Luego se realiza una evaluación crediticia y se reúne la documentación necesaria para presentar la carpeta al departamento de admisión. Si la solicitud es aprobada, se coordinan las condiciones y se realiza el otorgamiento de la ayuda económica.',
+        a: 'El proceso comienza con una consulta inicial, donde se analiza el perfil del solicitante y el destino del financiamiento. Luego se realiza una evaluación crediticia y se reúne la documentación necesaria para presentar la carpeta al departamento de admisión. Si la solicitud es aprobada, se coordinan las condiciones finales y se formaliza el otorgamiento de la ayuda económica.',
     },
     {
-        q: '¿Soy empresa, cómo me sumo como padrino?',
-        a: 'Las empresas pueden integrarse a AMES a través del Programa Empresas Padrino, una iniciativa que permite vincularse con emprendedores, profesionales y proyectos en desarrollo dentro del ecosistema. Ser Empresa Padrino brinda presencia institucional, acceso a la red de miembros y la posibilidad de detectar proyectos con potencial para acompañar o generar alianzas. Para conocer las modalidades disponibles y evaluar la participación, es necesario contactar al equipo de AMES.',
+        q: '¿Cómo me sumo como Padrino?',
+        a: 'Las empresas e instituciones pueden integrarse a AMES a través del Programa Padrinos, una iniciativa que les permite vincularse con emprendedores, profesionales y proyectos en desarrollo dentro del ecosistema. Ser Padrino brinda presencia institucional, acceso a la red de miembros y la posibilidad de detectar proyectos con potencial para acompañar o generar alianzas. Para conocer las modalidades disponibles y evaluar la participación, es necesario contactar al equipo de AMES.',
     },
     {
         q: '¿Puedo unirme si no soy de Rosario?',
-        a: 'Claro. Toda la metodología de consultoría y formación de la Escuela Express funciona en formato remoto sin problema. El networking principal hoy es presencial en Rosario, pero AMES se sigue expandiendo a otras ciudades. La comunidad digital es accesible desde cualquier punto del país.',
+        a: 'Claro. Toda la metodología de consultoría y formación de Academia Express AMES funciona en formato remoto sin problema. El networking principal hoy es presencial en Rosario, pero AMES se sigue expandiendo a otras ciudades. La comunidad digital es accesible desde cualquier punto del país.',
     },
     {
         q: '¿Puedo cancelar mi membresía cuando quiera?',
@@ -46,7 +65,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 const FAQ = () => {
-    const [openIndex, setOpenIndex] = useState<number | null>(0);
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
         <section id="preguntas-frecuentes" className="bg-[#f4f7ff] py-20 lg:py-28">

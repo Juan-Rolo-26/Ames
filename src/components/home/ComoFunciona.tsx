@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { community } from '../../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../../utils/tiendup';
 
 const ComoFunciona = () => {
     return (
@@ -70,7 +71,7 @@ const ComoFunciona = () => {
 
                             {/* Pasos */}
                             {[
-                                { num: 1, title: 'Te asociás', color: 'secondary', text: 'Elegís el plan, te asociás y obtenés acceso a capacitaciones de nuestra Academia Express, ayuda económica e inversiones y además el uso de oficinas hasta 2 veces al mes para reuniones o trabajo profesional.' },
+                                { num: 1, title: 'Te asociás', color: 'secondary', text: 'Obtenés acceso a capacitaciones de nuestra Academia Express, ayuda económica e inversiones, uso de oficinas hasta 2 veces al mes para reuniones o trabajo profesional, grandes descuentos en consultorías individualizadas, programa de aceleración de proyectos y consultorías mensuales sin cargo.' },
                                 { num: 2, title: 'Diagnosticamos', color: 'accent', text: 'Accedés a la comunidad de emprendedores, profesionales y empresas, generando networking estratégico y oportunidades dentro del ecosistema.' },
                                 { num: 3, title: 'Escalás', color: 'primary', text: 'Formás parte de un entorno que impulsa el crecimiento, donde podés intercambiar experiencias, generar alianzas y potenciar tu proyecto dentro de una comunidad activa.' }
                             ].map((paso, i) => (
@@ -104,7 +105,7 @@ const ComoFunciona = () => {
                             className="mt-12 flex justify-center lg:justify-start"
                         >
                             <a
-                                href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                href={TIENDUP_MEMBRESIA_URL}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-secondary hover:-translate-y-1 transition-all shadow-xl shadow-primary/30"

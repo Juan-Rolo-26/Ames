@@ -14,13 +14,13 @@ type RouteMeta = {
 const routeMeta: Record<string, RouteMeta> = {
     '/': {
         title: 'Asociación mutual entre emprendedores de Santa Fe',
-        description: 'Somos una Mutual ubicada en Rosario, Santa Fe que construye un ecosistema de crecimiento para personas, emprendedores y empresas. Impulsamos el desarrollo con consultoría estratégica, capacitaciones, planificación, acceso a ayuda económica, aceleración de proyectos e inversiones.',
+        description: 'Dejá de emprender solo. Sumate a una comunidad de Santa Fe que te conecta con oportunidades, financiamiento y crecimiento real.',
         canonicalPath: '/',
         keywords: DEFAULT_KEYWORDS,
     },
     '/servicios': {
         title: 'Servicios para Emprendedores y Empresas | Mutual AMES',
-        description: 'Conocé los servicios de Mutual AMES: consultoría estratégica, networking, Academia Express, ayuda económica, aceleradora de impacto y Empresas Padrino.',
+        description: 'Conocé los servicios de Mutual AMES: Academia Express AMES, networking y comunidad, consultoría estratégica, ayuda económica e inversiones, Aceleradora de Impacto By AMES e Instituciones y Empresas Padrinos.',
         canonicalPath: '/servicios',
     },
     '/nosotros': {
@@ -29,8 +29,8 @@ const routeMeta: Record<string, RouteMeta> = {
         canonicalPath: '/nosotros',
     },
     '/padrinos': {
-        title: 'Empresas Padrino | Mutual AMES',
-        description: 'Sumá tu empresa al programa Empresas Padrino y conectate con el ecosistema emprendedor de AMES con impacto real, visibilidad y oportunidades.',
+        title: 'Instituciones y Empresas Padrinos | Mutual AMES',
+        description: 'Sumá tu institución o empresa al Programa Padrinos y conectate con el ecosistema emprendedor de AMES con impacto real, visibilidad y oportunidades.',
         canonicalPath: '/padrinos',
     },
     '/casos': {
@@ -40,7 +40,7 @@ const routeMeta: Record<string, RouteMeta> = {
     },
     '/preguntas-frecuentes': {
         title: 'Preguntas Frecuentes | Mutual AMES',
-        description: 'Respondemos las dudas más comunes sobre Mutual AMES, membresía, comunidad, sede, ayuda económica y Empresas Padrino.',
+        description: 'Respondemos las dudas más comunes sobre Mutual AMES, membresía, comunidad, sede, ayuda económica y Programa Padrinos.',
         canonicalPath: '/preguntas-frecuentes',
     },
     '/terminos': {

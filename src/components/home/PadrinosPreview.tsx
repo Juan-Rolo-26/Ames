@@ -33,7 +33,7 @@ const PadrinosPreview = () => {
                             className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 text-sm font-semibold px-4 py-1.5 rounded-full mb-6"
                         >
                             <Building2 className="w-4 h-4 text-accent" />
-                            Programa de Empresas Padrino
+                            Programa Padrinos
                         </motion.span>
 
                         {/* Título — viene de la izquierda con spring */}
@@ -119,7 +119,7 @@ const PadrinosPreview = () => {
                                 whileTap={{ scale: 0.95 }}
                                 className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-2xl group"
                             >
-                                Quiero ser Empresa Padrino
+                                Quiero ser Padrino AMES
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
                             </motion.a>
                         </motion.div>
@@ -173,7 +173,7 @@ const PadrinosPreview = () => {
                             className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2.5 shadow-lg border border-white/20"
                         >
                             <p className="text-primary font-black text-xl font-heading">+50</p>
-                            <p className="text-gray-600 text-xs font-semibold">Empresas Padrino</p>
+                            <p className="text-gray-600 text-xs font-semibold">Padrinos AMES</p>
                         </motion.div>
                     </div>
                 </div>

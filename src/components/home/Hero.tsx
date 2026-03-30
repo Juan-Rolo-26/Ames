@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
 import { avatars } from '../../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../../utils/tiendup';
 import MutualNetworkVisual from './MutualNetworkVisual';
 
 const socialAvatars = [
@@ -12,13 +13,13 @@ const socialAvatars = [
 ];
 
 const desktopStats = [
-    { id: 'empresas', n: '+50', l: 'Empresas Padrino', c: 'text-primary' },
+    { id: 'empresas', n: '+50', l: 'Padrinos AMES', c: 'text-primary' },
     { id: 'proyectos', n: '+100', l: 'Proyectos acelerados', c: 'text-accent' },
 ];
 
 const mobileStats = [
     { id: 'miembros', n: '+500', l: 'Emprendedores', c: 'text-secondary' },
-    { id: 'empresas', n: '+50', l: 'Empresas Padrino', c: 'text-primary' },
+    { id: 'empresas', n: '+50', l: 'Padrinos AMES', c: 'text-primary' },
     { id: 'proyectos', n: '+100', l: 'Proyectos acelerados', c: 'text-accent' },
 ];
 
@@ -86,10 +87,34 @@ const Hero = () => {
                                 </motion.span>
                             </h1>
 
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={inView ? { opacity: 1, y: 0 } : {}}
+                                transition={{ duration: 0.75, delay: 0.38 }}
+                                className="relative w-full max-w-2xl overflow-hidden rounded-[30px] border border-[#c7d8fb] bg-white px-5 py-5 shadow-[0_18px_48px_rgba(45,100,223,0.12)] md:px-7 md:py-6"
+                            >
+                                <div
+                                    aria-hidden="true"
+                                    className="absolute inset-y-0 left-0 w-2 bg-gradient-to-b from-primary via-secondary to-accent"
+                                />
+                                <div
+                                    aria-hidden="true"
+                                    className="absolute -right-10 top-0 h-28 w-28 rounded-full bg-secondary/10 blur-2xl"
+                                />
+                                <div className="relative pl-3 md:pl-4">
+                                    <p className="text-primary text-[1.28rem] md:text-[1.9rem] font-heading font-black leading-tight">
+                                        Dejá de emprender solo.
+                                    </p>
+                                    <p className="mt-3 text-secondary text-[1rem] md:text-[1.2rem] font-bold leading-relaxed">
+                                        Sumate a una comunidad que te conecta con oportunidades, financiamiento y crecimiento real.
+                                    </p>
+                                </div>
+                            </motion.div>
+
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.75, delay: 0.44 }}
+                                transition={{ duration: 0.75, delay: 0.58 }}
                                 className="text-[#5f6f88] text-[0.99rem] md:text-[1.08rem] font-medium leading-relaxed max-w-2xl"
                             >
                                 Somos una Mutual ubicada en Rosario, Santa Fe. Construimos un ecosistema de crecimiento para emprendedores, empresas y profesionales. Impulsamos el despegue y desarrollo de nuestros asociados con <strong className="text-primary font-semibold">consultoría estratégica</strong>, <strong className="text-secondary font-semibold">formación práctica y académica</strong>, <strong className="text-primary font-semibold">planificación y planes de acción</strong>, networking de calidad, acceso a ayuda económica e inversiones y <strong className="text-accent font-semibold">aceleración de proyectos</strong>.
@@ -98,20 +123,21 @@ const Hero = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 24 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.65, delay: 0.58 }}
+                                transition={{ duration: 0.65, delay: 0.72 }}
                                 className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start"
                             >
-                                <motion.div
-                                    whileHover={{ scale: 1.04, y: -3, boxShadow: '0 18px 44px rgba(45,100,223,0.4)' }}
+                                <motion.a
+                                    whileHover={{ scale: 1.04, y: -3, boxShadow: '0 18px 44px rgba(37,211,102,0.28)' }}
                                     whileTap={{ scale: 0.98 }}
+                                    href={TIENDUP_MEMBRESIA_URL}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="relative inline-flex items-center justify-center gap-2 px-7 lg:px-8 py-3 lg:py-3.5 rounded-full font-bold text-base lg:text-lg text-white overflow-hidden cursor-pointer"
                                     style={{
-                                        background: 'linear-gradient(135deg, #2d64df 0%, #7c3aed 100%)',
-                                        boxShadow: '0 10px 30px rgba(45,100,223,0.3)',
+                                        background: 'linear-gradient(135deg, #25D366 0%, #1fb955 100%)',
+                                        boxShadow: '0 10px 30px rgba(37,211,102,0.22)',
                                     }}
-                                    onClick={() => navigate('/servicios')}
-                                    role="button"
-                                    aria-label="Conocer servicios de la mutual"
+                                    aria-label="Empezá hoy y asociate a AMES"
                                 >
                                     <motion.span
                                         className="absolute inset-0 bg-white/20"
@@ -119,7 +145,7 @@ const Hero = () => {
                                         animate={prefersReducedMotion ? {} : { x: '210%' }}
                                         transition={{ repeat: Infinity, duration: 2.7, ease: 'linear', repeatDelay: 1.7 }}
                                     />
-                                    Conocé nuestros servicios
+                                    Empezá hoy
                                     <motion.svg
                                         animate={prefersReducedMotion ? {} : { x: [0, 4, 0] }}
                                         transition={{ repeat: Infinity, duration: 1.5 }}
@@ -130,28 +156,24 @@ const Hero = () => {
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </motion.svg>
-                                </motion.div>
+                                </motion.a>
 
-                                <motion.a
+                                <motion.div
                                     whileHover={{ scale: 1.04, y: -3 }}
                                     whileTap={{ scale: 0.98 }}
-                                    href="https://wa.me/5493413702972?text=Hola,%20quiero%20solicitar%20asesoramiento%20en%20Mutual%20AMES."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center gap-2 px-7 lg:px-8 py-3 lg:py-3.5 bg-white text-primary rounded-full font-bold text-base lg:text-lg border border-[#c6d6f9] shadow-[0_10px_28px_rgba(36,81,165,0.14)] hover:border-secondary transition-all"
-                                    aria-label="Solicitar asesoramiento en Mutual AMES por WhatsApp"
+                                    onClick={() => navigate('/servicios')}
+                                    role="button"
+                                    aria-label="Conocé nuestros servicios"
                                 >
-                                    <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                    Solicitar asesoramiento
-                                </motion.a>
+                                    Conocé nuestros servicios
+                                </motion.div>
                             </motion.div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 16 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                                transition={{ duration: 0.65, delay: 0.72 }}
+                                transition={{ duration: 0.65, delay: 0.84 }}
                                 className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 pt-1"
                             >
                                 <div className="flex -space-x-3">

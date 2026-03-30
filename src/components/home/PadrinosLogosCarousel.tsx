@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Building2, Sparkles } from 'lucide-react';
+import logoMagna from '../../assets/images/logomagna.jpg';
 
 type LogoItem =
     | {
@@ -44,28 +45,41 @@ const repeatUntilMin = <T,>(items: T[], minItems: number) => {
     return result.slice(0, Math.max(minItems, items.length));
 };
 
-const seenLogoKeys = new Set<string>();
+const manualLogos: Extract<LogoItem, { kind: 'logo' }>[] = [
+    {
+        kind: 'logo',
+        id: 'manual-magna',
+        src: logoMagna,
+        name: 'Magna',
+        alt: 'Logo de Magna',
+    },
+];
 
-const realLogos: LogoItem[] = Object.entries(logoModules)
-    .sort(([left], [right]) => left.localeCompare(right))
-    .flatMap(([filePath, src]) => {
-        const name = formatLogoName(filePath);
-        const dedupeKey = name.toLowerCase();
+const seenLogoKeys = new Set<string>(manualLogos.map((logo) => logo.name.toLowerCase()));
 
-        if (seenLogoKeys.has(dedupeKey)) {
-            return [];
-        }
+const realLogos: LogoItem[] = [
+    ...manualLogos,
+    ...Object.entries(logoModules)
+        .sort(([left], [right]) => left.localeCompare(right))
+        .flatMap(([filePath, src]) => {
+            const name = formatLogoName(filePath);
+            const dedupeKey = name.toLowerCase();
 
-        seenLogoKeys.add(dedupeKey);
+            if (seenLogoKeys.has(dedupeKey)) {
+                return [];
+            }
 
-        return [{
-            kind: 'logo' as const,
-            id: filePath,
-            src,
-            name,
-            alt: `Logo de ${name}`,
-        }];
-    });
+            seenLogoKeys.add(dedupeKey);
+
+            return [{
+                kind: 'logo' as const,
+                id: filePath,
+                src,
+                name,
+                alt: `Logo de ${name}`,
+            }];
+        }),
+];
 
 const placeholderLogos: LogoItem[] = Array.from({ length: 8 }, (_, index) => ({
     kind: 'placeholder' as const,
@@ -89,14 +103,11 @@ const PadrinosLogosCarousel = () => {
                 <div className="mb-8 text-center">
                     <span className="inline-flex items-center gap-2 rounded-full border border-secondary/15 bg-secondary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-secondary">
                         <Sparkles className="h-3.5 w-3.5" />
-                        Empresas Padrino
+                        Impulsan AMES
                     </span>
                     <h3 className="mx-auto mt-4 max-w-3xl text-2xl font-heading font-black leading-tight text-primary md:text-3xl">
-                        Marcas que impulsan el ecosistema AMES
+                        Empresas e instituciones que impulsan, fortalecen y jerarquizan el ecosistema AMES
                     </h3>
-                    <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base">
-                        Logos de empresas que acompañan a la comunidad y fortalecen la red de oportunidades de AMES.
-                    </p>
                 </div>
 
                 <div className="relative overflow-hidden py-4">

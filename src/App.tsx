@@ -11,6 +11,7 @@ import TerminosPage from './pages/TerminosPage';
 import PrivacidadPage from './pages/PrivacidadPage';
 import ScrollToTop from './components/ScrollToTop';
 import RouteEffects from './components/RouteEffects';
+import FloatingActions from './components/FloatingActions';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <RouteEffects />
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <FloatingActions />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

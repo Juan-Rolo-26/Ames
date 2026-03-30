@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion, type Easing } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import {
     Briefcase, Users, GraduationCap, Banknote, Rocket,
     HeartHandshake, CheckCircle, ArrowRight, Star,
     Clock, BadgeCheck, ChevronDown, PhoneCall
 } from 'lucide-react';
-import { services, community, padrinos, avatars, about } from '../assets/images';
+import { services, community, padrinos, about } from '../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../utils/tiendup';
 
 // ── Animaciones ────────────────────────────────────────────────────
 const ease: Easing = 'easeOut';
@@ -47,8 +47,13 @@ interface Servicio {
     proceso: Paso[];
 }
 
-const TIENDUP_MEMBRESIA_URL = 'https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames';
-const serviciosConAsociate = new Set(['consultoria', 'networking', 'escuela-express']);
+const serviciosConAsociate = new Set([
+    'escuela-express',
+    'networking',
+    'consultoria',
+    'ayuda-economica',
+    'aceleradora-de-impacto',
+]);
 
 const WhatsAppIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
     <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -59,49 +64,53 @@ const WhatsAppIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
 // ── Servicios completos ────────────────────────────────────────────
 const servicios: Servicio[] = [
     {
-        id: 'consultoria',
-        icono: <Briefcase className="w-8 h-8" />,
-        titulo: 'Consultoría Estratégica',
-        subtitulo: 'Diagnóstico real, plan de acción claro',
-        imagen: services.consultoriaDetalle,
-        colorGradient: 'from-primary to-secondary',
-        colorLight: 'bg-secondary/10',
-        colorText: 'text-secondary',
-        colorBorder: 'border-secondary/30',
-        descripcion: `El departamento de Consultoría Estratégica brinda acompañamiento profesional personalizado para emprendedores y empresas que necesitan ordenar su estructura y tomar decisiones con mayor claridad. Trabajamos sobre análisis financiero, estructura de costos, planificación impositiva, redes sociales, estrategia comercial y marketing, con un enfoque práctico y orientado a resultados.
+        id: 'escuela-express',
+        icono: <GraduationCap className="w-8 h-8" />,
+        titulo: 'Academia Express AMES',
+        subtitulo: 'INCLUIDO EN TU MEMBRESÍA MENSUAL',
+        imagen: services.escuelaDetalle,
+        colorGradient: 'from-accent to-violet-900',
+        colorLight: 'bg-accent/10',
+        colorText: 'text-accent',
+        colorBorder: 'border-accent/30',
+        descripcion: `Academia Express es el departamento de formación de AMES. Está diseñado para acompañar a emprendedores desde la etapa inicial hasta la profesionalización de su negocio. Ofrece contenido práctico y enfocado en ejecución, abordando temas clave como finanzas, costos, ventas, marketing, comunicación y bases legales, de forma clara y aplicable.
 
-Nuestro objetivo es transformar la improvisación en planificación y convertir proyectos en estructuras sostenibles.`,
+Formamos para aplicar el conocimiento en el contexto real, fortaleciendo criterios de decisión, herramientas concretas y capacidades profesionales para emprender, liderar equipos o crecer dentro de una empresa.
+
+Formá parte de Comunidad AMES y vas a recibir acceso a todas las actividades educativas y de formación profesional, incluyendo una charla mensual con consultores invitados para seguir sumando valor todos los meses.`,
         beneficios: [
-            'Sesión inicial de consultoría con especialista para analizar la situación actual del proyecto.',
-            'Análisis del modelo de negocio y estructura del emprendimiento para detectar oportunidades de mejora.',
-            'Identificación de problemas clave y áreas de mejora que estén frenando el crecimiento.',
-            'Definición de próximos pasos y recomendaciones estratégicas adaptadas a la etapa del negocio.',
-            'Orientación sobre herramientas del ecosistema AMES que puedan aportar valor al proyecto.',
+            'Programas intensivos y actividades de formación profesional diseñados para aplicar herramientas concretas de forma inmediata en tu proyecto, tu rol o tu equipo.',
+            'Módulos de formación en ventas, marketing digital, costos, finanzas para emprendedores, estrategia de negocio, gestión y marco legal.',
+            'Formadores con experiencia real en emprendimientos y gestión empresarial.',
+            'Espacios de intercambio y resolución de dudas durante cada actividad, con foco en la aplicación práctica a casos reales de emprendedores, profesionales y equipos de trabajo.',
+            'Certificado de finalización al completar la formación.',
+            'Acceso gratuito para miembros de la mutual como beneficio incluido dentro de su membresía.',
         ],
         paraCuando: [
-            'Estás estancado y no sabés cuál es el próximo paso',
-            'Querés profesionalizar tu negocio informal',
-            'Tu crecimiento se frenó y necesitás un diagnóstico externo',
-            'Vas a lanzar algo nuevo y querés validarlo antes',
+            'Querés profesionalizarte y sumar herramientas aplicables a tu trabajo o a tu rol dentro de una empresa',
+            'Querés mejorar tus ventas y no sabés cómo sistematizarlas',
+            'Tus finanzas son un caos y necesitás orden urgente',
+            'Querés atraer más clientes por redes sociales o digital',
+            'Necesitás liderar mejor tu equipo y delegar sin perder control',
         ],
         proceso: [
-            { paso: '01', titulo: 'Reservás tu sesión', desc: 'Ingresás a Tiendup y elegís la sesión de consultoría estratégica. Si sos miembro de AMES accedés a descuentos exclusivos en la reserva.' },
-            { paso: '02', titulo: 'Preparás la información de tu proyecto', desc: 'Antes de la sesión es recomendable traer información clave de tu emprendimiento (modelo de negocio, números, situación actual o desafíos) para aprovechar al máximo el tiempo de trabajo.' },
-            { paso: '03', titulo: 'Sesión estratégica de 90 minutos', desc: 'Realizás una consultoría de 90 minutos con un especialista donde se analiza tu proyecto, se detectan oportunidades de mejora y se plantean próximos pasos estratégicos.' },
-            { paso: '04', titulo: 'Seguimiento posterior', desc: 'Luego de la sesión se realiza un breve seguimiento para acompañar la implementación de las recomendaciones y resolver dudas que puedan surgir.' },
+            { paso: '01', titulo: 'Elegís la formación', desc: 'Seleccionás el programa de Academia Express que mejor se adapte a las necesidades actuales de tu emprendimiento.' },
+            { paso: '02', titulo: 'Accedés con tu membresía', desc: 'Al abonar tu membresía en AMES obtenés acceso gratuito a las formaciones de Academia Express como uno de los beneficios incluidos.' },
+            { paso: '03', titulo: 'Participás de la capacitación', desc: 'Asistís a actividades educativas y formaciones profesionales con contenidos prácticos enfocados en ventas, marketing, finanzas, gestión y desarrollo aplicado.' },
+            { paso: '04', titulo: 'Seguís formándote', desc: 'Aplicás lo aprendido en tu contexto real y continuás sumando herramientas con nuevas actividades y una charla mensual junto a consultores invitados.' },
         ],
     },
     {
         id: 'networking',
         icono: <Users className="w-8 h-8" />,
         titulo: 'Networking y Comunidad',
-        subtitulo: 'No emprendas solo. La red lo es todo.',
+        subtitulo: 'INCLUIDO EN TU MEMBRESÍA MENSUAL',
         imagen: community.networkingDetalle,
         colorGradient: 'from-accent to-blue-700',
         colorLight: 'bg-accent/10',
         colorText: 'text-accent',
         colorBorder: 'border-accent/30',
-        descripcion: `El departamento de Networking está orientada a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales.
+        descripcion: `El departamento de Networking está orientado a generar vínculos estratégicos entre emprendedores, profesionales y empresas. Organizamos encuentros presenciales en nuestras oficinas, promoviendo espacios de conexión donde surgen alianzas, colaboraciones y oportunidades comerciales.
 
 Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercambio de valor.`,
         beneficios: [
@@ -113,67 +122,67 @@ Impulsamos una comunidad activa basada en el crecimiento conjunto y el intercamb
             'Interacción directa con otros miembros para intercambiar ideas, resolver dudas y colaborar.',
         ],
         paraCuando: [
-            'Te sentís aislado en tu emprendimiento',
+            '¿Te sentís solo en tu camino emprendedor o profesional?',
             'Necesitás proveedores, clientes o socios confiables',
             'Querés aprender de quienes ya resolvieron tus mismos problemas',
             'Buscás armar alianzas estratégicas para crecer más rápido',
         ],
         proceso: [
             { paso: '01', titulo: 'Te incorporás', desc: 'Con tu membresía accedés inmediatamente a la comunidad AMES y a los espacios de vinculación dentro del ecosistema.' },
-            { paso: '02', titulo: 'Agendás tu sesión', desc: 'Una vez que abonás tu membresía en Tiendup, podés agendar directamente tu sesión dentro de los servicios disponibles.' },
+            { paso: '02', titulo: 'Agendás tu participación', desc: 'Ingresás a las actividades de networking, encuentros y espacios de intercambio que se activan desde la comunidad.' },
             { paso: '03', titulo: 'Utilizás las oficinas', desc: 'Como miembro podés usar las oficinas de AMES hasta 2 veces por mes para reuniones, trabajo profesional o encuentros con otros miembros.' },
-            { paso: '04', titulo: 'Colaborás', desc: 'Empezás a generar conversaciones, compartir recursos y crear oportunidades junto a la red de emprendedores y profesionales del ecosistema.' },
+            { paso: '04', titulo: 'Colaborás', desc: 'Empezás a generar conversaciones, compartir recursos y crear oportunidades junto a la red de emprendedores, profesionales y empresas del ecosistema.' },
         ],
     },
     {
-        id: 'escuela-express',
-        icono: <GraduationCap className="w-8 h-8" />,
-        titulo: 'Academia Express AMES',
-        subtitulo: 'Formación práctica, sin vueltas, al grano',
-        imagen: services.escuelaDetalle,
-        colorGradient: 'from-accent to-violet-900',
-        colorLight: 'bg-accent/10',
-        colorText: 'text-accent',
-        colorBorder: 'border-accent/30',
-        descripcion: `Academia Express es el departamento de formación de AMES. Está diseñado para acompañar a emprendedores desde la etapa inicial hasta la profesionalización de su negocio. Ofrece contenido práctico y enfocado en ejecución, abordando temas clave como finanzas, costos, ventas, marketing, comunicación y bases legales, de forma clara y aplicable.
+        id: 'consultoria',
+        icono: <Briefcase className="w-8 h-8" />,
+        titulo: 'Consultoría Estratégica',
+        subtitulo: 'Tu membresía incluye grandes descuentos y consultorías sin cargo',
+        imagen: services.consultoriaDetalle,
+        colorGradient: 'from-primary to-secondary',
+        colorLight: 'bg-secondary/10',
+        colorText: 'text-secondary',
+        colorBorder: 'border-secondary/30',
+        descripcion: `El departamento de Consultoría Estratégica brinda acompañamiento profesional personalizado para emprendedores y empresas que necesitan ordenar su estructura y tomar decisiones con mayor claridad. Trabajamos sobre análisis financiero, estructura de costos, planificación impositiva, redes sociales, estrategia comercial y marketing, con un enfoque práctico y orientado a resultados.
 
-Formamos para aplicar, no solo para aprender.`,
+Nuestro objetivo es transformar la improvisación en planificación y convertir proyectos en estructuras sostenibles.`,
         beneficios: [
-            'Programas intensivos de 4 a 8 horas, diseñados para aplicar herramientas concretas de forma inmediata en tu proyecto.',
-            'Módulos de formación en ventas, marketing digital, costos, finanzas para emprendedores, estrategia de negocio, gestión y marco legal.',
-            'Formadores con experiencia real en emprendimientos y gestión empresarial.',
-            'Espacios de intercambio y resolución de dudas durante la formación vía WhatsApp, enfocados en casos reales de los participantes.',
-            'Certificado de finalización al completar la formación.',
-            'Acceso gratuito para miembros de la mutual como beneficio incluido dentro de su membresía.',
+            'Consultoría grupal mensual de cortesía, con profesionales altamente calificados.',
+            'Sesión individual de consultoría con descuento AMES, a cargo de especialistas de gran trayectoria profesional, amplia experiencia en su campo y una red de contactos calificados.',
+            'Análisis del modelo de negocio y estructura del plan de negocios para detectar viabilidad comercial y financiera.',
+            'Identificación de problemas clave y áreas de mejora que estén frenando el crecimiento.',
+            'Definición de próximos pasos y recomendaciones estratégicas adaptadas a la etapa del negocio.',
+            'Introducción al ecosistema AMES, con herramientas calificadas y aporte de valor profesional y personal.',
         ],
         paraCuando: [
-            'Querés mejorar tus ventas y no sabés cómo sistematizarlas',
-            'Tus finanzas son un caos y necesitás orden urgente',
-            'Querés atraer más clientes por redes sociales o digital',
-            'Necesitás liderar mejor tu equipo y delegar sin perder control',
+            'Estás estancado y no sabés cuál es el próximo paso',
+            'Querés profesionalizar tu negocio o tu estructura comercial',
+            'Tu crecimiento se frenó y necesitás un diagnóstico externo',
+            'Vas a lanzar algo nuevo y querés validarlo antes',
         ],
         proceso: [
-            { paso: '01', titulo: 'Elegís la formación', desc: 'Seleccionás el programa de Academia Express que mejor se adapte a las necesidades actuales de tu emprendimiento.' },
-            { paso: '02', titulo: 'Accedés con tu membresía', desc: 'Al abonar tu membresía en AMES obtenés acceso gratuito a las formaciones de Academia Express como uno de los beneficios incluidos.' },
-            { paso: '03', titulo: 'Participás de la capacitación', desc: 'Asistís a la formación intensiva de 4 a 8 horas con contenidos prácticos enfocados en ventas, marketing, finanzas y gestión para emprendedores.' },
-            { paso: '04', titulo: 'Aplicás lo aprendido', desc: 'Finalizás la formación con herramientas concretas para implementar en tu proyecto y recibís tu certificado de finalización.' },
+            { paso: '01', titulo: 'Participás de la consultoría grupal', desc: 'Cada mes accedés sin cargo a un espacio grupal con profesionales de AMES para ordenar dudas, destrabar decisiones y detectar oportunidades de mejora.' },
+            { paso: '02', titulo: 'Elegís el acompañamiento individual', desc: 'Si necesitás profundizar, podés reservar una sesión individual con descuento AMES junto al especialista más alineado a tu necesidad.' },
+            { paso: '03', titulo: 'Trabajás sobre tu caso', desc: 'Analizamos tu modelo de negocio, la viabilidad comercial y financiera, detectamos puntos críticos y definimos próximos pasos concretos.' },
+            { paso: '04', titulo: 'Seguimiento profesional', desc: 'Luego de la sesión se realiza un seguimiento profesional para acompañar la implementación de las recomendaciones y resolver dudas que puedan surgir.' },
         ],
     },
     {
         id: 'ayuda-economica',
         icono: <Banknote className="w-8 h-8" />,
         titulo: 'Ayuda Económica e Inversiones',
-        subtitulo: 'Inversión y financiamiento solidario, humano y accesible',
+        subtitulo: 'Accedé a beneficios exclusivos con tu membresía',
         imagen: services.financiamiento,
         colorGradient: 'from-primary to-secondary',
         colorLight: 'bg-secondary/10',
         colorText: 'text-secondary',
         colorBorder: 'border-secondary/30',
-        descripcion: `El departamento de Ayuda Económica e Inversiones está orientada a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable.
+        descripcion: `El departamento de Ayuda Económica e Inversiones está orientado a acompañar a emprendedores, trabajadores, profesionales y empresas que requieran respaldo financiero dentro de un marco institucional y responsable.
 
-Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles en la mutual, analizando cada situación de manera individual. El objetivo es facilitar alternativas acordes a cada perfil, promoviendo decisiones planificadas y sostenibles.
+Brindamos evaluación personalizada y orientación sobre las herramientas económicas disponibles, analizando cada situación de manera individual. El objetivo es facilitar alternativas acordes a cada perfil, promoviendo decisiones planificadas y sostenibles.
 
-En cuanto al área de Inversiones, ofrecemos información y asesoramiento sobre las opciones disponibles dentro del ámbito mutual, priorizando la transparencia, el análisis prudente y la adecuada comprensión de cada instrumento antes de su eventual adhesión.
+En el área de Inversiones, ofrecemos información y asesoramiento sobre las opciones disponibles, priorizando la transparencia, el análisis prudente y la adecuada comprensión de cada instrumento.
 
 Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañamiento profesional, buscando que cada decisión financiera esté alineada con los objetivos y posibilidades reales de cada persona o empresa.`,
         beneficios: [
@@ -182,87 +191,88 @@ Nuestro enfoque se basa en la responsabilidad, la planificación y el acompañam
             'Montos de financiamiento sujetos a evaluación según el proyecto, actividad y capacidad de pago.',
             'Condiciones y plazos definidos según el tipo de ayuda económica solicitada.',
             'Proceso de análisis y acompañamiento para orientar el uso del capital dentro del proyecto.',
-            'Acceso exclusivo para miembros de la mutual que cumplan con los requisitos de evaluación.',
+            'Beneficios exclusivos para miembros de la mutual que cumplan con los requisitos de evaluación.',
         ],
         paraCuando: [
             'Necesitás capital de trabajo para comprar mercadería o insumos',
             'Querés adquirir equipamiento para escalar tu producción',
             'Tenés una oportunidad de negocio que no podés perder por falta de cash',
-            'Necesitás cubrir un bache de liquidez sin recurrir al sistema bancario',
+            'Necesitás cubrir un bache de liquidez',
+            'Tenés disponibilidades ociosas y querés convertirlas en inversión para generar rentabilidad',
         ],
         proceso: [
-            { paso: '01', titulo: 'Realizás la consulta', desc: 'Te contactás con AMES y brindás la información inicial sobre tu situación, el monto solicitado y el destino del financiamiento.' },
-            { paso: '02', titulo: 'Evaluación crediticia', desc: 'Se analiza tu perfil y la información crediticia disponible para determinar la viabilidad de avanzar con la solicitud.' },
-            { paso: '03', titulo: 'Presentación al departamento de admisión', desc: 'Una vez reunida toda la documentación necesaria, la carpeta se presenta al departamento de admisión para su evaluación.' },
-            { paso: '04', titulo: 'Aprobación y otorgamiento', desc: 'Si la solicitud es aprobada, se coordinan las condiciones finales y se realiza el otorgamiento de la ayuda económica.' },
+            { paso: '01', titulo: 'Realizás la consulta', desc: 'Te contactás con AMES y brindás la información inicial sobre tus expectativas futuras de inversión o financiamiento. Te ayudamos estratégicamente a encontrar la mejor combinación entre costo financiero y rendimiento, para generar valor en tus decisiones financieras.' },
+            { paso: '02', titulo: 'Evaluación personalizada', desc: 'Analizamos tu perfil, tus objetivos y el destino proyectado del capital para identificar la alternativa más conveniente según tu situación.' },
+            { paso: '03', titulo: 'Propuesta y documentación', desc: 'Te presentamos la alternativa sugerida, revisamos condiciones, requisitos y documentación necesaria para avanzar con claridad y respaldo.' },
+            { paso: '04', titulo: 'Aprobación y acceso', desc: 'Si la solicitud es aprobada, se coordinan las condiciones finales y se facilita el acceso de financiamiento y/o inversión.' },
         ],
     },
     {
         id: 'aceleradora-de-impacto',
         icono: <Rocket className="w-8 h-8" />,
-        titulo: 'Aceleradora de Impacto',
-        subtitulo: 'Del proyecto a la empresa rentable con propósito',
+        titulo: 'Aceleradora de Impacto By AMES',
+        subtitulo: 'Tu membresía incluye grandes descuentos y consultorías sin cargo',
         imagen: services.aceleradora,
         colorGradient: 'from-primary to-accent',
         colorLight: 'bg-primary/10',
         colorText: 'text-primary',
         colorBorder: 'border-primary/30',
-        descripcion: `La Aceleradora de Impacto AMES es nuestro programa insignia. Un proceso estructurado de 4 meses diseñado para llevar proyectos con potencial desde la etapa inicial o de tracción hacia un modelo de negocio validado, escalable y con triple impacto.
+        descripcion: `La Aceleradora de Impacto by AMES es nuestro programa insignia. Un proceso estructurado y diseñado para llevar proyectos con potencial desde la etapa inicial o de tracción hacia un modelo de negocios validado, escalable y con triple impacto.
 
-No es otro curso. Es un programa intensivo con mentores dedicados, cohortes de pares, acceso prioritario a financiamiento y conexión directa con inversores y Empresas Padrino de la red.`,
+No es otro curso. Es un programa intensivo con mentores calificados, acceso prioritario a financiamiento y conexión directa con inversores y Empresas Padrinos de la red AMES.`,
         beneficios: [
-            'Proceso estructurado de 4 meses con cohortes de hasta 15 proyectos',
-            'Mentor dedicado con experiencia en tu industria',
-            'Workshops semanales de producto, ventas, finanzas y growth',
-            'Acceso prioritario a la Ayuda Económica Mutual',
-            'Demo Day para presentar tu proyecto a inversores y padrinos',
-            'Certificado del programa Aceleradora de Impacto AMES y sello de triple impacto',
+            'Programa intensivo y estructurado de 4 meses.',
+            'Mentor dedicado con experiencia en su expertise profesional.',
+            'Acceso prioritario a herramientas de financiamiento.',
+            'Demo Day para presentar tu proyecto a inversores y Padrinos AMES.',
+            'Certificado del programa Aceleradora de Impacto AMES.',
         ],
         paraCuando: [
-            'Tenés un proyecto con 6+ meses de operación y primeras ventas',
-            'Querés escalar pero necesitás estructura y acompañamiento serio',
-            'Buscás acceder a inversores o Empresas Padrino de la red',
+            'Tenés una idea y no sabés si es viable en el plano comercial, económico o financiero',
+            'Tenés un proyecto y querés escalarlo',
+            'Querés crecer pero necesitás estructura y acompañamiento serio',
+            'Buscás acceder a inversores o Empresas Padrinos de la red AMES',
             'Tu negocio tiene potencial de triple impacto y querés desarrollarlo',
         ],
         proceso: [
-            { paso: '01', titulo: 'Postulás tu proyecto', desc: 'Completás el formulario de postulación con información de tu proyecto, métricas actuales y objetivos.' },
+            { paso: '01', titulo: 'Postulás tu proyecto', desc: 'Escribinos en “Quiero saber más” y te enviamos un formulario de postulación para completar con información de tu proyecto, equipo, métricas actuales y objetivos.' },
             { paso: '02', titulo: 'Evaluación y entrevista', desc: 'El comité de AMES evalúa tu postulación y te convoca a una entrevista de selección.' },
-            { paso: '03', titulo: 'Onboarding de cohorte', desc: 'Ingresás a la cohorte, conocés a tus compañeros y empezás a trabajar con tu mentor asignado.' },
-            { paso: '04', titulo: 'Demo Day', desc: 'Al finalizar los 4 meses, presentás tu proyecto ante un panel de inversores, empresas y medios.' },
+            { paso: '03', titulo: 'Onboarding de inducción', desc: 'Ingresás al programa de aceleración, conocés a tus mentores y empezás a trabajar en el desarrollo de tu plan de negocios.' },
+            { paso: '04', titulo: 'Demo Day', desc: 'Al finalizar los 4 meses, presentás tu proyecto ante un panel de Empresas Padrinos AMES, quienes podrán realizar inversiones, acompañamientos y contactos de valor.' },
         ],
     },
     {
         id: 'empresas-padrinos',
         icono: <HeartHandshake className="w-8 h-8" />,
-        titulo: 'Empresas Padrino',
-        subtitulo: 'Crecé posicionando tu marca en el ecosistema',
+        titulo: 'Instituciones y Empresas Padrinos',
+        subtitulo: 'Sé parte del crecimiento económico de la región',
         imagen: padrinos.alianzaDetalle,
         colorGradient: 'from-primary to-accent',
         colorLight: 'bg-accent/10',
         colorText: 'text-accent',
         colorBorder: 'border-accent/30',
-        descripcion: `El programa de Empresas Padrino es la forma en que grandes y medianas empresas de Rosario y la región conectan con el ecosistema emprendedor, generan RSE real y potencian su posicionamiento de marca.
+        descripcion: `El programa Padrinos es la forma en que Instituciones y Empresas de Santa Fe y la región conectan con el ecosistema emprendedor, generan RSE real y potencian su posicionamiento de marca.
 
-No se trata solo de poner un logo. Como Empresa Padrino, tu organización participa activamente en el crecimiento de emprendedores, accede a una red de potenciales clientes y proveedores, y construye reputación como empresa con propósito en la comunidad.`,
+Como Padrino, tu organización participa activamente en el crecimiento de emprendedores, accede a una red de potenciales partners, clientes y proveedores, y construye reputación colaborativa con propósito en el desarrollo de la comunidad AMES.`,
         beneficios: [
-            'Visibilidad de marca en todos los eventos y comunicaciones de AMES',
-            'Acceso a la red de +500 emprendedores como potenciales clientes/proveedores',
-            'Participación en paneles y eventos como referente de tu industria',
-            'Informe trimestral de impacto RSE certificado para tu empresa',
-            'Categorías Platinum, Oro, Plata y Networking con beneficios diferenciados',
-            'Posibilidad de detectar talentos emprendedores y proyectos para invertir',
+            'Visibilidad de marca en todos los eventos y comunicaciones de AMES.',
+            'Acceso a la red de +500 emprendedores como potenciales partners, clientes y proveedores.',
+            'Participación en paneles y eventos como referente de tu giro de negocios.',
+            'Capacitación y herramientas de formación para colaboradores.',
+            'Presentación de proyectos de inversión.',
+            'Acompañamiento profesional interdisciplinario para el proceso decisorio de inversión en proyectos de interés.',
         ],
         paraCuando: [
             'Querés hacer RSE real y medible, no solo formal',
-            'Buscás visibilidad entre el segmento emprendedor de Rosario',
-            'Querés conectar con proveedores y clientes innovadores de la economía real',
-            'Tu empresa cree en el impacto colectivo y quiere ser parte de algo más grande',
+            'Buscás visibilidad entre el segmento emprendedor y empresarial de la región',
+            'Querés conectar con partners, proveedores y clientes innovadores de la economía real',
+            'Tu empresa cree en el impacto colaborativo y quiere ser parte de algo más grande',
         ],
         proceso: [
-            { paso: '01', titulo: 'Elegís tu categoría', desc: 'Analizamos juntos qué categoría de patrocinio se alinea mejor con los objetivos de tu empresa.' },
+            { paso: '01', titulo: 'Elegís tu categoría', desc: 'Te contactás con el equipo AMES cliqueando “Quiero saber más”. Analizamos juntos qué categoría de patrocinio se alinea mejor con los objetivos de tu empresa.' },
             { paso: '02', titulo: 'Propuesta a medida', desc: 'Te presentamos una propuesta de valor personalizada con los beneficios específicos para tu marca.' },
             { paso: '03', titulo: 'Acuerdo de padrino', desc: 'Firmamos el convenio de colaboración y definimos juntos el calendario de participación y visibilidad.' },
-            { paso: '04', titulo: 'Activación e impacto', desc: 'Tu empresa empieza a aparecer en el ecosistema y recibís reportes periódicos de impacto.' },
+            { paso: '04', titulo: 'Activación e impacto', desc: 'Tu empresa genera visibilidad en el ecosistema AMES y recibís reportes periódicos de impacto sobre el desarrollo de proyectos y actividades a realizar.' },
         ],
     },
 ];
@@ -482,7 +492,7 @@ const ServiciosPage = () => {
                         {...fadeUp(0.35)}
                         className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10"
                     >
-                        Seis pilares diseñados para acompañarte en cada etapa del camino emprendedor: desde el diagnóstico hasta la aceleración.
+                        Servicios ordenados para mostrar primero lo que está incluido o potenciado por tu membresía, y después los programas y oportunidades para escalar con más respaldo.
                     </motion.p>
                 </div>
 
@@ -545,13 +555,13 @@ const ServiciosPage = () => {
                             <span className="text-secondary">para tu proyecto?</span>
                         </h2>
                         <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Con una membresía mensual accedés a consultoría estratégica, formación, networking de calidad, ayuda económica e inversiones y acompañamiento real desde el primer día.
+                            Con tu membresía mensual accedés primero a formación, comunidad, consultoría y beneficios estratégicos; después podés ampliar tu camino con financiamiento, aceleración y conexiones de alto valor.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
                             <motion.a
                                 whileHover={{ scale: 1.05, y: -3 }}
                                 whileTap={{ scale: 0.95 }}
-                                href="https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames"
+                                href={TIENDUP_MEMBRESIA_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-secondary text-white px-10 py-5 rounded-full font-bold text-lg shadow-2xl shadow-secondary/30 hover:shadow-secondary/50 transition-all"

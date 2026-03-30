@@ -3,26 +3,29 @@ import { Link } from 'react-router-dom';
 import {
     Instagram, Linkedin, Youtube,
     MapPin, Mail, Phone, ArrowRight,
-    HeartHandshake, ExternalLink
+    ExternalLink
 } from 'lucide-react';
 import { brand } from '../assets/images';
+import { TIENDUP_MEMBRESIA_URL } from '../utils/tiendup';
 
 interface FooterLink { label: string; to?: string; href?: string; }
 
+const CONTACT_EMAIL = 'contacto@amesmutual.com';
+
 const footerLinks: { servicios: FooterLink[]; institucional: FooterLink[] } = {
     servicios: [
+        { label: 'Academia Express AMES', to: '/servicios#escuela-express' },
+        { label: 'Networking y Comunidad', to: '/servicios#networking' },
         { label: 'Consultoría Estratégica', to: '/servicios#consultoria' },
-        { label: 'Networking & Comunidad', to: '/servicios#networking' },
-        { label: 'Escuela Express', to: '/servicios#escuela-express' },
         { label: 'Ayuda Económica e Inversiones', to: '/servicios#ayuda-economica' },
-        { label: 'Aceleradora de Impacto', to: '/servicios#aceleradora-de-impacto' },
-        { label: 'Empresas Padrino', to: '/servicios#empresas-padrinos' },
+        { label: 'Aceleradora de Impacto By AMES', to: '/servicios#aceleradora-de-impacto' },
+        { label: 'Programa Padrinos', to: '/servicios#empresas-padrinos' },
     ],
     institucional: [
         { label: '¿Quiénes Somos?', to: '/nosotros' },
-        { label: 'Empresas Padrino', to: '/padrinos' },
+        { label: 'Programa Padrinos', to: '/padrinos' },
         { label: 'Casos de Éxito', to: '/casos' },
-        { label: 'Membresía', href: 'https://aceleradoraimpactobyames.tiendup.com/p/membresia-mensual-impacto-by-ames' },
+        { label: 'Membresía', href: TIENDUP_MEMBRESIA_URL },
     ],
 };
 
@@ -57,14 +60,14 @@ const Footer = () => {
                             <div className="flex h-[88px] w-[220px] items-center justify-center overflow-hidden sm:h-[108px] sm:w-[280px]">
                                 <img
                                     src={brand.logoTransparentUrl}
-                                    alt="Logo de Mutual AMES Rosario"
+                                    alt="Logo de Mutual AMES"
                                     className="w-auto"
                                     style={{ height: '290px', filter: 'drop-shadow(0 10px 24px rgba(0,0,0,0.18))' }}
                                 />
                             </div>
                         </div>
                         <p className="text-white/60 text-base leading-relaxed mb-8 max-w-xs text-center lg:text-left">
-                            La mutual de emprendedores de Rosario. Te acompañamos con formación, comunidad, consultoría y herramientas económicas para que tu negocio crezca con orden e impacto real.
+                            Mutual de emprendedores de Santa Fe. Te acompañamos con formación, comunidad, consultoría y herramientas económicas para que tu negocio crezca con orden e impacto real.
                         </p>
 
                         {/* Redes sociales */}
@@ -83,12 +86,6 @@ const Footer = () => {
                                     <Icon size={20} />
                                 </motion.a>
                             ))}
-                        </div>
-
-                        {/* Badge mutual */}
-                        <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2.5">
-                            <HeartHandshake className="w-5 h-5 text-white/80" />
-                            <span className="text-white/70 text-sm font-semibold">Mutual sin fines de lucro</span>
                         </div>
                     </div>
 
@@ -172,14 +169,14 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="mailto:aceleradoraimpactobyames@gmail.com"
+                                    href={`mailto:${CONTACT_EMAIL}`}
                                     className="flex items-center gap-4 group"
                                 >
                                     <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0 group-hover:bg-white/20 transition-colors">
                                         <Mail size={18} className="text-white/70" />
                                     </div>
                                     <span className="text-white/60 group-hover:text-white transition-colors text-sm break-all">
-                                        aceleradoraimpactobyames@gmail.com
+                                        {CONTACT_EMAIL}
                                     </span>
                                 </a>
                             </li>

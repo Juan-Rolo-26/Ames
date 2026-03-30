@@ -18,7 +18,7 @@ const secciones = [
     ]),
     seccion('¿Para qué usamos tus datos?', <Shield className="w-6 h-6" />, [
         'Gestión de la membresía: alta, administración, facturación y comunicación sobre tu plan de socio.',
-        'Prestación de servicios: consultoría, formación, networking, Ayuda Económica y Aceleradora de Impacto.',
+        'Prestación de servicios: consultoría, formación, networking, Ayuda Económica y Aceleradora de Impacto By AMES.',
         'Comunicaciones institucionales: novedades de AMES, invitaciones a eventos, actualizaciones de beneficios.',
         'Marketing y difusión: con tu consentimiento explícito, podemos utilizar testimonios, casos de éxito o imágenes en eventos para comunicaciones públicas de AMES.',
         'Mejora de servicios: análisis interno de uso de la plataforma y satisfacción de miembros para mejorar continuamente la propuesta de valor.',

@@ -54,18 +54,18 @@ const casosVideos: CasoVideo[] = [
 const padrinosVideos: CasoVideo[] = [
     {
         id: '2YbpUbu1AT8',
-        title: 'Empresas Padrino | Testimonio 1',
-        desc: 'Video de la sección Empresas Padrino con foco en alianzas, acompañamiento e impacto dentro del ecosistema AMES.',
+        title: 'Programa Padrinos | Testimonio 1',
+        desc: 'Video del Programa Padrinos con foco en alianzas, acompañamiento e impacto dentro del ecosistema AMES.',
     },
     {
         id: '4ZV8hkBWM0E',
-        title: 'Empresas Padrino | Testimonio 2',
-        desc: 'Experiencia compartida por una Empresa Padrino vinculada a la comunidad y a los proyectos de AMES.',
+        title: 'Programa Padrinos | Testimonio 2',
+        desc: 'Experiencia compartida por una institución o empresa padrino vinculada a la comunidad y a los proyectos de AMES.',
     },
     {
         id: 'Lu-2b1xi1Lw',
-        title: 'Empresas Padrino | Testimonio 3',
-        desc: 'Caso en video sobre el valor de participar como Empresa Padrino dentro del ecosistema emprendedor de AMES.',
+        title: 'Programa Padrinos | Testimonio 3',
+        desc: 'Caso en video sobre el valor de participar como institución o empresa padrino dentro del ecosistema emprendedor de AMES.',
     },
 ];
 
@@ -123,10 +123,10 @@ const CasosPage = () => {
                     >
                         <span className="inline-flex items-center gap-2 bg-secondary/10 text-secondary border border-secondary/20 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase mb-5">
                             <PlayCircle className="w-4 h-4" />
-                            Casos en video
+                            Casos reales
                         </span>
                         <h1 className="text-4xl md:text-5xl font-heading font-black text-primary mb-5 leading-tight">
-                            Casos de <span className="text-secondary">Exito Reales</span>
+                            Testimonios de <span className="text-secondary">emprendedores</span>
                         </h1>
                         <p className="text-gray-600 text-lg leading-relaxed">
                             Mira testimonios y experiencias de emprendedores que participaron en programas, rondas de negocios y actividades de la comunidad AMES.
@@ -149,13 +149,13 @@ const CasosPage = () => {
                         >
                             <span className="inline-flex items-center gap-2 bg-accent/10 text-accent border border-accent/20 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide uppercase mb-5">
                                 <HeartHandshake className="w-4 h-4" />
-                                Empresas Padrino
+                                Programa Padrinos
                             </span>
                             <h2 className="text-3xl md:text-4xl font-heading font-black text-primary mb-5 leading-tight">
-                                Casos de <span className="text-accent">Padrinos</span>
+                                Testimonios de <span className="text-accent">padrinos</span>
                             </h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Una sección dedicada a los videos de Empresas Padrino que forman parte del ecosistema y acompañan el crecimiento de la comunidad AMES.
+                                Una sección dedicada a las Instituciones y Empresas Padrinos que forman parte del ecosistema emprendedor y acompañan el crecimiento de la comunidad AMES.
                             </p>
                         </motion.div>
 
