@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const WHATSAPP_URL = 'https://wa.me/5493413702972?text=Hola%2C%20quiero%20hablar%20con%20el%20equipo%20de%20AMES';
 
@@ -9,21 +10,56 @@ const WhatsAppIcon = ({ className = 'w-5 h-5' }: { className?: string }) => (
 );
 
 const FloatingActions = () => {
+    const [hideForFooter, setHideForFooter] = useState(false);
+
+    useEffect(() => {
+        const footer = document.querySelector('footer');
+
+        if (!footer) {
+            return;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setHideForFooter(entry.isIntersecting);
+            },
+            {
+                rootMargin: '0px 0px 80px 0px',
+                threshold: 0.05,
+            },
+        );
+
+        observer.observe(footer);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className="fixed bottom-4 right-4 z-[1200] sm:bottom-5 sm:right-5">
+        <motion.div
+            initial={false}
+            animate={{
+                opacity: hideForFooter ? 0 : 1,
+                y: hideForFooter ? 20 : 0,
+                scale: hideForFooter ? 0.94 : 1,
+            }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+            className={`fixed bottom-5 right-4 z-[1200] sm:bottom-6 sm:right-5 ${
+                hideForFooter ? 'pointer-events-none' : ''
+            }`}
+        >
             <motion.a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
                 whileHover={{ y: -2, scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 rounded-full bg-[#25D366] px-6 py-4 text-base font-bold text-white shadow-[0_16px_36px_rgba(37,211,102,0.34)] transition-colors hover:bg-[#20ba57] sm:px-7 sm:py-4 sm:text-lg"
+                className="inline-flex items-center gap-3 rounded-full border border-white/35 bg-[linear-gradient(135deg,#2fdd70_0%,#1fbe59_100%)] px-5 py-3.5 text-[15px] font-black text-white shadow-[0_18px_40px_rgba(20,168,74,0.34)] backdrop-blur-sm transition-colors hover:bg-[linear-gradient(135deg,#35e378_0%,#1aad51_100%)] sm:px-7 sm:py-4 sm:text-base"
                 aria-label="Empezá hoy por WhatsApp con AMES"
             >
                 <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
                 Empezá hoy
             </motion.a>
-        </div>
+        </motion.div>
     );
 };
 
