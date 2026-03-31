@@ -32,6 +32,7 @@ const equipo = [
     { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, iniciales: null, bio: 'Responsable del área de marketing, comunicación y desarrollo estratégico en Mutual AMES. Participa en la construcción y posicionamiento del ecosistema, integrando formación, comunidad y expansión institucional. Su enfoque está orientado a fortalecer la presencia de AMES, optimizar la propuesta de valor y conectar emprendedores con herramientas concretas para su crecimiento.' },
     { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, iniciales: null, bio: 'Especialista en marketing digital, estrategia comercial y desarrollo de negocios. Desde su rol en Mutual AMES aporta una mirada integral orientada al crecimiento de emprendedores, profesionales y empresas, trabajando en el análisis estratégico de proyectos, posicionamiento digital y optimización de ventas online. Su enfoque combina planificación, ejecución y medición de resultados, acompañando a los asociados en la construcción de estrategias concretas que fortalezcan su presencia digital, mejoren su comunicación y generen oportunidades reales de crecimiento dentro del ecosistema de AMES.' },
     { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, iniciales: null, bio: 'Especialista en análisis financiero y planificación estratégica para emprendedores y empresas. Desde su rol en Mutual AMES acompaña a los asociados en el ordenamiento de la estructura financiera de sus negocios, trabajando sobre control de costos, rentabilidad, proyecciones y definición de indicadores clave. Su enfoque está orientado a transformar los números del negocio en información clara para la toma de decisiones, optimizando la gestión operativa y fortaleciendo la planificación para lograr resultados sostenibles dentro del ecosistema de AMES.' },
+    { nombre: 'Gerónimo', rol: 'Consultor Estratégico', foto: avatars.geronimo, iniciales: null, bio: 'Especialista en estrategia comercial, desarrollo de negocios y formación de equipos de alto rendimiento. Desde su rol en Mutual AMES aporta una visión práctica orientada al crecimiento de emprendedores, profesionales y empresas, trabajando en la construcción de sistemas comerciales, liderazgo organizacional y optimización de procesos de venta. Su enfoque combina experiencia real en creación y escalamiento de empresas, metodología aplicada y acompañamiento estratégico, impulsando a los asociados en el diseño de estructuras sólidas que potencien sus resultados, fortalezcan su posicionamiento y generen oportunidades concretas de crecimiento dentro del ecosistema de AMES.' },
 ];
 
 // ── Valores ────────────────────────────────────────────────────────
@@ -362,7 +363,7 @@ const NosotrosPage = () => {
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-                        {equipo.map((miembro, i) => (
+                        {equipo.slice(0, -1).map((miembro, i) => (
                             <motion.div
                                 key={i}
                                 {...fadeUp(i * 0.12)}
@@ -401,6 +402,44 @@ const NosotrosPage = () => {
                                 <p className="text-gray-500 text-base leading-relaxed">{miembro.bio}</p>
                             </motion.div>
                         ))}
+                    </div>
+
+                    {/* Último integrante centrado */}
+                    <div className="flex justify-center mt-10">
+                        {(() => {
+                            const miembro = equipo[equipo.length - 1];
+                            return (
+                                <motion.div
+                                    {...fadeUp((equipo.length - 1) * 0.12)}
+                                    whileHover={{ y: -10 }}
+                                    className="group text-center cursor-default bg-white p-6 rounded-3xl border border-gray-100 shadow-sm w-full md:w-[calc(50%-20px)]"
+                                >
+                                    <div className="relative mb-5 mx-auto w-fit">
+                                        <div className="w-36 h-36 rounded-3xl overflow-hidden shadow-xl border-4 border-white group-hover:border-secondary/50 transition-all mx-auto">
+                                            {miembro.foto ? (
+                                                <img
+                                                    src={miembro.foto}
+                                                    alt={miembro.nombre}
+                                                    className="w-full h-full object-cover object-[center_30%] group-hover:scale-110 transition-transform duration-500"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                                                    <span className="text-white font-heading font-black text-4xl tracking-tight">
+                                                        {miembro.iniciales}
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+                                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-secondary rounded-full border-2 border-white shadow" />
+                                    </div>
+                                    <h3 className="font-heading font-bold text-primary text-lg mb-1 group-hover:text-secondary transition-colors">
+                                        {miembro.nombre}
+                                    </h3>
+                                    <span className="text-accent text-sm font-semibold block mb-3">{miembro.rol}</span>
+                                    <p className="text-gray-500 text-base leading-relaxed">{miembro.bio}</p>
+                                </motion.div>
+                            );
+                        })()}
                     </div>
                 </div>
             </section>

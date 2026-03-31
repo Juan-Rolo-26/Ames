@@ -14,6 +14,7 @@ import caroImg from './Caro_imagen.png';
 import lautiImg from './Lautaro_imagen.png';
 import diegoImg from './Diego.png';
 import rocioImg from './Ro_imagen.png';
+import geronimoImg from './geronimo.png';
 import academiaHomeImg from './academia express.jpeg';
 import academiaDetalleImg from './academia express2.jpeg';
 import aceleradoraImpactoImg from '../nuevas imageenes/aceleradoraimpacto.jpeg';
@@ -111,6 +112,7 @@ export const avatars = {
     lauti: lautiImg,
     diego: diegoImg,
     rocio: rocioImg,
+    geronimo: geronimoImg,
     maria: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80',
     juan: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80',
     laura: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80',

@@ -1,11 +1,11 @@
-import React from 'react';
-import { motion, type Easing } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, type Easing } from 'framer-motion';
 import {
     Briefcase, Users, GraduationCap, Banknote, Rocket,
     HeartHandshake, CheckCircle, ArrowRight, Star,
     Clock, BadgeCheck, ChevronDown, PhoneCall
 } from 'lucide-react';
-import { services, community, padrinos, about } from '../assets/images';
+import { services, community, padrinos, about, avatars } from '../assets/images';
 import { TIENDUP_MEMBRESIA_URL } from '../utils/tiendup';
 
 // ── Animaciones ────────────────────────────────────────────────────
@@ -278,6 +278,71 @@ Como Padrino, tu organización participa activamente en el crecimiento de empren
 ];
 
 // ── Componente de sección de servicio ─────────────────────────────
+// ── Carrusel de consultores ────────────────────────────────────────
+const consultores = [
+    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, pos: 'object-[center_12%]' },
+    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, pos: 'object-[center_22%]' },
+    { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, pos: 'object-[center_5%]' },
+    { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, pos: 'object-[center_12%]' },
+    { nombre: 'Gerónimo', rol: 'Consultor Estratégico', foto: avatars.geronimo, pos: 'object-[center_20%]' },
+];
+
+const TeamCarousel = ({ colorGradient }: { colorGradient: string }) => {
+    const [current, setCurrent] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrent(prev => (prev + 1) % consultores.length);
+        }, 3000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const member = consultores[current];
+
+    return (
+        <div className="relative w-full h-[420px] rounded-3xl overflow-hidden shadow-2xl group">
+            <AnimatePresence mode="wait">
+                <motion.img
+                    key={current}
+                    src={member.foto}
+                    alt={member.nombre}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className={`absolute inset-0 w-full h-full object-cover ${member.pos}`}
+                />
+            </AnimatePresence>
+            <div className={`absolute inset-0 bg-gradient-to-t ${colorGradient} opacity-40 mix-blend-multiply`} />
+            {/* Nombre y rol */}
+            <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-black/70 to-transparent">
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={current}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.35 }}
+                    >
+                        <p className="text-white font-heading font-bold text-xl leading-tight">{member.nombre}</p>
+                        <p className="text-white/75 text-sm mt-0.5">{member.rol}</p>
+                    </motion.div>
+                </AnimatePresence>
+            </div>
+            {/* Dots */}
+            <div className="absolute bottom-5 right-5 flex gap-1.5 items-center">
+                {consultores.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-white w-5' : 'bg-white/50 w-2'}`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
+};
+
 const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed: boolean }) => {
     const whatsappNumber = servicio.id === 'ayuda-economica' ? '5493417483978' : '5493413702972';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hola, quiero saber más sobre ${servicio.titulo} de AMES.`)}`;
@@ -296,18 +361,24 @@ const ServicioSection = ({ servicio, reversed }: { servicio: Servicio; reversed:
                         {...(reversed ? fadeRight(0) : fadeLeft(0))}
                         className={`w-full lg:w-5/12 ${reversed ? 'lg:order-2' : ''}`}
                     >
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                            <img
-                                src={servicio.imagen}
-                                alt={servicio.titulo}
-                                className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className={`absolute inset-0 bg-gradient-to-t ${servicio.colorGradient} opacity-40 mix-blend-multiply`} />
+                        <div className="relative">
+                            {servicio.id === 'consultoria' ? (
+                                <TeamCarousel colorGradient={servicio.colorGradient} />
+                            ) : (
+                                <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+                                    <img
+                                        src={servicio.imagen}
+                                        alt={servicio.titulo}
+                                        className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className={`absolute inset-0 bg-gradient-to-t ${servicio.colorGradient} opacity-40 mix-blend-multiply`} />
+                                </div>
+                            )}
                             {/* Ícono flotante */}
                             <motion.div
                                 animate={{ y: [-5, 5, -5] }}
                                 transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                                className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-3 shadow-lg"
+                                className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-3 shadow-lg z-10"
                             >
                                 <div className={`${servicio.colorText}`}>{servicio.icono}</div>
                             </motion.div>

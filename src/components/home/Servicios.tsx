@@ -137,7 +137,7 @@ const Servicios = () => {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-4xl md:text-5xl font-heading font-black text-primary mb-6 leading-tight"
                     >
-                        Servicios de Nuestra <span className="text-secondary">Mutual en Argentina</span>
+                        Servicios <span className="text-secondary">Ames</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, x: 50 }}
