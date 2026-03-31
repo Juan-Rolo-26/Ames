@@ -280,11 +280,11 @@ Como Padrino, tu organización participa activamente en el crecimiento de empren
 // ── Componente de sección de servicio ─────────────────────────────
 // ── Carrusel de consultores ────────────────────────────────────────
 const consultores = [
-    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, pos: 'object-[center_12%]' },
-    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, pos: 'object-[center_22%]' },
-    { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, pos: 'object-[center_5%]' },
-    { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, pos: 'object-[center_12%]' },
-    { nombre: 'Gerónimo', rol: 'Consultor Estratégico', foto: avatars.geronimo, pos: 'object-[center_20%]' },
+    { nombre: 'Carolina Gazquez', rol: 'Fundadora', foto: avatars.caro, pos: 'object-[center_5%]' },
+    { nombre: 'Lautaro Zulian', rol: 'Desarrollo Estratégico', foto: avatars.lauti, pos: 'object-[center_8%]' },
+    { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, pos: 'object-[center_0%]' },
+    { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, pos: 'object-[center_5%]' },
+    { nombre: 'Gerónimo', rol: 'Consultor Estratégico', foto: avatars.geronimo, pos: 'object-[center_8%]' },
 ];
 
 const TeamCarousel = ({ colorGradient }: { colorGradient: string }) => {
@@ -300,7 +300,7 @@ const TeamCarousel = ({ colorGradient }: { colorGradient: string }) => {
     const member = consultores[current];
 
     return (
-        <div className="relative w-full h-[420px] rounded-3xl overflow-hidden shadow-2xl group">
+        <div className="relative w-full h-[560px] rounded-3xl overflow-hidden shadow-2xl group">
             <AnimatePresence mode="wait">
                 <motion.img
                     key={current}
