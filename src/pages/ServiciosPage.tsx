@@ -285,6 +285,8 @@ const consultores = [
     { nombre: 'Diego Ballerini', rol: 'Consultor Estratégico', foto: avatars.diego, pos: 'object-[center_0%]' },
     { nombre: 'Rocío Bellesi', rol: 'Consultora Estratégica', foto: avatars.rocio, pos: 'object-[center_5%]' },
     { nombre: 'Gerónimo', rol: 'Consultor Estratégico', foto: avatars.geronimo, pos: 'object-[center_8%]' },
+    { nombre: 'Maximiliano R. Colella', rol: 'Consultor Estratégico', foto: avatars.maximiliano, pos: 'object-[center_5%]' },
+    { nombre: 'Macarena Rosquini', rol: 'Consultora Estratégica', foto: avatars.macarena, pos: 'object-[center_5%]' },
 ];
 
 const TeamCarousel = ({ colorGradient }: { colorGradient: string }) => {
